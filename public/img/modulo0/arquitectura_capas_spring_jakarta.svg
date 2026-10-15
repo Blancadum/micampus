@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 520" width="1140" height="520">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="app-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1140" height="520" rx="20" fill="url(#bg-grad)"/>
+  <rect x="1.5" y="1.5" width="1137" height="517" rx="19" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <g transform="translate(60, 36)">
+    <rect x="0" y="0" width="210" height="26" rx="6" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+    <text x="105" y="17" fill="#047857" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="1" text-anchor="middle">ARQUITECTURA DE CAPAS</text>
+    
+    <text x="0" y="58" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800" letter-spacing="-0.5">Convivencia en el Ecosistema: Tu App, Spring y Jakarta EE</text>
+    <text x="0" y="82" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5">Cómo Spring Boot orquesta las especificaciones de Jakarta EE y sus motores subyacentes</text>
+  </g>
+
+  <!-- Stacked Layers Container -->
+  <g transform="translate(60, 140)">
+
+    <!-- LAYER 1: TU APLICACIÓN -->
+    <g transform="translate(0, 0)" filter="url(#shadow)">
+      <rect x="0" y="0" width="1020" height="74" rx="10" fill="url(#app-grad)"/>
+      <rect x="16" y="14" width="30" height="46" rx="6" fill="#1e3a8a" fill-opacity="0.4"/>
+      <text x="31" y="42" fill="#ffffff" font-size="18" text-anchor="middle">💻</text>
+      
+      <text x="60" y="34" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800">1. Tu Aplicación (Código y Dominio de Negocio)</text>
+      <text x="60" y="54" fill="#dbeafe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Controladores REST, Entidades de Negocio, Servicios (@Service), DTOs serializables y Reglas de la Empresa</text>
+    </g>
+
+    <!-- Flow Indicator 1 -> 2 -->
+    <text x="510" y="93" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="16" font-weight="800" text-anchor="middle">▼</text>
+
+    <!-- LAYER 2: SPRING BOOT -->
+    <g transform="translate(0, 105)" filter="url(#shadow)">
+      <rect x="0" y="0" width="1020" height="74" rx="10" fill="#ffffff" stroke="#86efac" stroke-width="1.8"/>
+      <rect x="16" y="14" width="30" height="46" rx="6" fill="#ecfdf5"/>
+      <text x="31" y="42" fill="#059669" font-size="18" text-anchor="middle">🌱</text>
+      
+      <text x="60" y="34" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800">2. Spring Framework &amp; Spring Boot (Ecosistema Ágil de Abstracción)</text>
+      <text x="60" y="54" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Inversión de Control (IoC), Spring Data JPA (JpaRepository), Autoconfiguración automática de Beans y Spring Security</text>
+    </g>
+
+    <!-- Flow Indicator 2 -> 3 -->
+    <text x="510" y="198" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="16" font-weight="800" text-anchor="middle">▼</text>
+
+    <!-- LAYER 3: JAKARTA EE -->
+    <g transform="translate(0, 210)" filter="url(#shadow)">
+      <rect x="0" y="0" width="1020" height="74" rx="10" fill="#ffffff" stroke="#c4b5fd" stroke-width="1.8"/>
+      <rect x="16" y="14" width="30" height="46" rx="6" fill="#f5f3ff"/>
+      <text x="31" y="42" fill="#7c3aed" font-size="18" text-anchor="middle">📜</text>
+      
+      <text x="60" y="34" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800">3. Jakarta EE (Especificaciones y Contratos Normativos Oficiales)</text>
+      <text x="60" y="54" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">Contratos e interfaces estándar: <tspan font-family="monospace" font-weight="700" fill="#6d28d9">jakarta.servlet</tspan> · <tspan font-family="monospace" font-weight="700" fill="#6d28d9">jakarta.persistence (JPA)</tspan> · <tspan font-family="monospace" font-weight="700" fill="#6d28d9">jakarta.validation</tspan></text>
+    </g>
+
+    <!-- Flow Indicator 3 -> 4 -->
+    <text x="510" y="303" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="16" font-weight="800" text-anchor="middle">▼</text>
+
+    <!-- LAYER 4: IMPLEMENTACIONES -->
+    <g transform="translate(0, 315)" filter="url(#shadow)">
+      <rect x="0" y="0" width="1020" height="74" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.4"/>
+      <rect x="16" y="14" width="30" height="46" rx="6" fill="#f1f5f9"/>
+      <text x="31" y="42" fill="#475569" font-size="18" text-anchor="middle">⚙️</text>
+      
+      <text x="60" y="34" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="800">4. Implementaciones y Motores de Ejecución Subyacentes</text>
+      <text x="60" y="54" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12"><tspan font-weight="700" fill="#0f172a">Apache Tomcat</tspan> (Servidor Embebido en el JAR) · <tspan font-weight="700" fill="#0f172a">Hibernate ORM</tspan> (Motor JPA) · <tspan font-weight="700" fill="#0f172a">Hibernate Validator</tspan> · <tspan font-weight="700" fill="#0f172a">Jackson</tspan> (JSON)</text>
+    </g>
+
+  </g>
+</svg>

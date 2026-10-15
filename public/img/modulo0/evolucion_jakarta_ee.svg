@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 560" width="1160" height="560">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#6366f1"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1160" height="560" rx="20" fill="url(#bg-grad)"/>
+  <rect x="1.5" y="1.5" width="1157" height="557" rx="19" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Header -->
+  <g transform="translate(60, 40)">
+    <rect x="0" y="0" width="250" height="26" rx="6" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1"/>
+    <text x="125" y="17" fill="#7c3aed" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="1" text-anchor="middle">LÍNEA TEMPORAL DE ESTÁNDARES</text>
+    
+    <text x="0" y="58" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800" letter-spacing="-0.5">Evolución de la Plataforma Empresarial: De J2EE a Jakarta EE</text>
+    <text x="0" y="82" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5">Cronología de gobernanza, simplificación arquitectónica y la migración al namespace jakarta.*</text>
+  </g>
+
+  <!-- Flow Line behind cards -->
+  <line x1="185" y1="210" x2="975" y2="210" stroke="#cbd5e1" stroke-width="3" stroke-dasharray="6,6"/>
+
+  <!-- Milestone Cards Container -->
+  <g transform="translate(60, 150)">
+    
+    <!-- CARD 1: J2EE (1999) -->
+    <g transform="translate(0, 0)">
+      <!-- Connecting dot on line -->
+      <circle cx="125" cy="60" r="7" fill="#d97706" stroke="#ffffff" stroke-width="2"/>
+      
+      <rect x="0" y="0" width="245" height="255" rx="12" fill="#ffffff" stroke="#fcd34d" stroke-width="1.5" filter="url(#shadow)"/>
+      <rect x="16" y="16" width="213" height="34" rx="6" fill="#fef3c7"/>
+      <text x="122.5" y="38" fill="#b45309" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" text-anchor="middle">1999 · J2EE</text>
+      
+      <text x="16" y="74" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">Java 2 Enterprise Edition</text>
+      <text x="16" y="92" fill="#92400e" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">🏢 Sun Microsystems</text>
+      
+      <line x1="16" y1="104" x2="229" y2="104" stroke="#f1f5f9" stroke-width="1"/>
+      
+      <text x="16" y="126" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">
+        <tspan x="16" dy="0">• EJBs 1.x/2.x complejos</tspan>
+        <tspan x="16" dy="18">• XML masivo de despliegue</tspan>
+        <tspan x="16" dy="18">• Servidores muy pesados</tspan>
+        <tspan x="16" dy="18">• Acoplamiento a interfaces</tspan>
+      </text>
+
+      <rect x="16" y="210" width="213" height="28" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="122.5" y="228" fill="#64748b" font-family="monospace" font-size="10.5" font-weight="700" text-anchor="middle">Paquete: javax.*</text>
+    </g>
+
+    <!-- Arrow 1 -> 2 -->
+    <line x1="248" y1="125" x2="260" y2="125" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- CARD 2: Java EE (2006) -->
+    <g transform="translate(265, 0)">
+      <circle cx="125" cy="60" r="7" fill="#2563eb" stroke="#ffffff" stroke-width="2"/>
+      
+      <rect x="0" y="0" width="245" height="255" rx="12" fill="#ffffff" stroke="#93c5fd" stroke-width="1.5" filter="url(#shadow)"/>
+      <rect x="16" y="16" width="213" height="34" rx="6" fill="#eff6ff"/>
+      <text x="122.5" y="38" fill="#1d4ed8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" text-anchor="middle">2006 · Java EE 5 / 6 / 7</text>
+      
+      <text x="16" y="74" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">Simplificación y Anotaciones</text>
+      <text x="16" y="92" fill="#1e40af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">🏢 Sun ➔ Oracle (2010)</text>
+      
+      <line x1="16" y1="104" x2="229" y2="104" stroke="#f1f5f9" stroke-width="1"/>
+      
+      <text x="16" y="126" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">
+        <tspan x="16" dy="0">• Reacción al éxito de Spring</tspan>
+        <tspan x="16" dy="18">• Anotaciones (@Entity, @EJB)</tspan>
+        <tspan x="16" dy="18">• EJB 3.0 aligerado con POJOs</tspan>
+        <tspan x="16" dy="18">• Menos configuración XML</tspan>
+      </text>
+
+      <rect x="16" y="210" width="213" height="28" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="122.5" y="228" fill="#64748b" font-family="monospace" font-size="10.5" font-weight="700" text-anchor="middle">Paquete: javax.*</text>
+    </g>
+
+    <!-- Arrow 2 -> 3 -->
+    <line x1="513" y1="125" x2="525" y2="125" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- CARD 3: Jakarta EE (2017) -->
+    <g transform="translate(530, 0)">
+      <circle cx="125" cy="60" r="7" fill="#7c3aed" stroke="#ffffff" stroke-width="2"/>
+      
+      <rect x="0" y="0" width="245" height="255" rx="12" fill="#ffffff" stroke="#c4b5fd" stroke-width="1.5" filter="url(#shadow)"/>
+      <rect x="16" y="16" width="213" height="34" rx="6" fill="#f5f3ff"/>
+      <text x="122.5" y="38" fill="#6d28d9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" text-anchor="middle">2017 · Jakarta EE 8</text>
+      
+      <text x="16" y="74" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">Traspaso Open Source</text>
+      <text x="16" y="92" fill="#5b21b6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">🏛️ Eclipse Foundation</text>
+      
+      <line x1="16" y1="104" x2="229" y2="104" stroke="#f1f5f9" stroke-width="1"/>
+      
+      <text x="16" y="126" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">
+        <tspan x="16" dy="0">• Oracle dona Java EE</tspan>
+        <tspan x="16" dy="18">• Oracle retiene marca "Java"</tspan>
+        <tspan x="16" dy="18">• Nace el nombre "Jakarta EE"</tspan>
+        <tspan x="16" dy="18">• Jakarta EE 8 mantiene compat.</tspan>
+      </text>
+
+      <rect x="16" y="210" width="213" height="28" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="122.5" y="228" fill="#64748b" font-family="monospace" font-size="10.5" font-weight="700" text-anchor="middle">Transición: javax.*</text>
+    </g>
+
+    <!-- Arrow 3 -> 4 -->
+    <line x1="778" y1="125" x2="790" y2="125" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- CARD 4: Jakarta EE 9+ (2020+) -->
+    <g transform="translate(795, 0)">
+      <circle cx="125" cy="60" r="7" fill="#059669" stroke="#ffffff" stroke-width="2"/>
+      
+      <rect x="0" y="0" width="245" height="255" rx="12" fill="#ffffff" stroke="#86efac" stroke-width="1.8" filter="url(#shadow)"/>
+      <rect x="16" y="16" width="213" height="34" rx="6" fill="#ecfdf5"/>
+      <text x="122.5" y="38" fill="#047857" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="800" text-anchor="middle">2020+ · Jakarta EE 9 / 10</text>
+      
+      <text x="16" y="74" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700">El Gran Cambio de Paquete</text>
+      <text x="16" y="92" fill="#065f46" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600">🚀 Era Cloud-Native &amp; Spring 3</text>
+      
+      <line x1="16" y1="104" x2="229" y2="104" stroke="#f1f5f9" stroke-width="1"/>
+      
+      <text x="16" y="126" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">
+        <tspan x="16" dy="0">• Migración total de namespace</tspan>
+        <tspan x="16" dy="18">• jakarta.servlet, jakarta.persistence</tspan>
+        <tspan x="16" dy="18">• Exigido en Spring Boot 3</tspan>
+        <tspan x="16" dy="18">• Requisito mínimo: Java 17+</tspan>
+      </text>
+
+      <rect x="16" y="210" width="213" height="28" rx="6" fill="#ecfdf5" stroke="#10b981" stroke-width="1.2"/>
+      <text x="122.5" y="228" fill="#047857" font-family="monospace" font-size="11" font-weight="800" text-anchor="middle">Paquete: jakarta.*</text>
+    </g>
+  </g>
+
+  <!-- Bottom Insight Highlight Bar -->
+  <g transform="translate(60, 430)">
+    <rect x="0" y="0" width="1040" height="90" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" filter="url(#shadow)"/>
+    
+    <rect x="18" y="14" width="24" height="24" rx="5" fill="#eff6ff"/>
+    <text x="30" y="30" fill="#2563eb" font-size="13" text-anchor="middle">💡</text>
+    
+    <text x="50" y="30" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700">Punto Crítico para Spring Boot: La barrera entre javax.* y jakarta.*</text>
+    
+    <text x="18" y="55" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">
+      <tspan x="18" dy="0">• <tspan font-weight="700" fill="#334155">Spring Boot 2.x (Spring 5):</tspan> Basado en la era Java EE 8 / J2EE. Utilizaba paquetes <tspan font-family="monospace" fill="#2563eb">javax.*</tspan> y ejecutaba en Java 8 u 11.</tspan>
+      <tspan x="18" dy="17">• <tspan font-weight="700" fill="#047857">Spring Boot 3.x (Spring 6):</tspan> Basado en Jakarta EE 9/10+. Exige <tspan font-weight="700" fill="#047857">Java 17+</tspan> y utiliza exclusivamente <tspan font-family="monospace" fill="#047857">jakarta.*</tspan>. Mezclarlos causa ClassNotFoundException.</tspan>
+    </text>
+  </g>
+</svg>

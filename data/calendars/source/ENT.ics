@@ -1,0 +1,111 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Blanca//IOC DAW ENT//ES
+X-WR-CALNAME:ENT - Calendario
+X-WR-CALDESC:0487 Entorns de Desenvolupament (IOC DAW)\nDocencia: Montserrat Treviño Martínez\nCoord: Ismael Trascastro\nAC = 40% EAC1 + 30% EAC2 + 30% EAC3\nFinal = 40% AC + 60% PAF (mínimo 5\,00 en PAF)
+BEGIN:VEVENT
+UID:ent-u1-estudio@ioc.xtec.cat
+DTSTAMP:20260925T094358Z
+DTSTART;VALUE=DATE:20260922
+DTEND;VALUE=DATE:20261021
+SUMMARY:🔵 ENT · U1
+DESCRIPTION:U1: Introducción al diseño orientado a objetos (26h)\n\n• Contenido: Diagramas de clases y de comportamiento UML (RA5 y RA6)\n• Docencia: Montserrat Treviño Martínez\n• Coord: Ismael Trascastro\n• Dedicación: Mínimo 6h semanales
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+COLOR:#1E90FF
+END:VEVENT
+BEGIN:VEVENT
+UID:3591421@ioc.xtec.cat/campus
+DTSTAMP:20260925T094358Z
+DTSTART:20260921T220000Z
+DTEND:20260921T220000Z
+SUMMARY:🔵 ENT · Inicio EAC1
+DESCRIPTION:Publicación del enunciado EAC1 (U1)\n\n• Ponderación: 40% de la Evaluación Continua (AC)\n• Entrega: 20-10-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:3522882@ioc.xtec.cat/campus
+DTSTAMP:20260925T094358Z
+DTSTART:20261020T215500Z
+DTEND:20261020T215500Z
+SUMMARY:🔵 ENT · Fin EAC1
+DESCRIPTION:Límite de entrega de la EAC1 (U1)\n\n• Ponderación: 40% de la Evaluación Continua (AC)\n• Calificaciones: 16-11-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:ent-u2-estudio@ioc.xtec.cat
+DTSTAMP:20260925T094358Z
+DTSTART;VALUE=DATE:20261021
+DTEND;VALUE=DATE:20261118
+SUMMARY:🔵 ENT · U2
+DESCRIPTION:U2: Desarrollo de software (20h)\n\n• Contenido: Herramientas del IDE\, edición de código fuente y ejecutables (RA1 y RA2)\n• Docencia: Montserrat Treviño Martínez\n• Coord: Ismael Trascastro
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+COLOR:#1E90FF
+END:VEVENT
+BEGIN:VEVENT
+UID:3591424@ioc.xtec.cat/campus
+DTSTAMP:20260925T094358Z
+DTSTART:20261020T220000Z
+DTEND:20261020T220000Z
+SUMMARY:🔵 ENT · Inicio EAC2
+DESCRIPTION:Publicación del enunciado EAC2 (U2)\n\n• Ponderación: 30% de la Evaluación Continua (AC)\n• Entrega: 17-11-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:3591423@ioc.xtec.cat/campus
+DTSTAMP:20260925T094358Z
+DTSTART:20261115T230000Z
+DTEND:20261115T230000Z
+SUMMARY:🔵 ENT · Notas EAC1
+DESCRIPTION:Publicación de calificaciones de la EAC1 (U1)\n\n• Ponderación: 40% de la Evaluación Continua (AC)
+END:VEVENT
+BEGIN:VEVENT
+UID:ent-fin-eac2-20261117@ioc.xtec.cat/campus
+DTSTAMP:20260925T094358Z
+DTSTART:20261117T225500Z
+DTEND:20261117T225500Z
+SUMMARY:🔵 ENT · Fin EAC2
+DESCRIPTION:Límite de entrega de la EAC2 (U2)\n\n• Ponderación: 30% de la Evaluación Continua (AC)\n• Calificaciones: 09-12-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:ent-u3-estudio@ioc.xtec.cat
+DTSTAMP:20260925T094358Z
+DTSTART;VALUE=DATE:20261118
+DTEND;VALUE=DATE:20261211
+SUMMARY:🔵 ENT · U3
+DESCRIPTION:U3: Optimización del software (20h)\n\n• Contenido: Diseño y ejecución de pruebas (testing)\, optimización de código (RA3 y RA4)\n• Docencia: Montserrat Treviño Martínez\n• Coord: Ismael Trascastro
+TRANSP:TRANSPARENT
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+COLOR:#1E90FF
+END:VEVENT
+BEGIN:VEVENT
+UID:3591427@ioc.xtec.cat/campus
+DTSTAMP:20260925T094358Z
+DTSTART:20261117T230000Z
+DTEND:20261117T230000Z
+SUMMARY:🔵 ENT · Inicio EAC3
+DESCRIPTION:Publicación del enunciado EAC3 (U3)\n\n• Ponderación: 30% de la Evaluación Continua (AC)\n• Entrega: 10-12-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:3591426@ioc.xtec.cat/campus
+DTSTAMP:20260925T094358Z
+DTSTART:20261208T230000Z
+DTEND:20261208T230000Z
+SUMMARY:🔵 ENT · Notas EAC2
+DESCRIPTION:Publicación de calificaciones de la EAC2 (U2)\n\n• Ponderación: 30% de la Evaluación Continua (AC)
+END:VEVENT
+BEGIN:VEVENT
+UID:ent-fin-eac3-20261210@ioc.xtec.cat/campus
+DTSTAMP:20260925T094358Z
+DTSTART:20261210T225500Z
+DTEND:20261210T225500Z
+SUMMARY:🔵 ENT · Fin EAC3
+DESCRIPTION:Límite de entrega de la EAC3 (U3)\n\n• Ponderación: 30% de la Evaluación Continua (AC)\n• Calificaciones: 21-12-2026
+END:VEVENT
+BEGIN:VEVENT
+UID:3591429@ioc.xtec.cat/campus
+DTSTAMP:20260925T094358Z
+DTSTART:20261220T230000Z
+DTEND:20261220T230000Z
+SUMMARY:🔵 ENT · Notas EAC3
+DESCRIPTION:Publicación de calificaciones de la EAC3 (U3)\n\n• Ponderación: 30% de la Evaluación Continua (AC)
+END:VEVENT
+END:VCALENDAR

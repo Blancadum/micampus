@@ -1,0 +1,123 @@
+{
+  "curso": {
+    "codigo": "IFCD0177",
+    "numeroExpediente": "F250881AA",
+    "titulo": "Desarrollo de Aplicaciones Orientadas a Objetos con Java",
+    "centro": "Enclave Formación, S.L.U.",
+    "cif": "B47507603",
+    "sedePrincipal": "Parque Tecnológico de Boecillo, C/ Luis Proust 17, 47151 Boecillo (Valladolid)",
+    "modalidad": "Teleformación (e-learning)",
+    "duracionHoras": 100,
+    "fechaInicio": "08/10/2026",
+    "fechaFin": "30/11/2026",
+    "campusVirtualUrl": "https://campusvirtual.enclaveformacion.com/",
+    "objetivo": "Desarrollar aplicaciones orientadas a objetos en Java, aplicando patrones de diseño, gestionando la persistencia de datos con JPA e Hibernate, y creando aplicaciones web escalables con Spring Framework."
+  },
+  "tutor": {
+    "nombre": "Javier García Lobo",
+    "horario": "Lunes a viernes de 09:00 a 12:00h",
+    "diasNoLectivos": "9, 12 y 14 de octubre; 2 de noviembre",
+    "plazoRespuesta": "24 / 48 horas laborables",
+    "telefonoSoporte": "900 842 246",
+    "horarioTelefono": "L-J de 9:00 a 17:30h, V de 9:00 a 14:00h",
+    "emailSoporte": "soporte@enclaveformacion.com",
+    "emailGeneral": "cursos@enclaveformacion.com"
+  },
+  "evaluacion": {
+    "criteriosSuperacion": [
+      "Visualizar el 100% del contenido interactivo multimedia del campus.",
+      "Realizar al menos el 75% de las actividades de control evaluables.",
+      "Obtener una nota final mínima de 5.0 sobre 10.",
+      "Cumplir con los tiempos de conexión y seguimiento continuado."
+    ],
+    "instrumentos": [
+      {
+        "nombre": "Contenido Interactivo Multimedia",
+        "descripcion": "Visualización obligatoria de todas las unidades",
+        "peso": "100% visualización",
+        "tipo": "Obligatorio"
+      },
+      {
+        "nombre": "4 Test de Autoevaluación",
+        "descripcion": "1 por cada módulo didáctico (máx. 2 intentos, cuenta la mejor nota)",
+        "peso": "30%",
+        "tipo": "Evaluación Continua"
+      },
+      {
+        "nombre": "1 Actividad Obligatoria de Entrega",
+        "descripcion": "Caso práctico de desarrollo calificado por el tutor Javier García Lobo",
+        "peso": "30%",
+        "tipo": "Práctica Obligatoria"
+      },
+      {
+        "nombre": "1 Prueba de Evaluación Final",
+        "descripcion": "Examen final del curso el 30/11/2026",
+        "peso": "70%",
+        "tipo": "Examen Sumativo"
+      },
+      {
+        "nombre": "3 Actividades Complementarias",
+        "descripcion": "Ejercicios prácticos adicionales para profundizar",
+        "peso": "0% (Formativa)",
+        "tipo": "Opcional"
+      },
+      {
+        "nombre": "Foros de Debate y Dudas",
+        "descripcion": "Participación activa e intercambio con compañeros",
+        "peso": "0% (Formativa)",
+        "tipo": "Colaborativo"
+      }
+    ]
+  },
+  "cronograma": [
+    {
+      "modulo": "Módulo 1",
+      "titulo": "Fundamentos de la Programación Orientada a Objetos",
+      "fechas": "08/10/2026 al 22/10/2026",
+      "targetSlug": "m1-1-poo-clases-estado",
+      "hitos": "Clases, herencia, polimorfismo, interfaces, excepciones y Test 1"
+    },
+    {
+      "modulo": "Módulo 2",
+      "titulo": "Patrones de Diseño y Buenas Prácticas en Java",
+      "fechas": "23/10/2026 al 06/11/2026",
+      "targetSlug": "m2-1-principios-solid",
+      "hitos": "SOLID, GoF (Factory, Builder, Strategy), Streams API y Test 2"
+    },
+    {
+      "modulo": "Módulo 3",
+      "titulo": "Persistencia y Manejo de Bases de Datos en Java",
+      "fechas": "09/11/2026 al 20/11/2026",
+      "targetSlug": "m3-1-jdbc-a-orm",
+      "hitos": "JPA, Hibernate, mapeo de relaciones, JPQL, Test 3 y Tarea Obligatoria"
+    },
+    {
+      "modulo": "Módulo 4",
+      "titulo": "Desarrollo de Aplicaciones Web con Spring Framework",
+      "fechas": "23/11/2026 al 30/11/2026",
+      "targetSlug": "m4-1-spring-ioc-di",
+      "hitos": "Spring Core, IoC/DI, Spring Boot, APIs REST y Test 4"
+    },
+    {
+      "modulo": "Cierre Final",
+      "titulo": "Prueba de Evaluación Final y Cierre de Expediente",
+      "fechas": "30/11/2026 (Inamovible)",
+      "targetSlug": "m4-4-evaluacion-final-prep",
+      "hitos": "Evaluación final, encuestas de calidad y emisión de diplomas"
+    }
+  ],
+  "documentos": [
+    {
+      "nombre": "Guía Didáctica Oficial (PDF)",
+      "archivo": "/documents/ifcd0177-java/IFCD0177_Guia didactica.pdf",
+      "icono": "📕",
+      "tamano": "1.2 MB"
+    },
+    {
+      "nombre": "Glosario de Java POO (PDF)",
+      "archivo": "/documents/ifcd0177-java/Glosario-java-poo.pdf",
+      "icono": "📘",
+      "tamano": "276 KB"
+    }
+  ]
+}

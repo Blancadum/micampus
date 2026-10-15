@@ -1,0 +1,85 @@
+{
+  "id": "ent",
+  "title": "Entornos de Desarrollo",
+  "themeColor": "#3b82f6",
+  "icon": "🛠️",
+  "progress": 0,
+  "theoryRoute": "/ioc/ent/lecciones-ent",
+  "blocks": [
+    { "id": "bloque1", "label": "BLOQUE 1: Modelado UML (EAC 1)" },
+    { "id": "bloque2", "label": "BLOQUE 2: Swing & Spring Boot (EAC 2)" },
+    { "id": "bloque3", "label": "BLOQUE 3: JUnit, Refactor & Git (EAC 3)" }
+  ],
+  "eacs": [
+    {
+      "id": "eac1",
+      "title": "EAC 1: Introducción a la ingeniería del software y entornos",
+      "status": "pending",
+      "dueDate": "2026-10-20",
+      "theorySlug": "intro-u1",
+      "weight": "40% AC",
+      "description": "Modelado visual orientado a objetos con UML, diagramas estructurales (clases con atributos y operaciones, composición y agregación) y de comportamiento (casos de uso con include/extend y diagramas de secuencia) usando Eclipse y Papyrus.",
+      "checklist": [
+        "Modelado de clases con visibilidades (+, -, #) y tipos de datos",
+        "Relaciones de composición vs agregación modeladas correctamente",
+        "Diagramas de casos de uso y secuencias temporales en Papyrus",
+        "Exportación de capturas PNG y memoria de entrega oficial"
+      ],
+      "resolvedExampleSlug": "2-6-3-eac1-festa-major",
+      "resolvedExampleTitle": "Ejemplo Resuelto EAC 1 (Fiesta Mayor)",
+      "resolvedTopicSlug": "2-6-resolver-un-enunciado-de-clases-paso-a-paso",
+      "nota": null
+    },
+    {
+      "id": "eac2",
+      "title": "EAC 2: Control de versiones con Git y GitHub",
+      "status": "locked",
+      "dueDate": "2026-11-17",
+      "theorySlug": "intro-u2",
+      "weight": "30% AC",
+      "description": "Construcción de interfaces gráficas de escritorio con WindowBuilder (Java Swing), empaquetado en ficheros JAR ejecutables e introducción a arquitecturas web con Spring Boot y controladores REST.",
+      "checklist": [
+        "Formulario Swing drag-and-drop con WindowBuilder y layouts",
+        "Manejo de eventos y ActionListeners desacoplados de la lógica",
+        "Empaquetado JAR ejecutable con Maven",
+        "Primera API REST con Spring Boot en localhost:8080"
+      ],
+      "nota": null
+    },
+    {
+      "id": "eac3",
+      "title": "EAC 3: Optimización, refactorización y documentación",
+      "status": "locked",
+      "dueDate": "2026-12-10",
+      "theorySlug": "intro-u3",
+      "weight": "30% AC",
+      "description": "Diseño de baterías de pruebas unitarias con JUnit 5, depuración avanzada con breakpoints, documentación estándar con comentarios Javadoc y flujo colaborativo de ramas en Git.",
+      "checklist": [
+        "Suite de tests JUnit 5 con clases de equivalencia y asserts descriptivos",
+        "Refactorización de código con red de seguridad de pruebas",
+        "Generación de documentación HTML con Javadoc (@param, @return)",
+        "Historial Git con commits semánticos y ramas limpias"
+      ],
+      "nota": null
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Montse",
+      "photoKey": "montse",
+      "mailLink": "https://ioc.xtec.cat/campus/local/mail/view.php?t=drafts&c=18646&m=9380631"
+    }
+  ],
+  "events": [
+    { "date": "2026-10-20", "type": "entrega", "title": "Entrega EAC1 (archivo .zip)", "time": "23:55" },
+    { "date": "2026-10-21", "type": "leccion", "title": "Apertura Lliçó 1 U2", "time": "00:00" },
+    { "date": "2026-10-21", "type": "inicio_eac", "title": "Enunciado EAC2", "time": "00:00" },
+    { "date": "2026-11-16", "type": "notas", "title": "Publicación de notas EAC1", "time": "00:00" },
+    { "date": "2026-11-17", "type": "entrega", "title": "Entrega EAC2 (U2)", "time": "23:55" },
+    { "date": "2026-11-18", "type": "inicio_eac", "title": "Enunciado EAC3 (U3)", "time": "00:00" },
+    { "date": "2026-12-09", "type": "notas", "title": "Publicación de notas EAC2", "time": "00:00" },
+    { "date": "2026-12-10", "type": "entrega", "title": "Entrega EAC3 (U3)", "time": "23:55" },
+    { "date": "2026-12-21", "type": "notas", "title": "Publicación de notas EAC3 y final AC", "time": "00:00" },
+    { "date": "2027-01-16", "type": "entrega", "title": "PAF 1: Prueba Presencial ENT", "time": "11:30" }
+  ]
+}

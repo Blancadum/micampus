@@ -1,0 +1,82 @@
+{
+  "id": "int",
+  "title": "Desarrollo de Interfaces Web",
+  "themeColor": "#eab308",
+  "icon": "🎨",
+  "progress": 0,
+  "theoryRoute": "/ioc/int/lecciones-int",
+  "blocks": [
+    { "id": "bloque1", "label": "BLOQUE 1: Usabilidad & UX (EAC 1)" },
+    { "id": "bloque2", "label": "BLOQUE 2: CSS Flexbox & Grid (EAC 2)" },
+    { "id": "bloque3", "label": "BLOQUE 3: Accesibilidad WCAG (EAC 3)" }
+  ],
+  "eacs": [
+    {
+      "id": "eac1",
+      "title": "EAC 1: Usabilidad, Planificación y Maquetación CSS (33% AC)",
+      "status": "pending",
+      "dueDate": "2026-10-22",
+      "theorySlug": "intro-bloque1",
+      "weight": "33% AC",
+      "description": "Aplicación de las 10 heurísticas de usabilidad de Jakob Nielsen, auditoría de Experiencia de Usuario (UX), arquitectura de la información y prototipado responsive de una interfaz web con maquetación CSS moderna y semántica HTML5.",
+      "checklist": [
+        "Auditoría heurística del sistema y patrones de interacción UX",
+        "Diseño inicial con enfoque Mobile-First y diseño adaptativo",
+        "Estructura semántica HTML5 sin anidamientos innecesarios",
+        "Entrega de la memoria técnica y archivos de código fuente"
+      ],
+      "nota": null
+    },
+    {
+      "id": "eac2",
+      "title": "EAC 2: Diseño Responsive, Flexbox y Grid (34% AC)",
+      "status": "locked",
+      "dueDate": "2026-11-26",
+      "theorySlug": "intro-bloque2",
+      "weight": "34% AC",
+      "description": "Maquetación espacial avanzada combinando CSS Flexbox (unidimensional) para cabeceras y tarjetas, con CSS Grid (bidimensional) para la rejilla global de contenidos, breakpoints fluidos y tipografía responsiva.",
+      "checklist": [
+        "Implementación de layouts complejos con CSS Grid (grid-template-areas)",
+        "Alineación y distribución de componentes con Flexbox",
+        "Media Queries bien estructuradas para móviles, tablets y monitores",
+        "Comprobación multidispositivo y renderizado sin desbordamientos"
+      ],
+      "nota": null
+    },
+    {
+      "id": "eac3",
+      "title": "EAC 3: Accesibilidad WCAG, Componentes y Multimedia (33% AC)",
+      "status": "locked",
+      "dueDate": "2026-12-14",
+      "theorySlug": "intro-bloque3",
+      "weight": "33% AC",
+      "description": "Auditoría e implementación de los principios P.O.U.R. de las pautas WCAG 2.2 nivel AA. Atributos WAI-ARIA, navegación completa mediante teclado, validación de contrastes de color, componentes interactivos accesibles y elementos multimedia inclusivos.",
+      "checklist": [
+        "Cumplimiento de estándares de accesibilidad WCAG 2.2 (nivel AA)",
+        "Atributos ARIA (aria-expanded, aria-label, roles semánticos)",
+        "Navegación 100% por teclado con indicador visual de foco visible",
+        "Contraste cromático mínimo 4.5:1 verificado con analizadores de color"
+      ],
+      "nota": null
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Anna",
+      "photoKey": "anna",
+      "mailLink": "https://ioc.xtec.cat/campus/local/mail/view.php?t=drafts&c=18755&m=9380633"
+    }
+  ],
+  "events": [
+    { "date": "2026-10-22", "type": "entrega", "title": "Entrega EAC1", "time": "23:55" },
+    { "date": "2026-10-23", "type": "leccion", "title": "Apertura Lliçons 1, 2 y 3 U3", "time": "00:00" },
+    { "date": "2026-10-23", "type": "inicio_eac", "title": "Enunciado EAC2", "time": "00:00" },
+    { "date": "2026-11-06", "type": "notas", "title": "Solución y calificaciones EAC1", "time": "00:00" },
+    { "date": "2026-11-26", "type": "entrega", "title": "Entrega EAC2 (U3 y U4)", "time": "23:55" },
+    { "date": "2026-11-27", "type": "inicio_eac", "title": "Enunciado EAC3 (U5 y U6)", "time": "00:00" },
+    { "date": "2026-12-11", "type": "notas", "title": "Solución y calificaciones EAC2", "time": "00:00" },
+    { "date": "2026-12-14", "type": "entrega", "title": "Entrega EAC3 (U5 y U6)", "time": "23:55" },
+    { "date": "2026-12-21", "type": "notas", "title": "Calificaciones EAC3 y final AC", "time": "00:00" },
+    { "date": "2027-01-16", "type": "entrega", "title": "PAF 1: Prueba Presencial INT", "time": "14:00" }
+  ]
+}

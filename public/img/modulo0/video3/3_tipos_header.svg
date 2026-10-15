@@ -1,0 +1,208 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 860" width="1120" height="860">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="1120" height="860" rx="20" fill="url(#bg)"/>
+  <rect x="1.5" y="1.5" width="1117" height="857" rx="19" fill="none" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <g transform="translate(560, 48)">
+    <text x="0" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="25" font-weight="800" fill="#0f172a" text-anchor="middle">Tipos y Clasificación de Cabeceras HTTP (Headers)</text>
+    <text x="0" y="25" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#64748b" text-anchor="middle">Matriz de distribución según propósito y rol (Peticiones del Cliente vs Respuestas del Servidor)</text>
+  </g>
+
+  <!-- Table Container -->
+  <g transform="translate(60, 100)" filter="url(#shadow)">
+    <rect width="1000" height="710" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+
+    <!-- Header Row -->
+    <g transform="translate(0, 0)">
+      <rect width="1000" height="60" rx="14" fill="#f8fafc"/>
+      <rect y="45" width="1000" height="15" fill="#f8fafc"/>
+      <line x1="0" y1="60" x2="1000" y2="60" stroke="#e2e8f0" stroke-width="1.5"/>
+
+      <text x="130" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13.5" font-weight="800" fill="#0f172a" text-anchor="middle">CATEGORÍA DE HEADER</text>
+      <text x="490" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#1d4ed8" text-anchor="middle">💻 CLIENTE (Request Headers)</text>
+      <text x="815" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#047857" text-anchor="middle">🖥️ SERVIDOR (Response Headers)</text>
+
+      <line x1="260" y1="0" x2="260" y2="710" stroke="#e2e8f0" stroke-width="1.5"/>
+      <line x1="670" y1="0" x2="670" y2="710" stroke="#e2e8f0" stroke-width="1.5"/>
+    </g>
+
+    <!-- ROW 1: INFORMACIÓN -->
+    <g transform="translate(0, 60)">
+      <line x1="0" y1="205" x2="1000" y2="205" stroke="#e2e8f0" stroke-width="1.5"/>
+      
+      <!-- Category Column -->
+      <g transform="translate(25, 25)">
+        <rect x="0" y="0" width="210" height="36" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.2"/>
+        <text x="105" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#1e40af" text-anchor="middle">ℹ️ INFORMACIÓN</text>
+        
+        <text x="0" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">
+          <tspan x="0" dy="0">Describen las propiedades</tspan>
+          <tspan x="0" dy="18">del body transmitido y los</tspan>
+          <tspan x="0" dy="18">metadatos del emisor.</tspan>
+        </text>
+      </g>
+
+      <!-- Client Column -->
+      <g transform="translate(285, 25)" font-family="'Courier New', Courier, monospace" font-size="12.5">
+        <g transform="translate(0, 0)">
+          <rect x="0" y="0" width="360" height="32" rx="6" fill="#f8fafc" stroke="#bfdbfe" stroke-width="1"/>
+          <text x="15" y="20" fill="#1d4ed8" font-weight="bold">Content-Type: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">application/json</tspan></text>
+        </g>
+        <g transform="translate(0, 40)">
+          <rect x="0" y="0" width="360" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#1d4ed8" font-weight="bold">Content-Length: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">1024 (bytes)</tspan></text>
+        </g>
+        <g transform="translate(0, 80)">
+          <rect x="0" y="0" width="360" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#1d4ed8" font-weight="bold">Date: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">Mon, 26 Sep 2026...</tspan></text>
+        </g>
+        <g transform="translate(0, 120)">
+          <rect x="0" y="0" width="360" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#1d4ed8" font-weight="bold">Origin: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">https://mi-frontend.com</tspan></text>
+        </g>
+      </g>
+
+      <!-- Server Column -->
+      <g transform="translate(695, 25)" font-family="'Courier New', Courier, monospace" font-size="12.5">
+        <g transform="translate(0, 0)">
+          <rect x="0" y="0" width="280" height="32" rx="6" fill="#f8fafc" stroke="#a7f3d0" stroke-width="1"/>
+          <text x="15" y="20" fill="#047857" font-weight="bold">Content-Type: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">app/json</tspan></text>
+        </g>
+        <g transform="translate(0, 40)">
+          <rect x="0" y="0" width="280" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#047857" font-weight="bold">Content-Length: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">512 (bytes)</tspan></text>
+        </g>
+        <g transform="translate(0, 80)">
+          <rect x="0" y="0" width="280" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#047857" font-weight="bold">Date: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">Fecha servidor</tspan></text>
+        </g>
+        <g transform="translate(0, 120)">
+          <rect x="0" y="0" width="280" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#047857" font-weight="bold">Server: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">Apache-Tomcat / Spring</tspan></text>
+        </g>
+      </g>
+    </g>
+
+    <!-- ROW 2: NEGOCIACIÓN -->
+    <g transform="translate(0, 265)">
+      <line x1="0" y1="215" x2="1000" y2="215" stroke="#e2e8f0" stroke-width="1.5"/>
+
+      <!-- Category Column -->
+      <g transform="translate(25, 25)">
+        <rect x="0" y="0" width="210" height="36" rx="8" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.2"/>
+        <text x="105" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#6b21a8" text-anchor="middle">🤝 NEGOCIACIÓN</text>
+        
+        <text x="0" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">
+          <tspan x="0" dy="0">Acuerdan formato,</tspan>
+          <tspan x="0" dy="18">idioma, codificación y</tspan>
+          <tspan x="0" dy="18">compresión del contenido.</tspan>
+        </text>
+      </g>
+
+      <!-- Client Column -->
+      <g transform="translate(285, 25)" font-family="'Courier New', Courier, monospace" font-size="12.5">
+        <g transform="translate(0, 0)">
+          <rect x="0" y="0" width="360" height="32" rx="6" fill="#f8fafc" stroke="#c4b5fd" stroke-width="1"/>
+          <text x="15" y="20" fill="#6b21a8" font-weight="bold">Accept: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">application/pdf, application/json</tspan></text>
+        </g>
+        <g transform="translate(0, 40)">
+          <rect x="0" y="0" width="360" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#6b21a8" font-weight="bold">Accept-Encoding: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">gzip, deflate, br</tspan></text>
+        </g>
+        <g transform="translate(0, 80)">
+          <rect x="0" y="0" width="360" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#6b21a8" font-weight="bold">Accept-Language: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">es-ES, es;q=0.9, en;q=0.8</tspan></text>
+        </g>
+        <g transform="translate(0, 120)">
+          <rect x="0" y="0" width="360" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#6b21a8" font-weight="bold">Range: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">bytes=0-1048576 (descarga parcial)</tspan></text>
+        </g>
+      </g>
+
+      <!-- Server Column -->
+      <g transform="translate(695, 25)" font-family="'Courier New', Courier, monospace" font-size="12.5">
+        <g transform="translate(0, 0)">
+          <rect x="0" y="0" width="280" height="32" rx="6" fill="#f8fafc" stroke="#a7f3d0" stroke-width="1"/>
+          <text x="15" y="20" fill="#047857" font-weight="bold">Content-Encoding: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">gzip</tspan></text>
+        </g>
+        <g transform="translate(0, 40)">
+          <rect x="0" y="0" width="280" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#047857" font-weight="bold">Content-Language: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">es</tspan></text>
+        </g>
+        <g transform="translate(0, 80)">
+          <rect x="0" y="0" width="280" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#047857" font-weight="bold">Content-Disposition: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">attachment</tspan></text>
+        </g>
+        <g transform="translate(0, 120)">
+          <rect x="0" y="0" width="280" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#047857" font-weight="bold">Accept-Ranges: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">bytes</tspan></text>
+        </g>
+      </g>
+    </g>
+
+    <!-- ROW 3: CONTROL Y ESTADO -->
+    <g transform="translate(0, 480)">
+      <!-- Category Column -->
+      <g transform="translate(25, 25)">
+        <rect x="0" y="0" width="210" height="36" rx="8" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.2"/>
+        <text x="105" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#92400e" text-anchor="middle">🛡️ CONTROL Y ESTADO</text>
+        
+        <text x="0" y="60" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">
+          <tspan x="0" dy="0">Gobiernan la caché,</tspan>
+          <tspan x="0" dy="18">la autenticación,</tspan>
+          <tspan x="0" dy="18">sesiones y redirección.</tspan>
+        </text>
+      </g>
+
+      <!-- Client Column -->
+      <g transform="translate(285, 25)" font-family="'Courier New', Courier, monospace" font-size="12.5">
+        <g transform="translate(0, 0)">
+          <rect x="0" y="0" width="360" height="32" rx="6" fill="#f8fafc" stroke="#fcd34d" stroke-width="1"/>
+          <text x="15" y="20" fill="#92400e" font-weight="bold">Authorization: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">Bearer &lt;token-jwt&gt;</tspan></text>
+        </g>
+        <g transform="translate(0, 40)">
+          <rect x="0" y="0" width="360" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#92400e" font-weight="bold">Cookie: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">JSESSIONID=A1B2C3; auth=ok</tspan></text>
+        </g>
+        <g transform="translate(0, 80)">
+          <rect x="0" y="0" width="360" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#92400e" font-weight="bold">If-Modified-Since: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">Fecha última versión local</tspan></text>
+        </g>
+        <g transform="translate(0, 120)">
+          <rect x="0" y="0" width="360" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#92400e" font-weight="bold">Cache-Control: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">no-cache (fuerza revalidación)</tspan></text>
+        </g>
+      </g>
+
+      <!-- Server Column -->
+      <g transform="translate(695, 25)" font-family="'Courier New', Courier, monospace" font-size="12.5">
+        <g transform="translate(0, 0)">
+          <rect x="0" y="0" width="280" height="32" rx="6" fill="#f8fafc" stroke="#a7f3d0" stroke-width="1"/>
+          <text x="15" y="20" fill="#047857" font-weight="bold">Set-Cookie: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">id=1; HttpOnly; Secure</tspan></text>
+        </g>
+        <g transform="translate(0, 40)">
+          <rect x="0" y="0" width="280" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#047857" font-weight="bold">Cache-Control: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">max-age=3600, public</tspan></text>
+        </g>
+        <g transform="translate(0, 80)">
+          <rect x="0" y="0" width="280" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#047857" font-weight="bold">Location: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11.5">/login (302) o /items/42 (201)</tspan></text>
+        </g>
+        <g transform="translate(0, 120)">
+          <rect x="0" y="0" width="280" height="32" rx="6" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+          <text x="15" y="20" fill="#047857" font-weight="bold">Strict-Transport-Sec: <tspan fill="#334155" font-family="-apple-system, sans-serif" font-size="11">HSTS</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
