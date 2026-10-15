@@ -244,13 +244,18 @@ function App() {
           {/* Materias IOC (Landings + Lecciones) generadas declarativamente */}
           {IOC_SUBJECTS.map(subj => (
             <React.Fragment key={subj.code}>
-              {/* Rutas de Gestión / Landing (incluyendo alias) */}
+              {/* Rutas de Gestión / Landing (incluyendo alias con y sin prefijo /ioc/) */}
               {subj.aliases.map(alias => (
-                <Route 
-                  key={`landing-${alias}`} 
-                  path={`/ioc/${alias}`} 
-                  element={<SubjectLanding dataSource={subj.gestion} subjectConfig={subj} />} 
-                />
+                <React.Fragment key={`landing-${alias}`}>
+                  <Route 
+                    path={`/ioc/${alias}`} 
+                    element={<SubjectLanding dataSource={subj.gestion} subjectConfig={subj} />} 
+                  />
+                  <Route 
+                    path={`/${alias}`} 
+                    element={<SubjectLanding dataSource={subj.gestion} subjectConfig={subj} />} 
+                  />
+                </React.Fragment>
               ))}
 
               {/* Ruta unificada de lecciones (base y con slug) */}
