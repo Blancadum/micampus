@@ -1,0 +1,629 @@
+/**
+ * quizTheoryMapping.js
+ * Mapeo bidireccional interactivo entre las 65 preguntas del Quiz Oficial
+ * y los capítulos del Libro de Arquitectura Spring Boot / Lecciones POO (IFCD0177).
+ */
+
+export const QUIZ_THEORY_MAP = {
+  // Capa Web / REST / Controladores
+  1: {
+    type: 'book',
+    targetId: 'capas-vs-hexagonal',
+    label: 'Cap. 2: Arquitectura en 3 Capas vs Hexagonal',
+    topic: '@Controller vs @RestController',
+    pooTargetId: 'm4-3-api-rest-spring',
+    pooLabel: 'M4.3: APIs RESTful con @RestController'
+  },
+  2: {
+    type: 'book',
+    targetId: 'dto-validaciones',
+    label: 'Cap. 5: Patrón DTO y Bean Validation',
+    topic: 'Códigos de Estado HTTP en Creación (201 Created)',
+    pooTargetId: 'm4-3-api-rest-spring',
+    pooLabel: 'M4.3: APIs RESTful con @RestController'
+  },
+  3: {
+    type: 'book',
+    targetId: 'dto-validaciones',
+    label: 'Cap. 5: Patrón DTO y Bean Validation',
+    topic: 'Excepciones de Validación (@Valid, MethodArgumentNotValidException)',
+    pooTargetId: 'm4-3-api-rest-spring',
+    pooLabel: 'M4.3: APIs RESTful con @RestController'
+  },
+  4: {
+    type: 'book',
+    targetId: 'dto-validaciones',
+    label: 'Cap. 5: Patrón DTO y Bean Validation',
+    topic: 'Respuesta HTTP 204 No Content en DELETE',
+    pooTargetId: 'm4-3-api-rest-spring',
+    pooLabel: 'M4.3: APIs RESTful con @RestController'
+  },
+  5: {
+    type: 'book',
+    targetId: 'capas-vs-hexagonal',
+    label: 'Cap. 2: Arquitectura en 3 Capas vs Hexagonal',
+    topic: 'Aislamiento de Capas: Controller no debe inyectar Repository',
+    pooTargetId: 'm4-2-springboot-arquitectura',
+    pooLabel: 'M4.2: Arquitectura en Capas de Spring Boot'
+  },
+
+  // Capa Service / Transacciones / Inyección
+  6: {
+    type: 'book',
+    targetId: 'transaccionalidad',
+    label: 'Cap. 3: Transaccionalidad ACID y Ciclo de Vida',
+    topic: 'Ubicación de @Transactional en Capa Service',
+    pooTargetId: 'm4-2-springboot-arquitectura',
+    pooLabel: 'M4.2: Arquitectura en Capas de Spring Boot'
+  },
+  7: {
+    type: 'book',
+    targetId: 'transaccionalidad',
+    label: 'Cap. 3: Transaccionalidad ACID y Ciclo de Vida',
+    topic: 'Rollback automático ante RuntimeException (Unchecked)',
+    pooTargetId: 'm1-6-excepciones',
+    pooLabel: 'M1.6: Gestión Robusta de Excepciones'
+  },
+  8: {
+    type: 'book',
+    targetId: 'transaccionalidad',
+    label: 'Cap. 3: Transaccionalidad ACID y Ciclo de Vida',
+    topic: 'Optimización de @Transactional(readOnly = true) y Dirty Checking',
+    pooTargetId: 'm3-4-jpql-ciclo-vida',
+    pooLabel: 'M3.4: Consultas JPQL y Ciclo de Vida'
+  },
+  9: {
+    type: 'book',
+    targetId: 'ioc-iod',
+    label: 'Cap. 1: Inversión de Control (IoC) e Inyección (DI)',
+    topic: 'Inyección de dependencias por constructor en Spring Boot 3',
+    pooTargetId: 'm4-1-spring-ioc-di',
+    pooLabel: 'M4.1: Arquitectura de Spring Framework, IoC y DI'
+  },
+  10: {
+    type: 'book',
+    targetId: 'transaccionalidad',
+    label: 'Cap. 3: Transaccionalidad ACID y Ciclo de Vida',
+    topic: 'Auto-invocación interna de métodos con @Transactional (Proxy AOP)',
+    pooTargetId: 'm4-2-springboot-arquitectura',
+    pooLabel: 'M4.2: Arquitectura en Capas de Spring Boot'
+  },
+
+  // Capa JPA / Hibernate / Persistencia
+  11: {
+    type: 'book',
+    targetId: 'jpa-hibernate-n1',
+    label: 'Cap. 4: JPA, Hibernate, Caché y Problema N+1',
+    topic: 'Problema N+1 y solución con JOIN FETCH / EntityGraph',
+    pooTargetId: 'm3-4-jpql-ciclo-vida',
+    pooLabel: 'M3.4: Consultas JPQL y Ciclo de Vida'
+  },
+  12: {
+    type: 'book',
+    targetId: 'jpa-hibernate-n1',
+    label: 'Cap. 4: JPA, Hibernate, Caché y Problema N+1',
+    topic: 'Derivación de Consultas en Spring Data JPA (Query Methods)',
+    pooTargetId: 'm3-4-jpql-ciclo-vida',
+    pooLabel: 'M3.4: Consultas JPQL y Ciclo de Vida'
+  },
+  13: {
+    type: 'book',
+    targetId: 'jpa-hibernate-n1',
+    label: 'Cap. 4: JPA, Hibernate, Caché y Problema N+1',
+    topic: 'Anotación @Modifying en consultas de modificación (@Query)',
+    pooTargetId: 'm3-4-jpql-ciclo-vida',
+    pooLabel: 'M3.4: Consultas JPQL y Ciclo de Vida'
+  },
+  14: {
+    type: 'book',
+    targetId: 'jpa-hibernate-n1',
+    label: 'Cap. 4: JPA, Hibernate, Caché y Problema N+1',
+    topic: 'Estados de Entidades JPA: Detached vs Managed',
+    pooTargetId: 'm3-4-jpql-ciclo-vida',
+    pooLabel: 'M3.4: Consultas JPQL y Ciclo de Vida'
+  },
+  15: {
+    type: 'book',
+    targetId: 'jpa-hibernate-n1',
+    label: 'Cap. 4: JPA, Hibernate, Caché y Problema N+1',
+    topic: 'JpaRepository vs CrudRepository (Paginación y Flush)',
+    pooTargetId: 'm3-5-actividad-3-jpa',
+    pooLabel: 'M3.5: Actividad 3 Mapeo JPA y Repositorios'
+  },
+
+  // Capa DTO / Mappers / Records
+  16: {
+    type: 'book',
+    targetId: 'dto-validaciones',
+    label: 'Cap. 5: Patrón DTO y Bean Validation',
+    topic: 'Riesgo de exponer entidades JPA directamente (LazyInit & Acoplamiento)',
+    pooTargetId: 'm4-3-api-rest-spring',
+    pooLabel: 'M4.3: APIs RESTful con @RestController'
+  },
+  17: {
+    type: 'book',
+    targetId: 'dto-validaciones',
+    label: 'Cap. 5: Patrón DTO y Bean Validation',
+    topic: 'Ventajas de Mappers Manuales puros frente a librerías de reflexión',
+    pooTargetId: 'm2-3-patrones-estructurales',
+    pooLabel: 'M2.3: Patrones Estructurales (Adapter / Mapper)'
+  },
+  18: {
+    type: 'book',
+    targetId: 'dto-validaciones',
+    label: 'Cap. 5: Patrón DTO y Bean Validation',
+    topic: 'Separación entre RequestDTO y ResponseDTO',
+    pooTargetId: 'm4-3-api-rest-spring',
+    pooLabel: 'M4.3: APIs RESTful con @RestController'
+  },
+  19: {
+    type: 'book',
+    targetId: 'dto-validaciones',
+    label: 'Cap. 5: Patrón DTO y Bean Validation',
+    topic: 'Inmutabilidad con Java Records en DTOs de lectura',
+    pooTargetId: 'm1-2-encapsulamiento',
+    pooLabel: 'M1.2: Encapsulamiento y Modelado de Datos'
+  },
+
+  // Capa de Seguridad / JWT / Spring Security
+  20: {
+    type: 'book',
+    targetId: 'seguridad-jwt',
+    label: 'Cap. 6: Seguridad Stateless con Spring Security y JWT',
+    topic: 'Desactivación de CSRF en APIs REST Stateless',
+    pooTargetId: 'm4-2-springboot-arquitectura',
+    pooLabel: 'M4.2: Arquitectura en Capas de Spring Boot'
+  },
+  21: {
+    type: 'book',
+    targetId: 'seguridad-jwt',
+    label: 'Cap. 6: Seguridad Stateless con Spring Security y JWT',
+    topic: 'Validación de firma criptográfica HMAC/RSA en JWT sin tocar BD',
+    pooTargetId: 'm4-2-springboot-arquitectura',
+    pooLabel: 'M4.2: Arquitectura en Capas de Spring Boot'
+  },
+  22: {
+    type: 'book',
+    targetId: 'seguridad-jwt',
+    label: 'Cap. 6: Seguridad Stateless con Spring Security y JWT',
+    topic: 'Posición de JwtAuthenticationFilter antes de UsernamePasswordAuthFilter',
+    pooTargetId: 'm4-2-springboot-arquitectura',
+    pooLabel: 'M4.2: Arquitectura en Capas de Spring Boot'
+  },
+  23: {
+    type: 'book',
+    targetId: 'seguridad-jwt',
+    label: 'Cap. 6: Seguridad Stateless con Spring Security y JWT',
+    topic: 'Diferencia semántica entre HTTP 401 Unauthorized y 403 Forbidden',
+    pooTargetId: 'm4-3-api-rest-spring',
+    pooLabel: 'M4.3: APIs RESTful con @RestController'
+  },
+  24: {
+    type: 'book',
+    targetId: 'seguridad-jwt',
+    label: 'Cap. 6: Seguridad Stateless con Spring Security y JWT',
+    topic: 'Configuración mediante @Bean SecurityFilterChain en Spring Security 6',
+    pooTargetId: 'm4-2-springboot-arquitectura',
+    pooLabel: 'M4.2: Arquitectura en Capas de Spring Boot'
+  },
+
+  // Capa Testing / Mockito / JUnit 5
+  25: {
+    type: 'book',
+    targetId: 'testing-mockito',
+    label: 'Cap. 7: Testing Unitario con Mockito',
+    topic: 'Diferencia entre @Mock (simulacro puro) y @Spy (envoltorio real)',
+    pooTargetId: 'm4-1-spring-ioc-di',
+    pooLabel: 'M4.1: Arquitectura de Spring Framework, IoC y DI'
+  },
+  26: {
+    type: 'book',
+    targetId: 'testing-mockito',
+    label: 'Cap. 7: Testing Unitario con Mockito',
+    topic: 'Inyección automática de mocks con @InjectMocks',
+    pooTargetId: 'm4-1-spring-ioc-di',
+    pooLabel: 'M4.1: Arquitectura de Spring Framework, IoC y DI'
+  },
+  27: {
+    type: 'book',
+    targetId: 'testing-mockito',
+    label: 'Cap. 7: Testing Unitario con Mockito',
+    topic: 'Verificación de comportamiento e interacciones con verify()',
+    pooTargetId: 'm4-1-spring-ioc-di',
+    pooLabel: 'M4.1: Arquitectura de Spring Framework, IoC y DI'
+  },
+  28: {
+    type: 'book',
+    targetId: 'testing-mockito',
+    label: 'Cap. 7: Testing Unitario con Mockito',
+    topic: 'Aislamiento y rapidez con @ExtendWith(MockitoExtension.class)',
+    pooTargetId: 'm4-1-spring-ioc-di',
+    pooLabel: 'M4.1: Arquitectura de Spring Framework, IoC y DI'
+  },
+  29: {
+    type: 'book',
+    targetId: 'testing-mockito',
+    label: 'Cap. 7: Testing Unitario con Mockito',
+    topic: 'Aserción de excepciones esperadas con assertThrows() de JUnit 5',
+    pooTargetId: 'm1-6-excepciones',
+    pooLabel: 'M1.6: Gestión Robusta de Excepciones'
+  },
+
+  // Infraestructura / Docker / Arquitectura
+  30: {
+    type: 'book',
+    targetId: 'capas-vs-hexagonal',
+    label: 'Cap. 2: Arquitectura en 3 Capas vs Hexagonal',
+    topic: 'Optimización de imágenes con Dockerfile Multi-Stage',
+    pooTargetId: 'm4-4-actividad-4-spring-boot',
+    pooLabel: 'M4.4: Despliegue y Empaquetado Spring Boot'
+  },
+  31: {
+    type: 'book',
+    targetId: 'capas-vs-hexagonal',
+    label: 'Cap. 2: Arquitectura en 3 Capas vs Hexagonal',
+    topic: 'Mapeo de puertos en contenedor Docker (-p host:container)',
+    pooTargetId: 'm4-4-actividad-4-spring-boot',
+    pooLabel: 'M4.4: Despliegue y Empaquetado Spring Boot'
+  },
+  32: {
+    type: 'book',
+    targetId: 'capas-vs-hexagonal',
+    label: 'Cap. 2: Arquitectura en 3 Capas vs Hexagonal',
+    topic: 'Diferencia entre ENTRYPOINT y CMD en Docker',
+    pooTargetId: 'm4-4-actividad-4-spring-boot',
+    pooLabel: 'M4.4: Despliegue y Empaquetado Spring Boot'
+  },
+  33: {
+    type: 'book',
+    targetId: 'transaccionalidad',
+    label: 'Cap. 3: Transaccionalidad ACID y Ciclo de Vida',
+    topic: 'Propiedades ACID: Atomicidad (Todo o Nada)',
+    pooTargetId: 'm3-4-jpql-ciclo-vida',
+    pooLabel: 'M3.4: Consultas JPQL y Ciclo de Vida'
+  },
+  34: {
+    type: 'book',
+    targetId: 'dto-validaciones',
+    label: 'Cap. 5: Patrón DTO y Bean Validation',
+    topic: 'Encapsulación de respuesta con ResponseEntity',
+    pooTargetId: 'm4-3-api-rest-spring',
+    pooLabel: 'M4.3: APIs RESTful con @RestController'
+  },
+  35: {
+    type: 'book',
+    targetId: 'jpa-hibernate-n1',
+    label: 'Cap. 4: JPA, Hibernate, Caché y Problema N+1',
+    topic: 'Configuración de persistencia en application.properties',
+    pooTargetId: 'm3-1-jdbc-a-orm',
+    pooLabel: 'M3.1: De JDBC al Mapeo Objeto-Relacional (ORM)'
+  },
+
+  // Patrones GoF y SOLID (Certificación IFCD0177 M2)
+  36: {
+    type: 'poo',
+    targetId: 'm2-4-patrones-comportamiento',
+    label: 'M2.4: Patrones de Comportamiento',
+    topic: 'Patrón Observer: Relación Uno a Muchos para Notificaciones',
+    bookTargetId: 'capas-vs-hexagonal',
+    bookLabel: 'Cap. 2: Arquitectura desacoplada por eventos'
+  },
+  37: {
+    type: 'poo',
+    targetId: 'm2-6-antipatrones-refactorizacion',
+    label: 'M2.6: Antipatrones y Catálogo GoF',
+    topic: 'Clasificación GoF: Creacionales, Estructurales y Comportamiento',
+    bookTargetId: 'capas-vs-hexagonal',
+    bookLabel: 'Cap. 2: Principios Arquitectónicos'
+  },
+  38: {
+    type: 'poo',
+    targetId: 'm2-1-principios-solid',
+    label: 'M2.1: Principios SOLID',
+    topic: 'Beneficios de Patrones: Vocabulario Común y Mantenibilidad',
+    bookTargetId: 'capas-vs-hexagonal',
+    bookLabel: 'Cap. 2: Arquitectura en Capas'
+  },
+  39: {
+    type: 'poo',
+    targetId: 'm2-1-principios-solid',
+    label: 'M2.1: Principios SOLID',
+    topic: 'Definición formal de un Patrón de Diseño',
+    bookTargetId: 'capas-vs-hexagonal',
+    bookLabel: 'Cap. 2: Arquitectura en Capas'
+  },
+  40: {
+    type: 'poo',
+    targetId: 'm2-3-patrones-estructurales',
+    label: 'M2.3: Patrones Estructurales',
+    topic: 'Patrón Decorator: Añadir Responsabilidades Dinámicamente',
+    bookTargetId: 'dto-validaciones',
+    bookLabel: 'Cap. 5: Mappers y Envoltorios'
+  },
+  41: {
+    type: 'poo',
+    targetId: 'm2-4-patrones-comportamiento',
+    label: 'M2.4: Patrones de Comportamiento',
+    topic: 'Patrón Strategy: Familia de Algoritmos Intercambiables',
+    bookTargetId: 'capas-vs-hexagonal',
+    bookLabel: 'Cap. 2: Puertos y Adaptadores'
+  },
+  42: {
+    type: 'poo',
+    targetId: 'm2-2-patrones-creacionales',
+    label: 'M2.2: Patrones Creacionales',
+    topic: 'Patrón Singleton: Una Sola Instancia de Acceso Global',
+    bookTargetId: 'ioc-iod',
+    bookLabel: 'Cap. 1: Beans Singleton en Spring IoC'
+  },
+  43: {
+    type: 'poo',
+    targetId: 'm2-3-patrones-estructurales',
+    label: 'M2.3: Patrones Estructurales',
+    topic: 'Patrón Adapter: Adaptar Interfaces Incompatibles',
+    bookTargetId: 'capas-vs-hexagonal',
+    bookLabel: 'Cap. 2: Adaptadores Hexagonales'
+  },
+  44: {
+    type: 'poo',
+    targetId: 'm2-6-antipatrones-refactorizacion',
+    label: 'M2.6: Antipatrones y Refactorización',
+    topic: 'Riesgos del Sobreuso de Patrones (Sobreingeniería y Complejidad)',
+    bookTargetId: 'capas-vs-hexagonal',
+    bookLabel: 'Cap. 2: Simplicidad y YAGNI'
+  },
+  45: {
+    type: 'poo',
+    targetId: 'm2-1-principios-solid',
+    label: 'M2.1: Principios SOLID',
+    topic: 'Origen de los Patrones: Christopher Alexander a GoF',
+    bookTargetId: 'capas-vs-hexagonal',
+    bookLabel: 'Cap. 2: Evolución Arquitectónica'
+  },
+
+  // Persistencia JPA & JDBC Clásico (Certificación IFCD0177 M3)
+  46: {
+    type: 'poo',
+    targetId: 'm3-1-jdbc-a-orm',
+    label: 'M3.1: De JDBC al Mapeo Objeto-Relacional (ORM)',
+    topic: 'Propósito del ORM: Mapear Clases a Tablas y Objetos a Filas',
+    bookTargetId: 'jpa-hibernate-n1',
+    bookLabel: 'Cap. 4: Fundamentos JPA'
+  },
+  47: {
+    type: 'poo',
+    targetId: 'm3-2-anotaciones-jpa',
+    label: 'M3.2: Anotaciones Esenciales de JPA',
+    topic: 'Propiedad hibernate.hbm2ddl.auto = create-drop para H2',
+    bookTargetId: 'jpa-hibernate-n1',
+    bookLabel: 'Cap. 4: Configuración de Hibernate'
+  },
+  48: {
+    type: 'poo',
+    targetId: 'm3-4-jpql-ciclo-vida',
+    label: 'M3.4: Consultas JPQL y Ciclo de Vida',
+    topic: 'Obtención de EntityManager mediante EntityManagerFactory',
+    bookTargetId: 'jpa-hibernate-n1',
+    bookLabel: 'Cap. 4: EntityManager y Sesión'
+  },
+  49: {
+    type: 'poo',
+    targetId: 'm3-4-jpql-ciclo-vida',
+    label: 'M3.4: Consultas JPQL y Ciclo de Vida',
+    topic: 'Eliminación con EntityManager: find() + remove()',
+    bookTargetId: 'jpa-hibernate-n1',
+    bookLabel: 'Cap. 4: Ciclo de Vida de Entidades'
+  },
+  50: {
+    type: 'poo',
+    targetId: 'm3-1-jdbc-a-orm',
+    label: 'M3.1: De JDBC al Mapeo Objeto-Relacional (ORM)',
+    topic: 'Ubicación de persistence.xml en src/main/resources/META-INF/',
+    bookTargetId: 'jpa-hibernate-n1',
+    bookLabel: 'Cap. 4: Estructura de Persistencia'
+  },
+  51: {
+    type: 'poo',
+    targetId: 'm3-2-anotaciones-jpa',
+    label: 'M3.2: Anotaciones Esenciales de JPA',
+    topic: 'Estado New / Transient de una entidad recién instanciada',
+    bookTargetId: 'jpa-hibernate-n1',
+    bookLabel: 'Cap. 4: Ciclo de Vida de Entidades'
+  },
+  52: {
+    type: 'poo',
+    targetId: 'm3-2-anotaciones-jpa',
+    label: 'M3.2: Anotaciones Esenciales de JPA',
+    topic: 'Estrategia de clave primaria GenerationType.IDENTITY (Autoincrement)',
+    bookTargetId: 'jpa-hibernate-n1',
+    bookLabel: 'Cap. 4: Mapeo de Identificadores'
+  },
+  53: {
+    type: 'poo',
+    targetId: 'm3-2-anotaciones-jpa',
+    label: 'M3.2: Anotaciones Esenciales de JPA',
+    topic: 'Propiedad hibernate.show_sql = true para imprimir consultas SQL',
+    bookTargetId: 'jpa-hibernate-n1',
+    bookLabel: 'Cap. 4: Debug y Monitoreo SQL'
+  },
+  54: {
+    type: 'poo',
+    targetId: 'm3-4-jpql-ciclo-vida',
+    label: 'M3.4: Consultas JPQL y Ciclo de Vida',
+    topic: 'Método find() de EntityManager para búsqueda por clave primaria',
+    bookTargetId: 'jpa-hibernate-n1',
+    bookLabel: 'Cap. 4: Búsquedas con EntityManager'
+  },
+  55: {
+    type: 'poo',
+    targetId: 'm3-1-jdbc-a-orm',
+    label: 'M3.1: De JDBC al Mapeo Objeto-Relacional (ORM)',
+    topic: 'Representación de una Entidad en la BD: Una Fila de la Tabla',
+    bookTargetId: 'jpa-hibernate-n1',
+    bookLabel: 'Cap. 4: Modelo Entidad-Relación'
+  },
+
+  // Rendimiento, Green IT y Spring Boot 3
+  56: {
+    type: 'book',
+    targetId: 'dto-validaciones',
+    label: 'Cap. 5: Patrón DTO y Bean Validation',
+    topic: 'Compresión GZIP en Tomcat (server.compression.min-response-size)',
+    pooTargetId: 'm4-3-api-rest-spring',
+    pooLabel: 'M4.3: APIs RESTful con @RestController'
+  },
+  57: {
+    type: 'book',
+    targetId: 'jpa-hibernate-n1',
+    label: 'Cap. 4: JPA, Hibernate, Caché y Problema N+1',
+    topic: 'FetchType.LAZY por defecto para evitar sobrecarga de memoria',
+    pooTargetId: 'm3-3-relaciones-jpa',
+    pooLabel: 'M3.3: Mapeo de Relaciones JPA'
+  },
+  58: {
+    type: 'book',
+    targetId: 'jpa-hibernate-n1',
+    label: 'Cap. 4: JPA, Hibernate, Caché y Problema N+1',
+    topic: 'Dimensionamiento de conexiones HikariCP (minimum-idle y consumo)',
+    pooTargetId: 'm4-4-actividad-4-spring-boot',
+    pooLabel: 'M4.4: Spring Boot, JPA y HikariCP'
+  },
+  59: {
+    type: 'book',
+    targetId: 'ioc-iod',
+    label: 'Cap. 1: Inversión de Control (IoC) e Inyección (DI)',
+    topic: 'Dimensionamiento de Thread Pools para tareas intensivas en CPU',
+    pooTargetId: 'm4-1-spring-ioc-di',
+    pooLabel: 'M4.1: Arquitectura de Spring Framework, IoC y DI'
+  },
+  60: {
+    type: 'book',
+    targetId: 'ioc-iod',
+    label: 'Cap. 1: Inversión de Control (IoC) e Inyección (DI)',
+    topic: 'Inicialización Perezosa Global (spring.main.lazy-initialization)',
+    pooTargetId: 'm4-1-spring-ioc-di',
+    pooLabel: 'M4.1: Arquitectura de Spring Framework, IoC y DI'
+  },
+  61: {
+    type: 'book',
+    targetId: 'capas-vs-hexagonal',
+    label: 'Cap. 2: Arquitectura en 3 Capas vs Hexagonal',
+    topic: 'Eficiencia energética en desarrollo (detener contenedores inactivos)',
+    pooTargetId: 'm4-4-actividad-4-spring-boot',
+    pooLabel: 'M4.4: Despliegue y Eficiencia Energética'
+  },
+  62: {
+    type: 'book',
+    targetId: 'jpa-hibernate-n1',
+    label: 'Cap. 4: JPA, Hibernate, Caché y Problema N+1',
+    topic: 'Resolución de N+1 con JPQL JOIN FETCH en una sola consulta SQL',
+    pooTargetId: 'm3-4-jpql-ciclo-vida',
+    pooLabel: 'M3.4: Consultas JPQL y Ciclo de Vida'
+  },
+  63: {
+    type: 'book',
+    targetId: 'ioc-iod',
+    label: 'Cap. 1: Inversión de Control (IoC) e Inyección (DI)',
+    topic: 'Impacto de inyección masiva en arranque y grafo de Beans',
+    pooTargetId: 'm4-1-spring-ioc-di',
+    pooLabel: 'M4.1: Arquitectura de Spring Framework, IoC y DI'
+  },
+  64: {
+    type: 'book',
+    targetId: 'jpa-hibernate-n1',
+    label: 'Cap. 4: JPA, Hibernate, Caché y Problema N+1',
+    topic: 'Prevención de conexiones fantasma o zombies con max-lifetime de HikariCP',
+    pooTargetId: 'm4-4-actividad-4-spring-boot',
+    pooLabel: 'M4.4: Spring Boot, JPA y HikariCP'
+  },
+  65: {
+    type: 'book',
+    targetId: 'seguridad-jwt',
+    label: 'Cap. 6: Seguridad Stateless con Spring Security y JWT',
+    topic: 'Seguridad de Endpoints Spring Actuator en Entornos Productivos',
+    pooTargetId: 'm4-2-springboot-arquitectura',
+    pooLabel: 'M4.2: Arquitectura en Capas de Spring Boot'
+  }
+};
+
+/**
+ * Obtiene el destino teórico primario y alternativo de una pregunta del Quiz.
+ */
+export function getTheoryTargetForQuiz(quizId) {
+  const mapping = QUIZ_THEORY_MAP[quizId];
+  if (!mapping) return null;
+
+  const basePath = '/java/studio';
+  const primaryUrl = mapping.type === 'book'
+    ? `${basePath}/libro/${mapping.targetId}`
+    : `${basePath}/poo/${mapping.targetId}`;
+
+  let secondaryUrl = null;
+  if (mapping.type === 'book' && mapping.pooTargetId) {
+    secondaryUrl = `${basePath}/poo/${mapping.pooTargetId}`;
+  } else if (mapping.type === 'poo' && mapping.bookTargetId) {
+    secondaryUrl = `${basePath}/libro/${mapping.bookTargetId}`;
+  }
+
+  return {
+    ...mapping,
+    primaryUrl,
+    secondaryUrl,
+    secondaryLabel: mapping.type === 'book' ? mapping.pooLabel : mapping.bookLabel
+  };
+}
+
+/**
+ * Retorna las preguntas del Quiz vinculadas a un capítulo del Libro de Arquitectura.
+ */
+export function getQuizzesForBookChapter(chapterId, allQuizzes = []) {
+  if (!chapterId || !Array.isArray(allQuizzes)) return [];
+  return allQuizzes.filter((q) => {
+    const map = QUIZ_THEORY_MAP[q.id];
+    if (!map) return false;
+    return (map.type === 'book' && map.targetId === chapterId) || map.bookTargetId === chapterId;
+  });
+}
+
+/**
+ * Retorna las preguntas del Quiz vinculadas a una lección de POO (IFCD0177).
+ */
+export function getQuizzesForPooLesson(lessonId, allQuizzes = []) {
+  if (!lessonId || !Array.isArray(allQuizzes)) return [];
+  return allQuizzes.filter((q) => {
+    const map = QUIZ_THEORY_MAP[q.id];
+    if (!map) return false;
+    return (map.type === 'poo' && map.targetId === lessonId) || map.pooTargetId === lessonId;
+  });
+}
+
+/**
+ * Mapeo de preguntas de evaluación oficial por número de actividad práctica (1 a 16).
+ */
+export const ACTIVITY_QUIZ_MAP = {
+  1: [9, 60, 63],                              // IoC y Contenedor de Beans
+  2: [9, 63],                                  // IoD e Inyección por Constructor
+  3: [9, 42],                                  // Anotaciones y Beans Singleton
+  4: [9, 60],                                  // Configuraciones JavaConfig vs XML
+  5: [1, 35],                                  // Preparación entorno y Datasource
+  6: [1, 2, 4, 5, 34],                         // Controllers REST, Verbos y Códigos HTTP
+  7: [6, 7, 8, 10, 33],                        // Capa Service, Transacciones ACID y Proxies
+  8: [11, 14, 57],                             // Entidades JPA, Relaciones y Estados
+  9: [11, 12, 13, 14, 15, 35, 58, 62, 64],     // Spring Data JPA, Consultas, JOIN FETCH y HikariCP
+  10: [16, 17, 18, 19],                        // DTOs, Mappers manuales y Java Records
+  11: [3, 16, 18],                             // Bean Validation (@Valid, @NotNull)
+  12: [3, 4, 23],                              // Manejo de errores globales y Status Codes
+  13: [34, 65],                                // OpenAPI, Documentación y Actuator
+  14: [25, 26, 27, 28, 29],                    // Testing Unitario: Mockito y JUnit 5
+  15: [20, 21, 22, 23, 24],                    // Seguridad Stateless con JWT y Spring Security 6
+  16: [30, 31, 32, 61]                         // Despliegue con Docker, Multi-Stage y Green IT
+};
+
+/**
+ * Retorna las preguntas del Quiz vinculadas a una actividad práctica entregable.
+ */
+export function getQuizzesForActivity(activityNum, allQuizzes = []) {
+  const ids = ACTIVITY_QUIZ_MAP[Number(activityNum)] || [];
+  return allQuizzes.filter(q => ids.includes(q.id));
+}
+

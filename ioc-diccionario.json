@@ -1,0 +1,36 @@
+{
+  "ciclo": "DAW",
+  "campusUrl": "https://ioc.xtec.cat/campus",
+  "asignaturas": [
+    {
+      "code": "DA2 0487",
+      "title": "DA2 0487 Entorns de desenvolupament",
+      "iocCourseId": "18646",
+      "gradesUrl": "https://ioc.xtec.cat/campus/grade/report/user/index.php?id=18646"
+    },
+    {
+      "code": "DAW 0615",
+      "title": "DAW 0615 Disseny d’Interfícies Web",
+      "iocCourseId": "18670",
+      "gradesUrl": "https://ioc.xtec.cat/campus/grade/report/user/index.php?id=18670"
+    },
+    {
+      "code": "DAW 0614",
+      "title": "DAW 0614 Desplegament d’Aplicacions Web",
+      "iocCourseId": "18669",
+      "gradesUrl": "https://ioc.xtec.cat/campus/grade/report/user/index.php?id=18669"
+    },
+    {
+      "code": "1710 TRS",
+      "title": "1710 TRS Itinerari personal per a l‘ocupabilitat II",
+      "iocCourseId": "18955",
+      "gradesUrl": "https://ioc.xtec.cat/campus/grade/report/user/index.php?id=18955"
+    },
+    {
+      "code": "1665-TRS",
+      "title": "1665-TRS Digitalització aplicada als sectors productius",
+      "iocCourseId": "18869",
+      "gradesUrl": "https://ioc.xtec.cat/campus/grade/report/user/index.php?id=18869"
+    }
+  ]
+}

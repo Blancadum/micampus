@@ -1,0 +1,6 @@
+.git
+target
+micampus-data
+frontend/node_modules
+node_modules
+*.log

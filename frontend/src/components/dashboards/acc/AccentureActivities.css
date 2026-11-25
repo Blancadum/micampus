@@ -1,0 +1,315 @@
+/* AccentureActivities.css - Cuaderno de Actividades Prácticas Spring Boot */
+
+.accenture-act-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* Breadcrumb & Header */
+.accenture-act-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.accenture-act-breadcrumb a {
+  color: var(--accent-blue, #38bdf8);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.accenture-act-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.accenture-act-title {
+  font-size: 2.3rem;
+  margin: 0 0 0.5rem;
+  color: var(--text-title);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.accenture-act-subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+/* Card del Tracker */
+.accenture-act-tracker-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 1.6rem;
+  margin: 1.8rem 0 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.accenture-act-tracker-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.accenture-act-tracker-tag {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.accenture-act-tracker-stat {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-title);
+  margin-top: 0.2rem;
+}
+
+.accenture-act-deadline-badge {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  color: #f59e0b;
+  font-size: 0.88rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.accenture-act-progress-track {
+  background: var(--bg-hover);
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.accenture-act-progress-fill {
+  background: linear-gradient(90deg, #38bdf8, #10b981);
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Protocolo desplegable */
+.accenture-act-protocol-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.accenture-act-protocol-btn {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-title);
+  font-weight: bold;
+  font-size: 0.98rem;
+  transition: background 0.15s ease;
+}
+
+.accenture-act-protocol-btn:hover {
+  background: var(--bg-hover);
+}
+
+.accenture-act-protocol-body {
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.accenture-act-protocol-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Controles de Búsqueda y Filtros */
+.accenture-act-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+}
+
+.accenture-act-search-box {
+  position: relative;
+  flex: 1;
+  max-width: 360px;
+  min-width: 240px;
+}
+
+.accenture-act-search-input {
+  width: 100%;
+  padding: 0.55rem 0.8rem 0.55rem 2.2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  font-size: 0.86rem;
+  color: var(--text-main);
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.accenture-act-search-input:focus {
+  border-color: var(--accent-blue, #38bdf8);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+}
+
+.accenture-act-search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.accenture-act-filter-chips {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.accenture-act-chip {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.accenture-act-chip:hover {
+  border-color: var(--accent-blue, #38bdf8);
+  color: var(--text-title);
+}
+
+.accenture-act-chip.is-active {
+  border-color: #38bdf8;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+/* Grid de Tarjetas de Actividades */
+.accenture-act-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.accenture-act-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.accenture-act-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: rgba(56, 189, 248, 0.4);
+}
+
+.accenture-act-card.is-done {
+  border-color: rgba(16, 185, 129, 0.4);
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.02) 0%, var(--bg-card) 100%);
+}
+
+.accenture-act-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.accenture-act-num-badge {
+  font-size: 0.8rem;
+  font-weight: bold;
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  padding: 0.22rem 0.55rem;
+  border-radius: 6px;
+}
+
+.accenture-act-status-badge {
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.2rem 0.65rem;
+  border-radius: 12px;
+}
+
+.accenture-act-status-badge.done {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.accenture-act-status-badge.pending {
+  background: var(--bg-hover);
+  color: var(--text-muted);
+}
+
+.accenture-act-card-title {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+  color: var(--text-title);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.accenture-act-card-resumen {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  margin-bottom: 1.2rem;
+}
+
+.accenture-act-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 0.8rem;
+}
+
+.accenture-act-card-actions {
+  display: flex;
+  gap: 0.5rem;
+}

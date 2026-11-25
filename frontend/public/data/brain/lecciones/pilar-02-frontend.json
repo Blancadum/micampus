@@ -1,0 +1,20 @@
+[
+  {
+    "id": "p2-layout",
+    "title": "Maquetación Moderna: CSS Grid vs Flexbox",
+    "slug": "css-grid-flexbox-arquitectura",
+    "moduleTitle": "Módulo 1: Layouts & CSS Moderno",
+    "moduleShort": "Módulo 1",
+    "topicNum": "2.1",
+    "contentMd": "# 🎨 CSS Grid vs Flexbox en Sistemas de Diseño\n\nNo compiten: se complementan.\n\n* **Flexbox (Unidimensional):** Diseñado para organizar elementos a lo largo de un solo eje (filas o columnas). Ideal para barras de navegación, botones con iconos, tarjetas horizontales y alineación de items.\n* **CSS Grid (Bidimensional):** Diseñado para estructurar filas y columnas simultáneamente. Ideal para el layout global de la aplicación (header, aside, main, footer), galerías responsivas y dashboards.\n\n```css\n/* Dashboard responsive con CSS Grid automático */\n.dashboard-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));\n  gap: 1.5rem;\n  align-items: stretch;\n}\n```\n"
+  },
+  {
+    "id": "p2-wcag",
+    "title": "Accesibilidad Web: Normativa WCAG 2.1 y Atributos ARIA",
+    "slug": "wcag-accesibilidad-aria",
+    "moduleTitle": "Módulo 2: Accesibilidad Universal",
+    "moduleShort": "Módulo 2",
+    "topicNum": "2.2",
+    "contentMd": "# ♿ Accesibilidad Web (WCAG 2.1 AA)\n\nLa accesibilidad web no es un extra estético; es un imperativo legal (Directiva Europea EN 301 549) y ético.\n\n### Principios POUR:\n1. **Perceptible:** Contraste mínimo de 4.5:1 para texto normal, alternativas de texto (`alt` en imágenes) y subtítulos.\n2. **Operable:** Navegación por teclado al 100% (sin trampas de foco `tabindex`), tiempos suficientes.\n3. **Comprensible:** Formularios con labels explícitos asociados mediante `for=\"id\"`, prevención de errores y mensajes claros.\n4. **Robusto:** Código HTML5 válido compatible con tecnologías de asistencia (lectores de pantalla NVDA/VoiceOver).\n"
+  }
+]

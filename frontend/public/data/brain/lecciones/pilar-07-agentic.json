@@ -1,0 +1,20 @@
+[
+  {
+    "id": "p7-sdd-paradigm",
+    "title": "El Paradigma Spec-Driven Development (SDD)",
+    "slug": "paradigma-sdd-agentes",
+    "moduleTitle": "Módulo 1: Filosofía & Metodología SDD",
+    "moduleShort": "Módulo 1",
+    "topicNum": "7.1",
+    "contentMd": "# 🤖 Spec-Driven Development (SDD)\n\nEl autocompletado ciego genera deuda técnica masiva. En **SDD**, el desarrollador no delega el pensamiento; define:\n1. **Especificación Formal:** Contratos de API, tipos estrictos y esquemas de datos.\n2. **Batería de Pruebas:** Casos de prueba que validan el comportamiento esperado antes de que el agente escriba código.\n3. **Ejecución en Sandbox:** El agente autónomo ejecuta, itera y soluciona errores dentro de límites prefijados sin autoaprobarse jamás.\n"
+  },
+  {
+    "id": "p7-harness-react",
+    "title": "Arquitectura de Agentes Autónomos: El Arnés ReAct y Tools",
+    "slug": "arquitectura-agentes-harness-react",
+    "moduleTitle": "Módulo 2: Agentes & Tool Calling",
+    "moduleShort": "Módulo 2",
+    "topicNum": "7.2",
+    "contentMd": "# ⚙️ El Arnés de Ejecución (Harness) ReAct\n\nUn LLM es un generador de texto; el **Harness** es el software que lo convierte en un agente capaz de actuar en el mundo real.\n\n### El Bucle ReAct (Reasoning + Acting):\n1. **Context Assembly:** Carga de especificaciones (`soul.md`, `user.md`, herramientas).\n2. **Pensamiento & Tool Call:** El modelo emite un JSON estructurado indicando qué función ejecutar.\n3. **Tool Dispatcher:** El arnés ejecuta la función en local (ej. leer un archivo en disco).\n4. **Observación:** Reinyecta el resultado en el contexto para que el agente concluya su respuesta.\n"
+  }
+]

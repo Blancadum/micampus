@@ -1,0 +1,290 @@
+{
+  "id": "int",
+  "title": "Desarrollo de Interfaces Web",
+  "themeColor": "#eab308",
+  "icon": "🎨",
+  "progress": 33,
+  "theoryRoute": "/ioc/int/lecciones-int",
+  "blocks": [
+    { "id": "bloque1", "label": "BLOQUE 1: Usabilidad & UX (EAC 1)" },
+    { "id": "bloque2", "label": "BLOQUE 2: Multimedia y Contenidos Interactivos (EAC 2)" },
+    { "id": "bloque3", "label": "BLOQUE 3: Accesibilidad WCAG (EAC 3)" }
+  ],
+  "eacs": [
+    {
+      "id": "eac1",
+      "title": "EAC 1: Usabilidad, Planificación y Maquetación CSS (33% AC)",
+      "status": "done",
+      "dueDate": "2026-10-22",
+      "theorySlug": "intro-bloque1",
+      "weight": "33% AC",
+      "description": "Aplicación de las 10 heurísticas de usabilidad de Jakob Nielsen, auditoría de Experiencia de Usuario (UX), arquitectura de la información y prototipado responsive de una interfaz web con maquetación CSS moderna y semántica HTML5.",
+      "checklist": [
+        "Auditoría heurística del sistema y patrones de interacción UX",
+        "Diseño inicial con enfoque Mobile-First y diseño adaptativo",
+        "Estructura semántica HTML5 sin anidamientos innecesarios",
+        "Entrega de la memoria técnica y archivos de código fuente"
+      ],
+      "downloadUrl": "/eacs/int/eac1/DAW_0615_EAC1_DeUna_M.zip",
+      "enunciatUrl": "/eacs/int/eac1/DAW_0615_EAC1_26-27-S1_DeUna_M.pdf",
+      "exercicis": [
+        {
+          "num": 1,
+          "points": "2.0 puntos",
+          "title": "Actividad 1: Wireframes Mobile-First (Bocetos Papelería Ratolí)",
+          "desc": "Definición y bocetado de las pantallas principales para smartphone: Home (3 secciones), menú desplegable, landing de subcategoría y ficha detallada de producto.",
+          "img": "/eacs/int/eac1/img_wireframes/home1.png",
+          "deliverables": ["home1.png", "home2.png", "home3.png", "menu-despl.png", "landingsubcategoria.png", "ficha de producto.png"]
+        },
+        {
+          "num": 2,
+          "points": "1.5 puntos",
+          "title": "Actividad 2: Arquitectura de la Información e Interlinking",
+          "desc": "Diseño del mapa de navegación del sitio web de la papelería Ratolí, taxonomia de categorías y jerarquía de enlaces internos.",
+          "img": "/eacs/int/eac1/Activitat_2/diagrama-mermaid.png",
+          "deliverables": ["diagrama-mermaid.png", "diagrama-ratoli.md"]
+        },
+        {
+          "num": 3,
+          "points": "1.5 puntos",
+          "title": "Actividad 3: Maquetación Semántica y Layout Inicial",
+          "desc": "Estructura base en HTML5 semántico: <header>, <nav>, <main>, <aside> y <footer> con maquetación fluida y adaptativa.",
+          "img": "/eacs/int/eac1/img_wireframes/landingsubcategoria.png",
+          "deliverables": ["index.html", "estils.css"]
+        },
+        {
+          "num": 4,
+          "points": "2.0 puntos",
+          "title": "Actividad 4: Guía de Estilos y Diseño Visual",
+          "desc": "Definición de tokens de diseño, paleta tipográfica, escala cromática (primario, acento, neutros) y componentes reutilizables de UI.",
+          "img": "/eacs/int/eac1/guia_estils/images/ratoli.png",
+          "deliverables": ["guia_de_estilos.html", "style.css", "tokens.css"]
+        },
+        {
+          "num": 5,
+          "points": "1.5 puntos",
+          "title": "Actividad 5: Animaciones y Microinteracciones CSS",
+          "desc": "Implementación de transiciones suaves, animación de la mascota Ratolí y queso, efectos hover y estados interactivos con CSS nativo.",
+          "img": "/eacs/int/eac1/Activitat_5/img/ratoli.png",
+          "deliverables": ["index.html", "estils.css", "ratoli-head.png"]
+        },
+        {
+          "num": 6,
+          "points": "1.5 puntos",
+          "title": "Actividad 6: Prototipado Interactivo y Catálogo de Productos",
+          "desc": "Ensamblado final de la tienda interactiva con rejilla de productos, filtros de compra y comprobación multidispositivo.",
+          "img": "/eacs/int/eac1/img_wireframes/ficha de producto.png",
+          "deliverables": ["productes.html", "index_bootstrap.html", "DAW_0615_EAC1_26-27-S1_DeUna_M.pdf"]
+        }
+      ],
+      "nota": null
+    },
+    {
+      "id": "eac2",
+      "title": "EAC 2: Elementos multimedia y contenidos interactivos (34% AC)",
+      "status": "in_progress",
+      "dueDate": "2026-11-26",
+      "theorySlug": "intro-bloque2",
+      "weight": "34% AC",
+      "folderPath": "/Users/blanca/Micampus/public/eacs/int/eac2",
+      "enunciatUrl": "/eacs/int/eac2/INT_EAC2_Enunciat.odt",
+      "downloadUrl": null,
+      "description": "Preparación e integración avanzada de archivos multimedia (audio, vídeo, imágenes) y contenidos interactivos: diseño y edición de logo con GIMP, optimización de imágenes web, iconografía FontAwesome, grabación y mezcla de audio en Audacity con reproductor HTML5/JS personalizado, vídeo-tutorial de jQuery UI, transiciones CSS, gráficas interactivas con D3.js, animaciones con Anime.js y formulario reactivo validado con Angular y Material Design.",
+      "checklist": [
+        "✅ Act 1.1: Logo corporativo con GIMP (logo_ratoli.png y .xcf) en cabecera",
+        "✅ Act 1.2: 2 fotos optimizadas a 800×800px 72dpi WebP en imatges.html (-93,8% y -87,2%)",
+        "✅ Act 1.3: Iconos FontAwesome 6 en el menú principal y desplegable EAC2",
+        "✅ Act 2.1: Locución + música CC en Audacity (projecte.aup4, MP4vsAVImix.mp3)",
+        "✅ Act 2.2: Reproductor JS personalizado en audio.html + MP4vsAVImix.ogg (ffmpeg)",
+        "⏳ Act 3.1: Grabar vídeo-tutorial (30-40s) de jQuery UI Datepicker en OBS Studio",
+        "⏳ Act 3.2: Guardar video/tutorial-jquery-ui.mp4 y comprobar en video.html",
+        "✅ Act 4.1: Transiciones CSS ('Promocions de la setmana' + 2 productos) en transicions.html",
+        "✅ Act 4.2: Gráfica Donut D3.js de navegadores en Europa 2025 en grafica.html",
+        "✅ Act 4.3: Galería animada de novedades con Anime.js en galeria.html",
+        "✅ Act 5.1: Formulario reactivo con Angular Material validado en contacte.html",
+        "⏳ Entrega final: Terminar DAW_0615_EAC2_DeUna_M.odt y generar DAW_0615_EAC2_DeUna_M.zip"
+      ],
+      "exercicis": [
+        {
+          "num": 1,
+          "label": "Actividad 1",
+          "points": "2.0 puntos",
+          "title": "Logos, imágenes e iconografía (GIMP, WebP y FontAwesome)",
+          "desc": "Creación del logotipo corporativo para la tienda escolar Ratolí con GIMP, optimización web de dos fotografías de productos en la nueva página imatges.html y aplicación de iconografía FontAwesome en el menú de navegación.",
+          "deliverables": [
+            "logo_ratoli.png (o SVG)",
+            "imatges.html (dentro del nuevo menú EAC2)",
+            "producte1_optimitzat.webp",
+            "producte2_optimitzat.webp",
+            "menu_fontawesome.css"
+          ],
+          "steps": [
+            {
+              "title": "1.1 Creación del Logotipo con GIMP (0,5 pts)",
+              "desc": "Abre GIMP y crea un lienzo transparente (ej: 400x120px) o utiliza Archivo > Crear > Logotipos. Diseña o formatea el logo de la tienda escolar 'Ratolí' utilizando capas independientes para el texto, símbolo y sombra paralela (Filtros > Luces y sombras > Sombra arrojada). Exporta la imagen a PNG con fondo transparente y colócala en la cabecera de index.html al lado o encima del menú de navegación.",
+              "code": "<!-- Inclusión del logotipo en la cabecera (index.html) -->\n<header class=\"site-header\">\n  <div class=\"logo-container\">\n    <a href=\"index.html\">\n      <img src=\"img/logo_ratoli.png\" alt=\"Papelería Ratolí - Material Escolar\" class=\"site-logo\" width=\"220\" height=\"65\" />\n    </a>\n  </div>\n  <nav class=\"main-nav\"><!-- Menú de navegación --></nav>\n</header>"
+            },
+            {
+              "title": "1.2 Optimización de Imágenes de Producto (1,0 pt)",
+              "desc": "Crea la página 'imatges.html' enlazada desde el nuevo menú desplegable 'EAC2'. Selecciona dos imágenes de productos en alta resolución, reescala sus dimensiones máximas (ej: 800x600px a 72 dpi) y expórtalas en formato WebP o JPEG progresivo con calidad ~80% para minimizar el peso sin pérdida visual perceptible. Documenta en la memoria el peso original frente al peso optimizado.",
+              "code": "<!-- Muestra optimizada en imatges.html con picture y WebP -->\n<figure class=\"product-showcase\">\n  <picture>\n    <source srcset=\"img/llapis_colors.webp\" type=\"image/webp\">\n    <img src=\"img/llapis_colors.jpg\" alt=\"Caja de 24 lápices de colores Alpino para dibujo escolar\" loading=\"lazy\" width=\"400\" height=\"300\">\n  </picture>\n  <figcaption>\n    <strong>Lápices Alpino 24 Colores</strong> - Peso optimizado: 48 KB (reducción del 82% desde 270 KB).\n  </figcaption>\n</figure>"
+            },
+            {
+              "title": "1.3 Iconos FontAwesome en el Menú Principal (0,5 pts)",
+              "desc": "Enlaza la librería FontAwesome mediante el CDN oficial en el <head> de todas las páginas y añade un icono representativo mediante la etiqueta <i> delante de cada opción del menú principal.",
+              "code": "<!-- CDN de FontAwesome en el <head> -->\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css\" />\n\n<!-- Menú principal con iconografía -->\n<nav class=\"navbar\">\n  <ul class=\"nav-list\">\n    <li><a href=\"index.html\"><i class=\"fa-solid fa-house\"></i> Inicio</a></li>\n    <li><a href=\"productes.html\"><i class=\"fa-solid fa-shapes\"></i> Catálogo</a></li>\n    <li class=\"dropdown\">\n      <a href=\"#\"><i class=\"fa-solid fa-cube\"></i> EAC2 <i class=\"fa-solid fa-chevron-down\"></i></a>\n      <ul class=\"dropdown-menu\">\n        <li><a href=\"imatges.html\"><i class=\"fa-solid fa-image\"></i> Imágenes</a></li>\n        <li><a href=\"audio.html\"><i class=\"fa-solid fa-headphones\"></i> Audio</a></li>\n        <li><a href=\"video.html\"><i class=\"fa-solid fa-video\"></i> Vídeo</a></li>\n        <li><a href=\"transicions.html\"><i class=\"fa-solid fa-wand-magic-sparkles\"></i> Transiciones</a></li>\n        <li><a href=\"grafica.html\"><i class=\"fa-solid fa-chart-column\"></i> Gráficas</a></li>\n        <li><a href=\"galeria.html\"><i class=\"fa-solid fa-photo-film\"></i> Galería</a></li>\n        <li><a href=\"contacte.html\"><i class=\"fa-solid fa-envelope\"></i> Contacto</a></li>\n      </ul>\n    </li>\n  </ul>\n</nav>"
+            }
+          ]
+        },
+        {
+          "num": 2,
+          "label": "Actividad 2",
+          "points": "1.0 punto",
+          "title": "Integración de audio en la web (Audacity, OGG/MP3 y reproductor JS personalizado)",
+          "desc": "Grabación de una locución de voz de máximo 10 segundos explicando las diferencias técnicas entre los formatos de contenedor multimedia AVI y MP4, mezcla de fondo musical con Audacity y desarrollo de un reproductor HTML5 con controles personalizados mediante JavaScript en audio.html.",
+          "deliverables": [
+            "audio.html",
+            "projecte.aup3 (proyecto Audacity)",
+            "MP4vsAVImix.mp3",
+            "MP4vsAVImix.ogg (convertido con ffmpeg)",
+            "reproductor_audio.js"
+          ],
+          "steps": [
+            {
+              "title": "2.1 Grabación y Mezcla en Audacity (0,5 pts)",
+              "desc": "Graba una locución de voz de 10 segundos: 'MP4 es un contenedor moderno optimizado para streaming y alta compresión web, mientras que AVI es un formato clásico de Microsoft más pesado y sin soporte nativo en la mayoría de navegadores'. Descarga una pista musical con licencia Creative Commons, añádela a una segunda pista en Audacity, atenúa su ganancia (-14 dB) para no tapar la voz, guarda el proyecto como 'projecte.aup3' y exporta la mezcla en 'MP4vsAVImix.mp3'.",
+              "code": "# Conversión a formato libre OGG Vorbis mediante ffmpeg:\nffmpeg -i MP4vsAVImix.mp3 -c:a libvorbis -q:a 4 MP4vsAVImix.ogg"
+            },
+            {
+              "title": "2.2 Reproductor de Audio con JavaScript Personalizado (0,5 pts)",
+              "desc": "Crea 'audio.html'. Inserta el elemento <audio> sin el atributo 'controls'. Diseña 4 botones interactivos: 'Play audio', 'Pause audio', 'Volume DOWN' y 'Volume UP'. Vincula cada uno a funciones JavaScript para controlar los métodos play(), pause() y la propiedad volume (ajustando de 0.1 en 0.1 entre 0.0 y 1.0).",
+              "code": "<!-- Estructura del reproductor en audio.html -->\n<h2>Integración de Audio en la Web</h2>\n<audio id=\"miAudio\">\n  <source src=\"audio/MP4vsAVImix.ogg\" type=\"audio/ogg\">\n  <source src=\"audio/MP4vsAVImix.mp3\" type=\"audio/mpeg\">\n  Tu navegador no soporta la etiqueta de audio.\n</audio>\n\n<div class=\"custom-audio-controls\">\n  <button id=\"btnPlay\"><i class=\"fa-solid fa-play\"></i> Play audio</button>\n  <button id=\"btnPause\"><i class=\"fa-solid fa-pause\"></i> Pause audio</button>\n  <button id=\"btnVolDown\"><i class=\"fa-solid fa-volume-low\"></i> Volume DOWN</button>\n  <button id=\"btnVolUp\"><i class=\"fa-solid fa-volume-high\"></i> Volume UP</button>\n  <span id=\"volDisplay\">Volumen: 100%</span>\n</div>\n\n<script>\n  const audio = document.getElementById('miAudio');\n  const volDisplay = document.getElementById('volDisplay');\n  \n  document.getElementById('btnPlay').onclick = () => audio.play();\n  document.getElementById('btnPause').onclick = () => audio.pause();\n  \n  document.getElementById('btnVolDown').onclick = () => {\n    audio.volume = Math.max(0, audio.volume - 0.1);\n    volDisplay.textContent = `Volumen: ${Math.round(audio.volume * 100)}%`;\n  };\n  document.getElementById('btnVolUp').onclick = () => {\n    audio.volume = Math.min(1, audio.volume + 0.1);\n    volDisplay.textContent = `Volumen: ${Math.round(audio.volume * 100)}%`;\n  };\n</script>"
+            }
+          ]
+        },
+        {
+          "num": 3,
+          "label": "Actividad 3",
+          "points": "1.0 punto",
+          "title": "Integración de vídeo en la web (Screencast de jQuery UI y etiqueta <video>)",
+          "desc": "Grabación de un vídeo-tutorial breve (30-40 segundos) con software de captura de pantalla (OBS Studio o Screencastify) explicando la integración y funcionamiento de un widget de jQuery UI (ej: Datepicker o Accordion) e incrustación en video.html.",
+          "deliverables": [
+            "video.html",
+            "tutorial_jquery.mp4 (o formato WebM)",
+            "Capturas de pantalla del guion preparado"
+          ],
+          "steps": [
+            {
+              "title": "3.1 Elección del Widget y Guion de Grabación",
+              "desc": "Elige un widget sencillo y visual como jQuery UI Datepicker o Accordion. Prepara 4 ventanas: la documentación en jqueryui.com, el explorador de archivos con los scripts descargados, el editor VS Code con el código HTML y el navegador mostrando el widget funcionando.",
+              "code": "<!-- Estructura del widget jQuery UI Datepicker en video.html -->\n<link rel=\"stylesheet\" href=\"https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css\">\n<script src=\"https://code.jquery.com/jquery-3.7.1.min.js\"></script>\n<script src=\"https://code.jquery.com/ui/1.13.2/jquery-ui.min.js\"></script>\n\n<p>Selecciona fecha de entrega de pedido: <input type=\"text\" id=\"datepicker\"></p>\n<script>\n  $(function() {\n    $(\"#datepicker\").datepicker({ dateFormat: 'dd/mm/yy' });\n  });\n</script>"
+            },
+            {
+              "title": "3.2 Grabación con OBS Studio y Exportación",
+              "desc": "Inicia OBS Studio en macOS/Windows, configura una escena con captura de pantalla (resolución 1920x1080 o 1280x720) y captura de audio del micrófono. Muestra tu imagen con webcam al inicio durante 3 segundos, graba los 30-40 segundos siguiendo el guion y detén la grabación. Verifica que el archivo MP4 no supere los 15-20 MB.",
+              "code": "# Opcional: optimizar el vídeo grabado para streaming web con ffmpeg:\nffmpeg -i screencast_raw.mp4 -vcodec libx264 -crf 24 -movflags +faststart tutorial_jquery.mp4"
+            },
+            {
+              "title": "3.3 Incrustación del Vídeo en video.html",
+              "desc": "Añade la etiqueta estándar <video> con controles nativos, dimensiones responsivas, subtítulos o texto alternativo y una imagen de portada (poster).",
+              "code": "<div class=\"video-container\">\n  <h2>Vídeo-Tutorial: Integración de jQuery UI Datepicker</h2>\n  <video controls width=\"720\" poster=\"img/poster_video.webp\" preload=\"metadata\">\n    <source src=\"video/tutorial_jquery.mp4\" type=\"video/mp4\">\n    Tu navegador no soporta la reproducción de vídeos HTML5.\n  </video>\n</div>"
+            }
+          ]
+        },
+        {
+          "num": 4,
+          "label": "Actividad 4",
+          "points": "4.0 puntos",
+          "title": "Transiciones, animaciones y gráficas (CSS Hover, D3.js y Anime.js)",
+          "desc": "Esta actividad consta de 3 partes: transiciones CSS en transicions.html, gráfica dinámica de cuota de mercado de navegadores con D3.js en grafica.html y animación interactiva de galería de novedades con Anime.js en galeria.html.",
+          "deliverables": [
+            "transicions.html",
+            "transicions.css",
+            "grafica.html",
+            "d3_browsers.js",
+            "galeria.html",
+            "galeria_anime.js"
+          ],
+          "steps": [
+            {
+              "title": "4.1 Transición CSS: Titular y Productos en Promoción (1,0 pt)",
+              "desc": "Crea 'transicions.html'. Añade el titular 'Promocions de la setmana' que aparece automáticamente con una animación @keyframes de fundido y que al pasar el cursor (hover) aumenta de tamaño suavemente con 'transition: transform 0.4s ease, color 0.4s ease'. Añade dos productos con imagen y descripción que se eleven o desplacen con un efecto dinámico de elevación.",
+              "code": "/* transicions.css */\n@keyframes aparicionTitular {\n  from { opacity: 0; transform: translateY(-20px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.titol-promocions {\n  font-size: 2rem;\n  animation: aparicionTitular 1.2s ease-out forwards;\n  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;\n  display: inline-block;\n  cursor: pointer;\n}\n\n.titol-promocions:hover {\n  transform: scale(1.12) rotate(-1deg);\n  color: #e11d48;\n}\n\n.targeta-promo {\n  transition: transform 0.4s ease, box-shadow 0.4s ease;\n}\n.targeta-promo:hover {\n  transform: translateY(-10px) scale(1.03);\n  box-shadow: 0 16px 32px rgba(0,0,0,0.15);\n}"
+            },
+            {
+              "title": "4.2 Gráfica de Cuota de Mercado con D3.js (1,5 pts)",
+              "desc": "Crea 'grafica.html'. Carga D3.js v7 (<script src='https://d3js.org/d3.v7.min.js'></script>). Representa los datos oficiales de navegadores en Europa 2025: Chrome (62.66%), Safari (17.8%), Edge (6.66%), Firefox (4.61%), Samsung Internet (3.45%), Opera (2.17%) en un gráfico de barras verticales o donut con etiquetas y tooltips.",
+              "code": "<!-- Contenedor en grafica.html -->\n<h2>Cuota de Mercado de Navegadores (Europa 2025) - D3.js</h2>\n<div id=\"d3-chart\"></div>\n\n<script>\nconst dades = [\n  { navegador: \"Chrome\", percentatge: 62.66 },\n  { navegador: \"Safari\", percentatge: 17.80 },\n  { navegador: \"Edge\", percentatge: 6.66 },\n  { navegador: \"Firefox\", percentatge: 4.61 },\n  { navegador: \"Samsung\", percentatge: 3.45 },\n  { navegador: \"Opera\", percentatge: 2.17 }\n];\n\nconst margin = { top: 30, right: 30, bottom: 50, left: 60 },\n      width = 650 - margin.left - margin.right,\n      height = 380 - margin.top - margin.bottom;\n\nconst svg = d3.select(\"#d3-chart\").append(\"svg\")\n  .attr(\"width\", width + margin.left + margin.right)\n  .attr(\"height\", height + margin.top + margin.bottom)\n  .append(\"g\")\n  .attr(\"transform\", `translate(${margin.left},${margin.top})`);\n\nconst x = d3.scaleBand().range([0, width]).domain(dades.map(d => d.navegador)).padding(0.25);\nconst y = d3.scaleLinear().domain([0, 70]).range([height, 0]);\n\nsvg.append(\"g\").attr(\"transform\", `translate(0,${height})`).call(d3.axisBottom(x));\nsvg.append(\"g\").call(d3.axisLeft(y).ticks(7).tickFormat(d => d + \"%\"));\n\nsvg.selectAll(\".bar\").data(dades).enter().append(\"rect\")\n  .attr(\"x\", d => x(d.navegador))\n  .attr(\"width\", x.bandwidth())\n  .attr(\"y\", height)\n  .attr(\"height\", 0)\n  .attr(\"fill\", \"#2563eb\")\n  .attr(\"rx\", 5)\n  .transition().duration(1000)\n  .attr(\"y\", d => y(d.percentatge))\n  .attr(\"height\", d => height - y(d.percentatge));\n</script>"
+            },
+            {
+              "title": "4.3 Galería Animada con Anime.js (1,5 pts)",
+              "desc": "Crea 'galeria.html'. Importa la librería Anime.js (<script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js'></script>). Construye una galería o carrusel de novedades de productos escolares con botones 'Anterior' y 'Siguiente' con animaciones elásticas de traslación, opacidad y escala.",
+              "code": "<!-- Carrusel con Anime.js en galeria.html -->\n<div class=\"carrusel-container\">\n  <div class=\"carrusel-cards\">\n    <div class=\"carrusel-card card-1 active\"><img src=\"img/mochila.webp\" alt=\"Mochila Escolar\"><h3>Mochila Ergonómica</h3></div>\n    <div class=\"carrusel-card card-2\"><img src=\"img/agenda.webp\" alt=\"Agenda 2026/27\"><h3>Agenda Escolar</h3></div>\n    <div class=\"carrusel-card card-3\"><img src=\"img/estuche.webp\" alt=\"Estuche Triple\"><h3>Estuche Multicompartimento</h3></div>\n  </div>\n  <button id=\"btnPrev\"><i class=\"fa-solid fa-arrow-left\"></i> Anterior</button>\n  <button id=\"btnNext\">Siguiente <i class=\"fa-solid fa-arrow-right\"></i></button>\n</div>\n\n<script>\nfunction animarTarjeta(elemento, direccion) {\n  anime({\n    targets: elemento,\n    translateX: [direccion * 120, 0],\n    opacity: [0, 1],\n    scale: [0.85, 1],\n    easing: 'spring(1, 80, 10, 0)',\n    duration: 800\n  });\n}\n</script>"
+            }
+          ]
+        },
+        {
+          "num": 5,
+          "label": "Actividad 5",
+          "points": "2.0 puntos",
+          "title": "Uso de librerías de interfaces de usuario: Angular-Material",
+          "desc": "Implementación de un formulario interactivo de contacto en contacte.html utilizando la librería Angular y componentes Material Design, con validación reactiva en tiempo real y mensajes de error visuales.",
+          "deliverables": [
+            "contacte.html",
+            "contacte.component.ts",
+            "contacte.component.html",
+            "contacte.component.css",
+            "Capturas del formulario con validación de errores"
+          ],
+          "steps": [
+            {
+              "title": "5.1 Estructura del Formulario Angular y Material Design",
+              "desc": "Crea la página 'contacte.html'. Siguiendo la unidad didáctica, monta el componente de contacto con ReactiveFormsModule y componentes de Angular Material (@angular/material/form-field, @angular/material/input, @angular/material/button). Define los 4 campos solicitados: Nombre (obligatorio), Correo electrónico (obligatorio y formato email válido), Teléfono (patrón numérico) y Mensaje.",
+              "code": "<!-- contacte.component.html -->\n<form [formGroup]=\"contactForm\" (ngSubmit)=\"enviarFormulario()\" class=\"contact-material-form\">\n  <h2>Contacta con Papelería Ratolí</h2>\n  \n  <mat-form-field appearance=\"outline\" class=\"full-width\">\n    <mat-label>Nombre y Apellidos</mat-label>\n    <input matInput formControlName=\"nom\" placeholder=\"Ej: Laura Puig\" required>\n    <mat-error *ngIf=\"contactForm.get('nom')?.hasError('required')\">\n      El nombre es obligatorio\n    </mat-error>\n  </mat-form-field>\n\n  <mat-form-field appearance=\"outline\" class=\"full-width\">\n    <mat-label>Correo Electrónico</mat-label>\n    <input matInput formControlName=\"email\" placeholder=\"nombre@dominio.com\" required>\n    <mat-error *ngIf=\"contactForm.get('email')?.hasError('required')\">El correo es obligatorio</mat-error>\n    <mat-error *ngIf=\"contactForm.get('email')?.hasError('email')\">Introduce un correo electrónico válido</mat-error>\n  </mat-form-field>\n\n  <mat-form-field appearance=\"outline\" class=\"full-width\">\n    <mat-label>Teléfono de Contacto</mat-label>\n    <input matInput formControlName=\"telefon\" placeholder=\"612345678\">\n  </mat-form-field>\n\n  <mat-form-field appearance=\"outline\" class=\"full-width\">\n    <mat-label>Mensaje o Consulta</mat-label>\n    <textarea matInput formControlName=\"missatge\" rows=\"4\" placeholder=\"Escribe tu consulta...\"></textarea>\n  </mat-form-field>\n\n  <button mat-raised-button color=\"primary\" type=\"submit\" [disabled]=\"contactForm.invalid\">\n    <i class=\"fa-solid fa-paper-plane\"></i> Enviar Consulta\n  </button>\n</form>"
+            },
+            {
+              "title": "5.2 Lógica de Validación Reactiva (TypeScript)",
+              "desc": "Implementa los validadores oficiales de Validators.required y Validators.email en el FormGroup de Angular para bloquear el envío si faltan campos obligatorios.",
+              "code": "// contacte.component.ts\nimport { Component, OnInit } from '@angular/core';\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\n\n@Component({\n  selector: 'app-contacte',\n  templateUrl: './contacte.component.html',\n  styleUrls: ['./contacte.component.css']\n})\nexport class ContacteComponent implements OnInit {\n  contactForm!: FormGroup;\n  enviado: boolean = false;\n\n  constructor(private fb: FormBuilder) {}\n\n  ngOnInit(): void {\n    this.contactForm = this.fb.group({\n      nom: ['', [Validators.required, Validators.minLength(3)]],\n      email: ['', [Validators.required, Validators.email]],\n      telefon: ['', [Validators.pattern('^[0-9]{9}$')]],\n      missatge: ['', [Validators.required, Validators.minLength(10)]]\n    });\n  }\n\n  enviarFormulario(): void {\n    if (this.contactForm.valid) {\n      console.log('Datos enviados:', this.contactForm.value);\n      this.enviado = true;\n      alert('¡Gracias por contactar! Hemos recibido tu consulta.');\n      this.contactForm.reset();\n    }\n  }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eac3",
+      "title": "EAC 3: Accesibilidad WCAG, Componentes y Multimedia (33% AC)",
+      "status": "locked",
+      "dueDate": "2026-12-14",
+      "theorySlug": "intro-bloque3",
+      "weight": "33% AC",
+      "description": "Auditoría e implementación de los principios P.O.U.R. de las pautas WCAG 2.2 nivel AA. Atributos WAI-ARIA, navegación completa mediante teclado, validación de contrastes de color, componentes interactivos accesibles y elementos multimedia inclusivos.",
+      "checklist": [
+        "Cumplimiento de estándares de accesibilidad WCAG 2.2 (nivel AA)",
+        "Atributos ARIA (aria-expanded, aria-label, roles semánticos)",
+        "Navegación 100% por teclado con indicador visual de foco visible",
+        "Contraste cromático mínimo 4.5:1 verificado con analizadores de color"
+      ],
+      "nota": null
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Anna",
+      "photoKey": "anna",
+      "mailLink": "https://ioc.xtec.cat/campus/local/mail/view.php?t=drafts&c=18755&m=9380633"
+    }
+  ],
+  "events": [
+    { "date": "2026-10-22", "type": "entrega", "title": "Entrega EAC1", "time": "23:55" },
+    { "date": "2026-10-23", "type": "leccion", "title": "Apertura Lliçons 1, 2 y 3 U3", "time": "00:00" },
+    { "date": "2026-10-23", "type": "inicio_eac", "title": "Enunciado EAC2", "time": "00:00" },
+    { "date": "2026-11-06", "type": "notas", "title": "Solución y calificaciones EAC1", "time": "00:00" },
+    { "date": "2026-11-26", "type": "entrega", "title": "Entrega EAC2 (U3 y U4)", "time": "23:55" },
+    { "date": "2026-11-27", "type": "inicio_eac", "title": "Enunciado EAC3 (U5 y U6)", "time": "00:00" },
+    { "date": "2026-12-11", "type": "notas", "title": "Solución y calificaciones EAC2", "time": "00:00" },
+    { "date": "2026-12-14", "type": "entrega", "title": "Entrega EAC3 (U5 y U6)", "time": "23:55" },
+    { "date": "2026-12-21", "type": "notas", "title": "Calificaciones EAC3 y final AC", "time": "00:00" },
+    { "date": "2027-01-16", "type": "entrega", "title": "PAF 1: Prueba Presencial INT", "time": "14:00" }
+  ]
+}

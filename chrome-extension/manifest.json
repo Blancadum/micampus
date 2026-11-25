@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "MiCampus IOC - Sincronizador de Notas",
+  "version": "1.0.0",
+  "description": "Lee tus notas de Qualificacions en el IOC usando tu sesión actual y las envía a MiCampus y Telegram.",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": [
+    "https://ioc.xtec.cat/*",
+    "http://localhost:8090/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://ioc.xtec.cat/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

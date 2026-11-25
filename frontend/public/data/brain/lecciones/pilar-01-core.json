@@ -1,0 +1,29 @@
+[
+  {
+    "id": "p1-intro",
+    "title": "Introducción al Pilar 01: Core Engineering & POO Multilenguaje",
+    "slug": "intro-core-engineering",
+    "moduleTitle": "Módulo 1: Fundamentos y Modelo de Tipos",
+    "moduleShort": "Módulo 1",
+    "topicNum": "1.1",
+    "contentMd": "# 🏛️ Core Engineering & POO Multilenguaje\n\nEste pilar consolida la **base innegociable de cualquier ingeniero de software**: cómo modelar dominios de negocio, gestionar memoria y escribir algoritmos limpios y testeables en **Java 17**, **Python 3** y **PHP 8**.\n\n---\n\n## 1. Tipado Estático vs Tipado Dinámico\n\n| Característica | Java 17 (Estático) | Python 3 (Dinámico con Type Hints) | PHP 8+ (Gradual / Estricto) |\n| :--- | :--- | :--- | :--- |\n| **Comprobación** | En tiempo de compilación (*compile-time*) | En tiempo de ejecución (*runtime*) | Ejecución con `declare(strict_types=1);` |\n| **Seguridad de Tipos** | Máxima (el compilador impide asignar `int` a `String`) | Flexible; herramientas como `mypy` simulan chequeo | Alta si se tipan parámetros y retornos |\n| **Rendimiento** | Optimizado por la JVM mediante JIT | Interpretado con bytecode CPython | Acelerado por motor OPcache / JIT |\n\n```java\n// Java 17: Tipado fuerte y registros inmutables\npublic record Cliente(Long id, String nombre, String email) {\n    public Cliente {\n        Objects.requireNonNull(email, \"El email no puede ser nulo\");\n    }\n}\n```\n\n```python\n# Python 3.10+: Dataclasses con validación tipada\nfrom dataclasses import dataclass\n\n@dataclass(frozen=True)\nclass Cliente:\n    id: int\n    nombre: str\n    email: str\n\n    def __post_init__(self):\n        if not self.email:\n            raise ValueError(\"El email no puede estar vacío\")\n```\n"
+  },
+  {
+    "id": "p1-solid",
+    "title": "Los 5 Principios SOLID con Ejemplos Reales",
+    "slug": "principios-solid-practica",
+    "moduleTitle": "Módulo 2: Patrones de Diseño & SOLID",
+    "moduleShort": "Módulo 2",
+    "topicNum": "1.2",
+    "contentMd": "# 📐 Los Principios SOLID en la Práctica\n\nLos principios SOLID formulados por Robert C. Martin (*Uncle Bob*) son la guía definitiva para evitar código espagueti y arquitecturas frágiles:\n\n1. **S - Single Responsibility Principle (SRP):** Una clase debe tener una sola razón para cambiar.\n2. **O - Open/Closed Principle (OCP):** Abierto a extensión, cerrado a modificación.\n3. **L - Liskov Substitution Principle (LSP):** Las subclases deben poder sustituir a sus clases base sin romper el programa.\n4. **I - Interface Segregation Principle (ISP):** Mejor muchas interfaces específicas que una interfaz gigante multipropósito.\n5. **D - Dependency Inversion Principle (DIP):** Depender de abstracciones (interfaces), nunca de implementaciones concretas.\n\n```python\n# Violación del SRP (Mala práctica):\nclass Pedido:\n    def calcular_total(self): pass\n    def guardar_en_base_de_datos(self): pass # <-- Responsabilidad de persistencia\n    def enviar_email_confirmacion(self): pass # <-- Responsabilidad de notificación\n\n# Aplicando SRP (Buena práctica):\nclass Pedido:\n    def calcular_total(self): pass\n\nclass PedidoRepository:\n    def guardar(self, pedido: Pedido): pass\n\nclass NotificadorPedido:\n    def notificar(self, pedido: Pedido): pass\n```\n"
+  },
+  {
+    "id": "p1-fechas-memoria",
+    "title": "Tratamiento de Fechas, Localización y Colecciones",
+    "slug": "fechas-colecciones-optimizacion",
+    "moduleTitle": "Módulo 3: Utilidades del Sistema & Rendimiento",
+    "moduleShort": "Módulo 3",
+    "topicNum": "1.3",
+    "contentMd": "# ⏱️ Tratamiento de Fechas & Colecciones Eficientes\n\nManipular fechas y zonas horarias es una de las mayores fuentes de bugs en software empresarial.\n\n### La Regla de Oro de las Fechas\n> **Almacena siempre en UTC (ISO 8601 con Zulu / offset +00:00) y proyecta en la zona horaria local del cliente únicamente al renderizar en la interfaz.**\n\nEn Python:\n```python\nfrom datetime import datetime, timezone\n\nahora_utc = datetime.now(timezone.utc)\niso_format = ahora_utc.isoformat()\nprint(f\"Timestamp canónico: {iso_format}\")\n```\n\nEn Java 17:\n```java\nimport java.time.Instant;\nimport java.time.ZoneId;\nimport java.time.ZonedDateTime;\n\nInstant ahoraUtc = Instant.now();\nZonedDateTime fechaMadrid = ahoraUtc.atZone(ZoneId.of(\"Europe/Madrid\"));\n```\n"
+  }
+]

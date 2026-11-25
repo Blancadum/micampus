@@ -1,0 +1,20 @@
+[
+  {
+    "id": "p5-docker-multistage",
+    "title": "Contenedores Docker & Dockerfiles Multi-Stage",
+    "slug": "docker-multistage-produccion",
+    "moduleTitle": "Módulo 1: Contenedores & Virtualización",
+    "moduleShort": "Módulo 1",
+    "topicNum": "5.1",
+    "contentMd": "# 🐳 Dockerfiles Multi-Stage de Producción\n\nUn error habitual es dejar el compilador (Maven, JDK de 600MB) en la imagen final de producción.\n\nCon **Multi-Stage Builds**, usamos una fase de compilación temporal y copiamos únicamente el binario ligero a una imagen base de ejecución mínima:\n\n```dockerfile\n# Fase 1: Build con Maven y JDK completo\nFROM maven:3.9-eclipse-temurin-17 AS builder\nWORKDIR /app\nCOPY pom.xml .\nRUN mvn dependency:go-offline\nCOPY src ./src\nRUN mvn clean package -DskipTests\n\n# Fase 2: Imagen final ultra-ligera con JRE Alpine (~120MB)\nFROM eclipse-temurin:17-jre-alpine\nWORKDIR /app\nCOPY --from=builder /app/target/*.jar app.jar\nEXPOSE 8080\nENTRYPOINT [\"java\", \"-jar\", \"app.jar\"]\n```\n"
+  },
+  {
+    "id": "p5-utm-apple-silicon",
+    "title": "Virtualización Nativa en Apple Silicon (ARM64 vs x86)",
+    "slug": "utm-virtualizacion-apple-silicon",
+    "moduleTitle": "Módulo 2: Linux Platform & Hardware",
+    "moduleShort": "Módulo 2",
+    "topicNum": "5.2",
+    "contentMd": "# 💻 Virtualización en Apple Silicon (M1/M2/M3/M4/M5)\n\nEn procesadores Apple Silicon (ARM64), VirtualBox genera kernel panics debido a la incompatibilidad con el hipervisor nativo de macOS.\n\nLa solución oficial y robusta es **UTM** utilizando el **Apple Virtualization Framework**, permitiendo virtualizar Ubuntu Server ARM64 con aceleración de hardware directa y mapeo de puertos hacia macOS.\n"
+  }
+]

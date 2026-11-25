@@ -1,0 +1,20 @@
+[
+  {
+    "id": "p3-rest-spec",
+    "title": "Diseño de APIs RESTful & Especificación OpenAPI",
+    "slug": "diseno-apis-rest-openapi",
+    "moduleTitle": "Módulo 1: Contratos REST & Protocolo HTTP",
+    "moduleShort": "Módulo 1",
+    "topicNum": "3.1",
+    "contentMd": "# ⚡ Diseño de APIs RESTful Robustas\n\nUna API REST bien diseñada sigue el principio de mínima sorpresa:\n\n### Códigos de Estado Clave:\n* `200 OK`: Petición GET/PUT procesada con éxito.\n* `201 Created`: Recurso creado con éxito vía POST (debe incluir cabecera `Location`).\n* `204 No Content`: Eliminación correcta vía DELETE sin cuerpo devuelto.\n* `400 Bad Request`: Fallo de validación sintáctica en el DTO recibido.\n* `404 Not Found`: El identificador solicitado no existe en la base de datos.\n* `409 Conflict`: Violación de unicidad (ej. email ya registrado).\n* `500 Internal Server Error`: Fallo no controlado en backend (evitar exponer trazas de stacktrace por seguridad).\n"
+  },
+  {
+    "id": "p3-spring-layers",
+    "title": "Arquitectura en Capas Limpia: Controller, Service y DTOs",
+    "slug": "spring-boot-capas-dtos",
+    "moduleTitle": "Módulo 2: Arquitectura Spring Boot 3",
+    "moduleShort": "Módulo 2",
+    "topicNum": "3.2",
+    "contentMd": "# ☕ Arquitectura en Capas en Spring Boot 3\n\nLa regla innegociable de las capas:\n`@RestController (Web) -> Service Layer (Negocio) -> Repository Layer (JPA/DB)`\n\nLas entidades JPA (`@Entity`) nunca deben exponerse directamente en el controlador web. Usamos **DTOs** (Data Transfer Objects) para:\n1. No filtrar datos sensibles (hashes de contraseñas, flags internos).\n2. Evitar errores de recursión infinita en serialización JSON por relaciones bidireccionales `@OneToMany`.\n3. Validar con Bean Validation (`@NotBlank`, `@Email`, `@Min`).\n"
+  }
+]

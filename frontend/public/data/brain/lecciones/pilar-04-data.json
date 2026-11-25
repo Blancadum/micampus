@@ -1,0 +1,20 @@
+[
+  {
+    "id": "p4-acid-jpa",
+    "title": "Transacciones ACID & Mapeo Objeto-Relacional con JPA",
+    "slug": "acid-transacciones-jpa",
+    "moduleTitle": "Módulo 1: Persistencia Relacional & ORM",
+    "moduleShort": "Módulo 1",
+    "topicNum": "4.1",
+    "contentMd": "# 💾 Transacciones ACID y Spring Data JPA\n\n### Las 4 Propiedades ACID:\n* **Atomicidad:** O se ejecutan todas las operaciones de la transacción o ninguna (Rollback automático ante RuntimeException).\n* **Consistencia:** Las restricciones de integridad de datos (claves foráneas, checks) nunca se violan.\n* **Aislamiento:** Las transacciones concurrentes no ven estados intermedios inconsistentes.\n* **Durabilidad:** Una vez hecho el commit, los datos persisten aunque falle la alimentación eléctrica.\n\n```java\n@Service\npublic class TransferService {\n\n    @Transactional(rollbackFor = Exception.class)\n    public void transferMoney(Long fromId, Long toId, BigDecimal amount) {\n        accountRepo.debit(fromId, amount);\n        accountRepo.credit(toId, amount);\n        // Si ocurre cualquier error, ambas operaciones se revierten.\n    }\n}\n```\n"
+  },
+  {
+    "id": "p4-pandas-analytics",
+    "title": "Ciencia de Datos con Pandas y NumPy",
+    "slug": "analitica-datos-pandas-numpy",
+    "moduleTitle": "Módulo 2: Analítica & Computación Numérica",
+    "moduleShort": "Módulo 2",
+    "topicNum": "4.2",
+    "contentMd": "# 🐼 DataFrames con Pandas y Vectores NumPy\n\nNumPy proporciona arrays `ndarray` continuos en memoria C, permitiendo operaciones vectorizadas sin bucles lentos en Python.\n\nPandas construye sobre NumPy para ofrecer tablas de datos indexadas (`DataFrame`) con capacidades avanzadas de agrupamiento (`groupby`), unión (`merge`) y limpieza de nulos (`dropna`, `fillna`).\n"
+  }
+]

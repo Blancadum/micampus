@@ -1,0 +1,273 @@
+/* AgileScrumStudio.css */
+.agile-studio-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem 1rem;
+}
+
+.agile-studio-header {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+  border-radius: 20px;
+  padding: 2rem 2.2rem;
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(49, 46, 129, 0.25);
+  margin-bottom: 1.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.agile-studio-header::after {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.agile-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  margin-bottom: 0.75rem;
+}
+
+.agile-studio-title {
+  font-size: 2.1rem;
+  font-weight: 850;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+.agile-studio-subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin: 0 0 1.25rem 0;
+  max-width: 820px;
+  line-height: 1.55;
+}
+
+.agile-kpi-bar {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.agile-kpi-pill {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 650;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+/* Nav Pills */
+.agile-nav-bar {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-subtle, #e2e8f0);
+}
+
+.agile-nav-btn {
+  padding: 0.65rem 1.15rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle, #cbd5e1);
+  background: var(--bg-card, #ffffff);
+  color: var(--text-muted, #64748b);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.2s ease;
+}
+
+.agile-nav-btn:hover {
+  background: var(--bg-subtle, #f8fafc);
+  color: var(--text-title, #0f172a);
+}
+
+.agile-nav-btn.active {
+  background: #4338ca;
+  color: #ffffff;
+  border-color: #4338ca;
+  box-shadow: 0 4px 12px rgba(67, 56, 202, 0.25);
+}
+
+/* Content Cards */
+.agile-card {
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-subtle, #e2e8f0);
+  border-radius: 16px;
+  padding: 1.6rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.agile-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.agile-role-box {
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.agile-role-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Ceremonies timeline */
+.agile-ceremonies-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.agile-ceremony-card {
+  border-radius: 14px;
+  padding: 1.4rem;
+  border: 1px solid var(--border-subtle, #e2e8f0);
+  background: var(--bg-card, #ffffff);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Interactive Quiz */
+.agile-quiz-score-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1.5px solid #86efac;
+  border-radius: 14px;
+  padding: 1rem 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.agile-quiz-card {
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-subtle, #e2e8f0);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.02);
+}
+
+.agile-option-btn {
+  width: 100%;
+  text-align: left;
+  padding: 0.9rem 1.15rem;
+  border-radius: 10px;
+  border: 1.5px solid var(--border-subtle, #cbd5e1);
+  background: var(--bg-card, #ffffff);
+  color: var(--text-title, #0f172a);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-bottom: 0.6rem;
+  transition: all 0.15s ease;
+}
+
+.agile-option-btn:hover:not(:disabled) {
+  border-color: #6366f1;
+  background: rgba(99, 102, 241, 0.04);
+}
+
+.agile-option-btn.selected-correct {
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  color: #065f46;
+  font-weight: 650;
+}
+
+.agile-option-btn.selected-incorrect {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  color: #991b1b;
+  font-weight: 650;
+}
+
+.agile-explanation-box {
+  background: rgba(99, 102, 241, 0.07);
+  border-left: 4px solid #6366f1;
+  border-radius: 8px;
+  padding: 1rem 1.15rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--text-title, #0f172a);
+  margin-top: 0.85rem;
+}
+
+/* Comparison Table */
+.agile-table-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle, #e2e8f0);
+}
+
+.agile-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.agile-table th {
+  background: var(--bg-subtle, #f8fafc);
+  color: var(--text-muted, #64748b);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+  letter-spacing: 0.5px;
+  padding: 0.85rem 1rem;
+  border-bottom: 2px solid var(--border-subtle, #e2e8f0);
+  text-align: left;
+}
+
+.agile-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--border-subtle, #e2e8f0);
+  vertical-align: top;
+  color: var(--text-title, #0f172a);
+}
+
+.agile-table tr:last-child td {
+  border-bottom: none;
+}

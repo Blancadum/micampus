@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; width: 300px; margin: 0; padding: 14px; background: #f8fafc; color: #0f172a; }
+    h3 { margin: 0 0 8px; font-size: 15px; }
+    label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 4px; }
+    input { width: 100%; box-sizing: border-box; padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 6px; margin-bottom: 10px; font-size: 12px; }
+    button { width: 100%; padding: 8px; border: none; border-radius: 8px; background: #2563eb; color: #fff; font-weight: 700; cursor: pointer; font-size: 13px; margin-bottom: 6px; }
+    .secondary { background: #e2e8f0; color: #0f172a; }
+    #status { margin-top: 8px; font-size: 12px; line-height: 1.4; }
+  </style>
+</head>
+<body>
+  <h3>🎓 MiCampus · Notas IOC</h3>
+  <label for="apiBase">URL de tu MiCampus</label>
+  <input id="apiBase" type="text" value="http://localhost:8090" />
+  <button id="syncBtn">🔄 Sincronizar notas de esta pestaña</button>
+  <button id="allCoursesBtn" class="secondary">🚀 Abrir todas mis asignaturas del IOC</button>
+  <button id="overviewBtn" class="secondary">📊 Abrir notas globales del IOC</button>
+  <div id="status">Al entrar en Qualificacions se sincronizan solas o pulsa el botón.</div>
+  <script src="popup.js"></script>
+</body>
+</html>

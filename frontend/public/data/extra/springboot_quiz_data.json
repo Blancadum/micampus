@@ -1,0 +1,3210 @@
+[
+  {
+    "meta": {
+      "id": 1,
+      "title": "Tutoría 01: HTTP y Arquitectura Web",
+      "icon": "🌐",
+      "topic": "HTTP, REST, Idempotencia, Métodos, Status Codes"
+    },
+    "file": "/Users/blanca/Micampus/public/fuentes/springboot/tutorias-isra/tutoria-01-http-arquitectura/src/main/java/tut01/Preguntas.java",
+    "questions": [
+      {
+        "id": "tut1_q1",
+        "number": 1,
+        "methodName": "pregunta1",
+        "title": "Pregunta 1",
+        "question": "Un cliente llama a POST /api/v1/libros y el libro se crea.\n¿Qué código HTTP debe devolver el servidor?",
+        "options": [
+          {
+            "key": "a",
+            "text": "200 OK"
+          },
+          {
+            "key": "b",
+            "text": "201 Created"
+          },
+          {
+            "key": "c",
+            "text": "204 No Content"
+          },
+          {
+            "key": "d",
+            "text": "202 Accepted"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "201 Created POST que crea un recurso → 201. 200 es para GET/PUT que devuelven el recurso. 204 es para DELETE (éxito sin cuerpo).",
+        "tutoriaId": 1,
+        "tutoriaTitle": "Tutoría 01: HTTP y Arquitectura Web",
+        "tutoriaTopic": "HTTP, REST, Idempotencia, Métodos, Status Codes",
+        "tutoriaKey": "tutoria-01-http-arquitectura"
+      },
+      {
+        "id": "tut1_q2",
+        "number": 2,
+        "methodName": "pregunta2",
+        "title": "Pregunta 2",
+        "question": "Necesitas actualizar SOLO el precio de un libro (id=5).\n¿Qué verbo HTTP es el más adecuado?",
+        "options": [
+          {
+            "key": "a",
+            "text": "PUT /api/v1/libros/5"
+          },
+          {
+            "key": "b",
+            "text": "POST /api/v1/libros/5"
+          },
+          {
+            "key": "c",
+            "text": "PATCH /api/v1/libros/5"
+          },
+          {
+            "key": "d",
+            "text": "GET /api/v1/libros/5"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "PATCH PATCH = actualización PARCIAL (solo los campos que cambian). PUT = actualización COMPLETA (reemplaza todo el recurso).",
+        "tutoriaId": 1,
+        "tutoriaTitle": "Tutoría 01: HTTP y Arquitectura Web",
+        "tutoriaTopic": "HTTP, REST, Idempotencia, Métodos, Status Codes",
+        "tutoriaKey": "tutoria-01-http-arquitectura"
+      },
+      {
+        "id": "tut1_q3",
+        "number": 3,
+        "methodName": "pregunta3",
+        "title": "Pregunta 3",
+        "question": "Un usuario autenticado intenta borrar un libro que no es suyo.\nEl servidor le deniega el acceso. ¿Qué código devuelve?",
+        "options": [
+          {
+            "key": "a",
+            "text": "401 Unauthorized"
+          },
+          {
+            "key": "b",
+            "text": "403 Forbidden"
+          },
+          {
+            "key": "c",
+            "text": "404 Not Found"
+          },
+          {
+            "key": "d",
+            "text": "400 Bad Request"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "403 Forbidden El usuario SÍ está autenticado (sabemos quién es → no es 401 pero NO tiene permiso para esa operación concreta → 403.",
+        "tutoriaId": 1,
+        "tutoriaTitle": "Tutoría 01: HTTP y Arquitectura Web",
+        "tutoriaTopic": "HTTP, REST, Idempotencia, Métodos, Status Codes",
+        "tutoriaKey": "tutoria-01-http-arquitectura"
+      },
+      {
+        "id": "tut1_q4",
+        "number": 4,
+        "methodName": "pregunta4",
+        "title": "Pregunta 4",
+        "question": "¿Cuál de estas afirmaciones viola la regla de dependencias?",
+        "options": [
+          {
+            "key": "a",
+            "text": "La capa Presentación llama a la capa Negocio"
+          },
+          {
+            "key": "b",
+            "text": "La capa Negocio llama a la capa Datos"
+          },
+          {
+            "key": "c",
+            "text": "La capa Datos llama a la capa Negocio"
+          },
+          {
+            "key": "d",
+            "text": "La capa Presentación llama directamente a la capa Datos"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "y d) — ambas violan la regla. Las dependencias solo van hacia abajo (Pres → Neg → Datos). c) Datos llamando a Negocio = dependencia hacia arriba ❌ d) Presentación saltándose Negocio = se salta la capa ❌",
+        "tutoriaId": 1,
+        "tutoriaTitle": "Tutoría 01: HTTP y Arquitectura Web",
+        "tutoriaTopic": "HTTP, REST, Idempotencia, Métodos, Status Codes",
+        "tutoriaKey": "tutoria-01-http-arquitectura"
+      },
+      {
+        "id": "tut1_q5",
+        "number": 5,
+        "methodName": "pregunta5",
+        "title": "Pregunta 5",
+        "question": "En una SPA (Single-Page Application), ¿qué devuelve el\nservidor de Spring Boot en cada petición?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Una página HTML completa"
+          },
+          {
+            "key": "b",
+            "text": "Solo los datos en formato JSON"
+          },
+          {
+            "key": "c",
+            "text": "Un archivo .jsp renderizado"
+          },
+          {
+            "key": "d",
+            "text": "Un fragmento de HTML"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Solo datos en JSON En SPA, el cliente (React/Angular) gestiona la presentación. Spring Boot solo expone una API que devuelve JSON.",
+        "tutoriaId": 1,
+        "tutoriaTitle": "Tutoría 01: HTTP y Arquitectura Web",
+        "tutoriaTopic": "HTTP, REST, Idempotencia, Métodos, Status Codes",
+        "tutoriaKey": "tutoria-01-http-arquitectura"
+      },
+      {
+        "id": "tut1_q6",
+        "number": 6,
+        "methodName": "pregunta6",
+        "title": "Pregunta 6",
+        "question": "HTTP es un protocolo 'stateless'. ¿Qué consecuencia tiene esto\npara una API REST con autenticación?",
+        "options": [
+          {
+            "key": "a",
+            "text": "El servidor guarda la sesión del usuario en memoria"
+          },
+          {
+            "key": "b",
+            "text": "El cliente debe enviar el token en CADA petición"
+          },
+          {
+            "key": "c",
+            "text": "Solo se necesita autenticarse en la primera petición"
+          },
+          {
+            "key": "d",
+            "text": "El servidor recuerda automáticamente al usuario entre peticiones"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "El cliente envía el token en cada petición Stateless = el servidor no recuerda nada entre peticiones. Por eso los headers Authorization: Bearer <token> van en CADA request.",
+        "tutoriaId": 1,
+        "tutoriaTitle": "Tutoría 01: HTTP y Arquitectura Web",
+        "tutoriaTopic": "HTTP, REST, Idempotencia, Métodos, Status Codes",
+        "tutoriaKey": "tutoria-01-http-arquitectura"
+      },
+      {
+        "id": "tut1_q7",
+        "number": 7,
+        "methodName": "pregunta7",
+        "title": "Pregunta 7",
+        "question": "¿Cuál es la diferencia fundamental entre HTTP y HTTPS?",
+        "options": [
+          {
+            "key": "a",
+            "text": "HTTPS es más rápido que HTTP"
+          },
+          {
+            "key": "b",
+            "text": "HTTPS cifra el tráfico con TLS; HTTP envía texto plano"
+          },
+          {
+            "key": "c",
+            "text": "HTTPS solo funciona con navegadores modernos"
+          },
+          {
+            "key": "d",
+            "text": "HTTPS no necesita certificado digital"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "HTTPS cifra con TLS HTTP = texto plano visible en la red. HTTPS = HTTP + capa TLS que cifra todo el tráfico. Sí requiere certificado digital (opción d es incorrecta).",
+        "tutoriaId": 1,
+        "tutoriaTitle": "Tutoría 01: HTTP y Arquitectura Web",
+        "tutoriaTopic": "HTTP, REST, Idempotencia, Métodos, Status Codes",
+        "tutoriaKey": "tutoria-01-http-arquitectura"
+      }
+    ]
+  },
+  {
+    "meta": {
+      "id": 2,
+      "title": "Tutoría 02: JSON y Ecosistema Java",
+      "icon": "📦",
+      "topic": "JSON, Jackson, Serialización, JVM vs Node"
+    },
+    "file": "/Users/blanca/Micampus/public/fuentes/springboot/tutorias-isra/tutoria-02-json-ecosistema/src/main/java/tut02/Preguntas.java",
+    "questions": [
+      {
+        "id": "tut2_q1",
+        "number": 1,
+        "methodName": "pregunta2",
+        "title": "Pregunta 1",
+        "question": "Quieres deserializar este JSON en Java:\n¿Cuál es la forma CORRECTA con Jackson?",
+        "options": [
+          {
+            "key": "a",
+            "text": "mapper.readValue(json, List.class)"
+          },
+          {
+            "key": "b",
+            "text": "mapper.readValue(json, new TypeReference<List<Libro>>() {})"
+          },
+          {
+            "key": "c",
+            "text": "mapper.readValue(json, Libro[].class) → (válido también)"
+          },
+          {
+            "key": "d",
+            "text": "Las opciones b y c son ambas correctas"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "Tanto TypeReference como array[] funcionan. a) da una List<Object> (pierde el tipo genérico por type erasure).",
+        "tutoriaId": 2,
+        "tutoriaTitle": "Tutoría 02: JSON y Ecosistema Java",
+        "tutoriaTopic": "JSON, Jackson, Serialización, JVM vs Node",
+        "tutoriaKey": "tutoria-02-json-ecosistema"
+      },
+      {
+        "id": "tut2_q2",
+        "number": 2,
+        "methodName": "pregunta3",
+        "title": "Pregunta 2",
+        "question": "En un proyecto Spring Boot 3.x, ¿qué import usas para\nla anotación de validación @NotBlank?",
+        "options": [
+          {
+            "key": "a",
+            "text": "import javax.validation.constraints.NotBlank;"
+          },
+          {
+            "key": "b",
+            "text": "import jakarta.validation.constraints.NotBlank;"
+          },
+          {
+            "key": "c",
+            "text": "import org.springframework.validation.NotBlank;"
+          },
+          {
+            "key": "d",
+            "text": "import java.validation.constraints.NotBlank;"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "jakarta.validation — Spring Boot 3.x usa jakarta.* Spring Boot 2.x usaba javax.*. El cambio fue en Jakarta EE 9 (2019).",
+        "tutoriaId": 2,
+        "tutoriaTitle": "Tutoría 02: JSON y Ecosistema Java",
+        "tutoriaTopic": "JSON, Jackson, Serialización, JVM vs Node",
+        "tutoriaKey": "tutoria-02-json-ecosistema"
+      },
+      {
+        "id": "tut2_q3",
+        "number": 3,
+        "methodName": "pregunta4",
+        "title": "Pregunta 3",
+        "question": "En un @RestController de Spring Boot, cuando el método\ndevuelve un objeto Java, ¿quién lo convierte a JSON?",
+        "options": [
+          {
+            "key": "a",
+            "text": "El programador, llamando a ObjectMapper.writeValueAsString()"
+          },
+          {
+            "key": "b",
+            "text": "Spring Boot automáticamente, usando Jackson como librería interna"
+          },
+          {
+            "key": "c",
+            "text": "El navegador del cliente"
+          },
+          {
+            "key": "d",
+            "text": "El servidor Tomcat embebido"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Spring Boot / Jackson — automáticamente. spring-boot-starter-web incluye Jackson. @RestController usa HttpMessageConverter que llama a Jackson internamente.",
+        "tutoriaId": 2,
+        "tutoriaTitle": "Tutoría 02: JSON y Ecosistema Java",
+        "tutoriaTopic": "JSON, Jackson, Serialización, JVM vs Node",
+        "tutoriaKey": "tutoria-02-json-ecosistema"
+      },
+      {
+        "id": "tut2_q4",
+        "number": 4,
+        "methodName": "pregunta5",
+        "title": "Pregunta 4",
+        "question": "¿Cuál es la relación correcta entre Jakarta EE y Spring?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Son competidores excluyentes — hay que elegir uno"
+          },
+          {
+            "key": "b",
+            "text": "Jakarta EE es el estándar; Spring lo implementa y extiende"
+          },
+          {
+            "key": "c",
+            "text": "Spring es anterior a J2EE"
+          },
+          {
+            "key": "d",
+            "text": "Jakarta EE es más moderno y ha reemplazado a Spring"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Jakarta EE = estándar; Spring = implementación + más. Spring usa Jakarta EE internamente (@RestController usa jakarta.servlet).",
+        "tutoriaId": 2,
+        "tutoriaTitle": "Tutoría 02: JSON y Ecosistema Java",
+        "tutoriaTopic": "JSON, Jackson, Serialización, JVM vs Node",
+        "tutoriaKey": "tutoria-02-json-ecosistema"
+      },
+      {
+        "id": "tut2_q5",
+        "number": 5,
+        "methodName": "pregunta6",
+        "title": "Pregunta 5",
+        "question": "Tu API recibe un POST con este body JSON:\ny Spring Boot lo convierte a un objeto Libro Java.\n¿Cómo se llama esta operación?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Serialización"
+          },
+          {
+            "key": "b",
+            "text": "Deserialización"
+          },
+          {
+            "key": "c",
+            "text": "Marshalling (término antiguo, también correcto)"
+          },
+          {
+            "key": "d",
+            "text": "Las opciones b y c son correctas"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "Deserialización / Unmarshalling — ambos términos. JSON → Java Object = deserialización. Java Object → JSON = serialización.",
+        "tutoriaId": 2,
+        "tutoriaTitle": "Tutoría 02: JSON y Ecosistema Java",
+        "tutoriaTopic": "JSON, Jackson, Serialización, JVM vs Node",
+        "tutoriaKey": "tutoria-02-json-ecosistema"
+      }
+    ]
+  },
+  {
+    "meta": {
+      "id": 3,
+      "title": "Tutoría 03: Apache Maven y Lombok",
+      "icon": "⚙️",
+      "topic": "Maven lifecycle, POM, Lombok @Data, @Builder"
+    },
+    "file": "/Users/blanca/Micampus/public/fuentes/springboot/tutorias-isra/tutoria-03-maven-lombok/src/main/java/tut03/Preguntas.java",
+    "questions": [
+      {
+        "id": "tut3_q1",
+        "number": 1,
+        "methodName": "pregunta1",
+        "title": "Pregunta 1",
+        "question": "Ejecutas: mvn package\n¿Qué fases del ciclo de vida se ejecutan?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Solo la fase 'package'"
+          },
+          {
+            "key": "b",
+            "text": "validate → compile → test → package"
+          },
+          {
+            "key": "c",
+            "text": "compile → package (saltando test)"
+          },
+          {
+            "key": "d",
+            "text": "package → install → deploy"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "validate → compile → test → package Ejecutar una fase ejecuta todas las anteriores. Si quieres saltar tests: mvn package -DskipTests",
+        "tutoriaId": 3,
+        "tutoriaTitle": "Tutoría 03: Apache Maven y Lombok",
+        "tutoriaTopic": "Maven lifecycle, POM, Lombok @Data, @Builder",
+        "tutoriaKey": "tutoria-03-maven-lombok"
+      },
+      {
+        "id": "tut3_q2",
+        "number": 2,
+        "methodName": "pregunta2",
+        "title": "Pregunta 2",
+        "question": "Añades 'spring-boot-starter-web' al pom.xml.\n¿Qué incluye esta dependencia?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Solo Spring MVC"
+          },
+          {
+            "key": "b",
+            "text": "Spring MVC + Tomcat embebido + Jackson"
+          },
+          {
+            "key": "c",
+            "text": "Todo Spring: MVC + Security + Data JPA + Test"
+          },
+          {
+            "key": "d",
+            "text": "Solo el servidor Tomcat"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Spring MVC + Tomcat + Jackson Los starters agrupan dependencias relacionadas. El BOM garantiza versiones compatibles entre sí.",
+        "tutoriaId": 3,
+        "tutoriaTitle": "Tutoría 03: Apache Maven y Lombok",
+        "tutoriaTopic": "Maven lifecycle, POM, Lombok @Data, @Builder",
+        "tutoriaKey": "tutoria-03-maven-lombok"
+      },
+      {
+        "id": "tut3_q3",
+        "number": 3,
+        "methodName": "pregunta3",
+        "title": "Pregunta 3",
+        "question": "Tienes una entidad JPA 'Pedido' con una lista de 'Lineas'.\nAñades @Data a la entidad. ¿Qué puede pasar?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Nada, @Data funciona perfectamente en entidades JPA"
+          },
+          {
+            "key": "b",
+            "text": "StackOverflowError al serializar por el toString() recursivo"
+          },
+          {
+            "key": "c",
+            "text": "Los getters no se generan correctamente con JPA"
+          },
+          {
+            "key": "d",
+            "text": "La BBDD no puede persistir los datos"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "StackOverflowError / bucle infinito @Data incluye @ToString y @EqualsAndHashCode que pueden entrar en bucle con relaciones bidireccionales JPA. Usar @Data solo en DTOs, no en entidades.",
+        "tutoriaId": 3,
+        "tutoriaTitle": "Tutoría 03: Apache Maven y Lombok",
+        "tutoriaTopic": "Maven lifecycle, POM, Lombok @Data, @Builder",
+        "tutoriaKey": "tutoria-03-maven-lombok"
+      },
+      {
+        "id": "tut3_q4",
+        "number": 4,
+        "methodName": "pregunta4",
+        "title": "Pregunta 4",
+        "question": "¿Cuál es la principal ventaja de @Builder frente a un constructor?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Es más rápido en ejecución"
+          },
+          {
+            "key": "b",
+            "text": "Permite especificar solo los campos que necesitas, sin importar el orden, mejorando la legibilidad"
+          },
+          {
+            "key": "c",
+            "text": "Genera código más eficiente que el constructor normal"
+          },
+          {
+            "key": "d",
+            "text": "Es obligatorio cuando la clase tiene más de 5 campos"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Legibilidad y campos opcionales Con un constructor de 10 parámetros es fácil equivocarse de orden. Con builder: Objeto.builder().campo1(v1).campo3(v3).build(",
+        "tutoriaId": 3,
+        "tutoriaTitle": "Tutoría 03: Apache Maven y Lombok",
+        "tutoriaTopic": "Maven lifecycle, POM, Lombok @Data, @Builder",
+        "tutoriaKey": "tutoria-03-maven-lombok"
+      },
+      {
+        "id": "tut3_q5",
+        "number": 5,
+        "methodName": "pregunta5",
+        "title": "Pregunta 5",
+        "question": "JUnit solo debe estar disponible al ejecutar los tests,\nno en el .jar final de producción. ¿Qué scope usas?",
+        "options": [
+          {
+            "key": "a",
+            "text": "compile (por defecto)"
+          },
+          {
+            "key": "b",
+            "text": "provided"
+          },
+          {
+            "key": "c",
+            "text": "test"
+          },
+          {
+            "key": "d",
+            "text": "runtime"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "test scope=test: la dependencia solo está disponible en src/test. No aparece en el .jar final → el paquete de producción es más ligero.",
+        "tutoriaId": 3,
+        "tutoriaTitle": "Tutoría 03: Apache Maven y Lombok",
+        "tutoriaTopic": "Maven lifecycle, POM, Lombok @Data, @Builder",
+        "tutoriaKey": "tutoria-03-maven-lombok"
+      },
+      {
+        "id": "tut3_q6",
+        "number": 6,
+        "methodName": "pregunta6",
+        "title": "Pregunta 6",
+        "question": "Tienes esta clase: @Getter @Setter @NoArgsConstructor\npublic class Libro { private String titulo; private Double precio; }\n¿Qué métodos genera Lombok?",
+        "options": [
+          {
+            "key": "a",
+            "text": "getTitulo(), setTitulo(), getPrecio(), setPrecio() + constructor vacío Libro()"
+          },
+          {
+            "key": "b",
+            "text": "Solo getTitulo() y getPrecio()"
+          },
+          {
+            "key": "c",
+            "text": "getTitulo(), setTitulo(), getPrecio(), setPrecio() + constructor vacío + toString() + equals()"
+          },
+          {
+            "key": "d",
+            "text": "Todos los getters, setters, constructores y toString()"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "Solo lo que pides con las anotaciones declaradas. @Getter = getters, @Setter = setters, @NoArgsConstructor = Libro(). toString() y equals() requieren @ToString y @EqualsAndHashCode (o @Data que los incluye todos).",
+        "tutoriaId": 3,
+        "tutoriaTitle": "Tutoría 03: Apache Maven y Lombok",
+        "tutoriaTopic": "Maven lifecycle, POM, Lombok @Data, @Builder",
+        "tutoriaKey": "tutoria-03-maven-lombok"
+      }
+    ]
+  },
+  {
+    "meta": {
+      "id": 4,
+      "title": "Tutoría 04: Fundamentos Spring & IoC",
+      "icon": "🌱",
+      "topic": "IoC, DI, ApplicationContext, Beans, Scope"
+    },
+    "file": "/Users/blanca/Micampus/public/fuentes/springboot/tutorias-isra/tutoria-04-fundamentos-spring/src/main/java/tut04/Preguntas.java",
+    "questions": [
+      {
+        "id": "tut4_q1",
+        "number": 1,
+        "methodName": "pregunta1",
+        "title": "Pregunta 1",
+        "question": "¿Cuál es la diferencia entre una aplicación SIN IoC y CON IoC?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Con IoC la aplicación es más lenta porque el framework crea los objetos"
+          },
+          {
+            "key": "b",
+            "text": "Sin IoC el código crea sus dependencias con 'new'; con IoC el framework las crea y las inyecta"
+          },
+          {
+            "key": "c",
+            "text": "IoC solo aplica a aplicaciones web, no a consola"
+          },
+          {
+            "key": "d",
+            "text": "Con IoC no se puede usar la palabra clave 'new' en Java"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "El framework gestiona la creación de dependencias. El control se 'invierte': antes lo tenías tú (new), ahora Spring.",
+        "tutoriaId": 4,
+        "tutoriaTitle": "Tutoría 04: Fundamentos Spring & IoC",
+        "tutoriaTopic": "IoC, DI, ApplicationContext, Beans, Scope",
+        "tutoriaKey": "tutoria-04-fundamentos-spring"
+      },
+      {
+        "id": "tut4_q2",
+        "number": 2,
+        "methodName": "pregunta2",
+        "title": "Pregunta 2",
+        "question": "¿Cuál es la forma de inyección de dependencias recomendada en Spring?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Por campo con @Autowired"
+          },
+          {
+            "key": "b",
+            "text": "Por setter con @Autowired"
+          },
+          {
+            "key": "c",
+            "text": "Por constructor"
+          },
+          {
+            "key": "d",
+            "text": "Todas son equivalentes, da igual cuál uses"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "Por constructor El campo puede ser final → inmutabilidad. Más fácil de testear: solo pasas el mock como parámetro. Las dependencias son explícitas en la firma del constructor.",
+        "tutoriaId": 4,
+        "tutoriaTitle": "Tutoría 04: Fundamentos Spring & IoC",
+        "tutoriaTopic": "IoC, DI, ApplicationContext, Beans, Scope",
+        "tutoriaKey": "tutoria-04-fundamentos-spring"
+      },
+      {
+        "id": "tut4_q3",
+        "number": 3,
+        "methodName": "pregunta3",
+        "title": "Pregunta 3",
+        "question": "Tienes dos implementaciones de NotificacionService:\nEmailNotificacion (con @Primary) y SmsNotificacion.\nUn servicio inyecta NotificacionService sin más especificaciones.\n¿Qué ocurre?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Error: Spring no puede elegir entre dos implementaciones"
+          },
+          {
+            "key": "b",
+            "text": "Spring inyecta EmailNotificacion porque tiene @Primary"
+          },
+          {
+            "key": "c",
+            "text": "Spring inyecta SmsNotificacion porque es la última declarada"
+          },
+          {
+            "key": "d",
+            "text": "Spring inyecta ambas y lanza una excepción en runtime"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "EmailNotificacion — tiene @Primary. @Primary define el candidato por defecto. Si se quiere SmsNotificacion explícitamente → @Qualifier.",
+        "tutoriaId": 4,
+        "tutoriaTitle": "Tutoría 04: Fundamentos Spring & IoC",
+        "tutoriaTopic": "IoC, DI, ApplicationContext, Beans, Scope",
+        "tutoriaKey": "tutoria-04-fundamentos-spring"
+      },
+      {
+        "id": "tut4_q4",
+        "number": 4,
+        "methodName": "pregunta4",
+        "title": "Pregunta 4",
+        "question": "PedidoService es un bean singleton. Dos controllers distintos\nlo inyectan. ¿Cuántas instancias de PedidoService existen?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Dos: una por cada controller que lo inyecta"
+          },
+          {
+            "key": "b",
+            "text": "Una sola instancia compartida por ambos controllers"
+          },
+          {
+            "key": "c",
+            "text": "Una nueva instancia por cada petición HTTP"
+          },
+          {
+            "key": "d",
+            "text": "Spring decide en runtime cuántas crear"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Una sola instancia (singleton Por eso los beans deben ser STATELESS: si guardan estado de usuario, lo comparten entre todas las peticiones.",
+        "tutoriaId": 4,
+        "tutoriaTitle": "Tutoría 04: Fundamentos Spring & IoC",
+        "tutoriaTopic": "IoC, DI, ApplicationContext, Beans, Scope",
+        "tutoriaKey": "tutoria-04-fundamentos-spring"
+      },
+      {
+        "id": "tut4_q5",
+        "number": 5,
+        "methodName": "pregunta5",
+        "title": "Pregunta 5",
+        "question": "¿Qué diferencia técnica hay entre @Service y @Component?",
+        "options": [
+          {
+            "key": "a",
+            "text": "@Service tiene lógica adicional de transacciones automáticas"
+          },
+          {
+            "key": "b",
+            "text": "@Component no puede inyectar dependencias; @Service sí"
+          },
+          {
+            "key": "c",
+            "text": "Técnicamente ninguna: ambas registran un bean. @Service es una especialización semántica para la capa de negocio"
+          },
+          {
+            "key": "d",
+            "text": "@Service solo funciona en Spring Boot, no en Spring Framework"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "Técnicamente son equivalentes en registro de bean. La diferencia es semántica: ayuda al lector a entender el rol. @Repository sí añade traducción de excepciones JPA además.",
+        "tutoriaId": 4,
+        "tutoriaTitle": "Tutoría 04: Fundamentos Spring & IoC",
+        "tutoriaTopic": "IoC, DI, ApplicationContext, Beans, Scope",
+        "tutoriaKey": "tutoria-04-fundamentos-spring"
+      },
+      {
+        "id": "tut4_q6",
+        "number": 6,
+        "methodName": "pregunta6",
+        "title": "Pregunta 6",
+        "question": "Quieres registrar un ObjectMapper de Jackson como bean de Spring.\nNo puedes añadir @Component a ObjectMapper (es una clase externa).\n¿Cuál es la forma correcta?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Crear una subclase de ObjectMapper y añadir @Component"
+          },
+          {
+            "key": "b",
+            "text": "Crear una clase @Configuration con un método @Bean que devuelva new ObjectMapper()"
+          },
+          {
+            "key": "c",
+            "text": "Usar @Autowired en el campo directamente"
+          },
+          {
+            "key": "d",
+            "text": "No se puede registrar clases externas como beans de Spring"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "@Configuration + @Bean @Bean en un método de @Configuration → el retorno se registra como bean en el contenedor. Así se registran librerías externas.",
+        "tutoriaId": 4,
+        "tutoriaTitle": "Tutoría 04: Fundamentos Spring & IoC",
+        "tutoriaTopic": "IoC, DI, ApplicationContext, Beans, Scope",
+        "tutoriaKey": "tutoria-04-fundamentos-spring"
+      }
+    ]
+  },
+  {
+    "meta": {
+      "id": 5,
+      "title": "Tutoría 05: Arquitectura en Capas y SOLID",
+      "icon": "🏛️",
+      "topic": "SOLID, Capas (Controller-Service-Repo), DTOs"
+    },
+    "file": "/Users/blanca/Micampus/public/fuentes/springboot/tutorias-isra/tutoria-05-capas-solid-springboot/src/main/java/tut05/explicacion/Preguntas.java",
+    "questions": [
+      {
+        "id": "tut5_q1",
+        "number": 1,
+        "methodName": "pregunta1",
+        "title": "Pregunta 1",
+        "question": "@SpringBootApplication es equivalente a combinar:",
+        "options": [
+          {
+            "key": "a",
+            "text": "@Component + @Service + @Repository"
+          },
+          {
+            "key": "b",
+            "text": "@Controller + @Service + @Autowired"
+          },
+          {
+            "key": "c",
+            "text": "@Configuration + @ComponentScan + @EnableAutoConfiguration"
+          },
+          {
+            "key": "d",
+            "text": "@Bean + @Scope + @Primary"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "@Configuration: puede definir @Bean @ComponentScan: busca @Component/@Service/... en el paquete @EnableAutoConfiguration: configura Tomcat, Jackson, etc. automáticamente",
+        "tutoriaId": 5,
+        "tutoriaTitle": "Tutoría 05: Arquitectura en Capas y SOLID",
+        "tutoriaTopic": "SOLID, Capas (Controller-Service-Repo), DTOs",
+        "tutoriaKey": "tutoria-05-capas-solid-springboot"
+      },
+      {
+        "id": "tut5_q2",
+        "number": 2,
+        "methodName": "pregunta2",
+        "title": "Pregunta 2",
+        "question": "Un @RestController contiene la lógica de cálculo de descuentos.\n¿Qué principio SOLID viola?",
+        "options": [
+          {
+            "key": "a",
+            "text": "OCP — Open/Closed Principle"
+          },
+          {
+            "key": "b",
+            "text": "LSP — Liskov Substitution Principle"
+          },
+          {
+            "key": "c",
+            "text": "ISP — Interface Segregation Principle"
+          },
+          {
+            "key": "d",
+            "text": "SRP — Single Responsibility Principle"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "SRP El Controller tiene 2 responsabilidades: gestionar HTTP Y calcular descuentos. La lógica de negocio debe ir en @Service.",
+        "tutoriaId": 5,
+        "tutoriaTitle": "Tutoría 05: Arquitectura en Capas y SOLID",
+        "tutoriaTopic": "SOLID, Capas (Controller-Service-Repo), DTOs",
+        "tutoriaKey": "tutoria-05-capas-solid-springboot"
+      },
+      {
+        "id": "tut5_q3",
+        "number": 3,
+        "methodName": "pregunta3",
+        "title": "Pregunta 3",
+        "question": "LibroController inyecta LibroService (interfaz).\n¿Qué ventaja concreta da esto?",
+        "options": [
+          {
+            "key": "a",
+            "text": "En tests se puede inyectar un mock de LibroService sin arrancar la app completa"
+          },
+          {
+            "key": "b",
+            "text": "El Controller puede llamar directamente a la BBDD sin pasar por el Service, ahorrando una capa"
+          },
+          {
+            "key": "c",
+            "text": "Se reduce el número de beans en el contexto"
+          },
+          {
+            "key": "d",
+            "text": "No es necesario el @Service en la implementación"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "Testabilidad con mock Si el Controller dependiera de LibroServiceImpl, el test necesitaría una BBDD real. Con la interfaz, basta un mock.",
+        "tutoriaId": 5,
+        "tutoriaTitle": "Tutoría 05: Arquitectura en Capas y SOLID",
+        "tutoriaTopic": "SOLID, Capas (Controller-Service-Repo), DTOs",
+        "tutoriaKey": "tutoria-05-capas-solid-springboot"
+      },
+      {
+        "id": "tut5_q4",
+        "number": 4,
+        "methodName": "pregunta4",
+        "title": "Pregunta 4",
+        "question": "¿Por qué Spring Boot no necesita instalar Tomcat por separado?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Spring Boot usa su propio servidor HTTP, no Tomcat"
+          },
+          {
+            "key": "b",
+            "text": "Tomcat está embebido dentro del .jar gracias al starter-web"
+          },
+          {
+            "key": "c",
+            "text": "Spring Boot solo funciona en la nube, no necesita servidor"
+          },
+          {
+            "key": "d",
+            "text": "Hay que configurar Tomcat manualmente en application.properties antes de poder arrancar la aplicación desde el .jar"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Tomcat embebido en el .jar spring-boot-starter-web incluye spring-boot-starter-tomcat. java -jar mi-app.jar es suficiente para arrancar el servidor.",
+        "tutoriaId": 5,
+        "tutoriaTitle": "Tutoría 05: Arquitectura en Capas y SOLID",
+        "tutoriaTopic": "SOLID, Capas (Controller-Service-Repo), DTOs",
+        "tutoriaKey": "tutoria-05-capas-solid-springboot"
+      },
+      {
+        "id": "tut5_q5",
+        "number": 5,
+        "methodName": "pregunta5",
+        "title": "Pregunta 5",
+        "question": "Tu @SpringBootApplication está en 'com.empresa.miapp'.\nTienes un @Service en 'com.empresa.utilidades'.\nSpring Boot NO detecta ese servicio. ¿Por qué?",
+        "options": [
+          {
+            "key": "a",
+            "text": "@Service no es compatible con @ComponentScan"
+          },
+          {
+            "key": "b",
+            "text": "Hay que añadir manualmente el paquete 'utilidades' dentro de application.properties"
+          },
+          {
+            "key": "c",
+            "text": "@ComponentScan escanea el paquete de la clase main y sus sub-paquetes. 'utilidades' no es sub-paquete de 'miapp'"
+          },
+          {
+            "key": "d",
+            "text": "Los beans deben estar en el mismo fichero que Application"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "@ComponentScan(basePackages) escanea el paquete de la clase main y todos sus hijos. 'com.empresa.utilidades' no es hijo de 'com.empresa.miapp'. Solución: mover la clase main a 'com.empresa' o configurar @ComponentScan.",
+        "tutoriaId": 5,
+        "tutoriaTitle": "Tutoría 05: Arquitectura en Capas y SOLID",
+        "tutoriaTopic": "SOLID, Capas (Controller-Service-Repo), DTOs",
+        "tutoriaKey": "tutoria-05-capas-solid-springboot"
+      },
+      {
+        "id": "tut5_q6",
+        "number": 6,
+        "methodName": "pregunta6",
+        "title": "Pregunta 6",
+        "question": "¿Cuál es la afirmación CORRECTA sobre Spring Boot?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Spring Boot reemplaza a Spring Framework; son incompatibles"
+          },
+          {
+            "key": "b",
+            "text": "Spring Boot solo sirve para microservicios, no para monolitos"
+          },
+          {
+            "key": "c",
+            "text": "Spring Boot no usa IoC ni DI; esas son características solo de Spring Framework puro"
+          },
+          {
+            "key": "d",
+            "text": "Spring Boot ES Spring Framework con autoconfiguración y convenciones predefinidas encima"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "Spring Boot ES Spring Framework + @EnableAutoConfiguration. Usa IoC, DI y todos los módulos de Spring. Solo los configura automáticamente.",
+        "tutoriaId": 5,
+        "tutoriaTitle": "Tutoría 05: Arquitectura en Capas y SOLID",
+        "tutoriaTopic": "SOLID, Capas (Controller-Service-Repo), DTOs",
+        "tutoriaKey": "tutoria-05-capas-solid-springboot"
+      }
+    ]
+  },
+  {
+    "meta": {
+      "id": 6,
+      "title": "Tutoría 06: Controladores y API REST",
+      "icon": "🎯",
+      "topic": "RestController, PathVariable vs RequestParam, ResponseEntity, 201 Created"
+    },
+    "file": "/Users/blanca/Micampus/public/fuentes/springboot/tutorias-isra/tutoria-06-controller-api-rest/src/main/java/tut06/explicacion/Preguntas.java",
+    "questions": [
+      {
+        "id": "tut6_q1",
+        "number": 1,
+        "methodName": "pregunta1",
+        "title": "Pregunta 1",
+        "question": "GET /api/v1/productos/42       → ¿qué anotación recibe el 42?\nGET /api/v1/productos?min=20   → ¿qué anotación recibe el 20?",
+        "options": [
+          {
+            "key": "a",
+            "text": "@PathVariable para /42, @RequestParam para ?min=20"
+          },
+          {
+            "key": "b",
+            "text": "Ambos @PathVariable, ya que ambos identifican el mismo recurso"
+          },
+          {
+            "key": "c",
+            "text": "Ambos @RequestParam"
+          },
+          {
+            "key": "d",
+            "text": "@RequestBody para ambos"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "@PathVariable para segmentos del path, @RequestParam para query string.",
+        "tutoriaId": 6,
+        "tutoriaTitle": "Tutoría 06: Controladores y API REST",
+        "tutoriaTopic": "RestController, PathVariable vs RequestParam, ResponseEntity, 201 Created",
+        "tutoriaKey": "tutoria-06-controller-api-rest"
+      },
+      {
+        "id": "tut6_q2",
+        "number": 2,
+        "methodName": "pregunta2",
+        "title": "Pregunta 2",
+        "question": "Un POST /api/v1/productos crea un producto correctamente.\n¿Qué código HTTP debe devolver?",
+        "options": [
+          {
+            "key": "a",
+            "text": "200 OK"
+          },
+          {
+            "key": "b",
+            "text": "201 Created"
+          },
+          {
+            "key": "c",
+            "text": "204 No Content"
+          },
+          {
+            "key": "d",
+            "text": "202 Accepted"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "201 Created — estándar REST para creación exitosa.",
+        "tutoriaId": 6,
+        "tutoriaTitle": "Tutoría 06: Controladores y API REST",
+        "tutoriaTopic": "RestController, PathVariable vs RequestParam, ResponseEntity, 201 Created",
+        "tutoriaKey": "tutoria-06-controller-api-rest"
+      },
+      {
+        "id": "tut6_q3",
+        "number": 3,
+        "methodName": "pregunta3",
+        "title": "Pregunta 3",
+        "question": "Un DELETE /api/v1/productos/5 elimina el producto. ¿Código correcto?",
+        "options": [
+          {
+            "key": "a",
+            "text": "200 OK"
+          },
+          {
+            "key": "b",
+            "text": "201 Created"
+          },
+          {
+            "key": "c",
+            "text": "204 No Content"
+          },
+          {
+            "key": "d",
+            "text": "404 Not Found"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "204 No Content — éxito sin cuerpo de respuesta.",
+        "tutoriaId": 6,
+        "tutoriaTitle": "Tutoría 06: Controladores y API REST",
+        "tutoriaTopic": "RestController, PathVariable vs RequestParam, ResponseEntity, 201 Created",
+        "tutoriaKey": "tutoria-06-controller-api-rest"
+      },
+      {
+        "id": "tut6_q4",
+        "number": 4,
+        "methodName": "pregunta4",
+        "title": "Pregunta 4",
+        "question": "¿Cuál es la diferencia técnica entre @RestController y @Controller?",
+        "options": [
+          {
+            "key": "a",
+            "text": "@RestController solo funciona en Spring Boot, no en Spring MVC"
+          },
+          {
+            "key": "b",
+            "text": "@Controller devuelve JSON; @RestController devuelve HTML"
+          },
+          {
+            "key": "c",
+            "text": "No hay diferencia técnica, solo semántica"
+          },
+          {
+            "key": "d",
+            "text": "@RestController = @Controller + @ResponseBody en todos los métodos"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "@RestController incluye @ResponseBody automáticamente.",
+        "tutoriaId": 6,
+        "tutoriaTitle": "Tutoría 06: Controladores y API REST",
+        "tutoriaTopic": "RestController, PathVariable vs RequestParam, ResponseEntity, 201 Created",
+        "tutoriaKey": "tutoria-06-controller-api-rest"
+      },
+      {
+        "id": "tut6_q5",
+        "number": 5,
+        "methodName": "pregunta5",
+        "title": "Pregunta 5",
+        "question": "¿Cuál de estas URLs sigue las convenciones REST?",
+        "options": [
+          {
+            "key": "a",
+            "text": "GET /api/v1/productos"
+          },
+          {
+            "key": "b",
+            "text": "GET /api/v1/obtenerProductos"
+          },
+          {
+            "key": "c",
+            "text": "POST /api/v1/crearProducto"
+          },
+          {
+            "key": "d",
+            "text": "GET /api/v1/Productos"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "Plural, minúsculas, sustantivo, sin verbo en la URL.",
+        "tutoriaId": 6,
+        "tutoriaTitle": "Tutoría 06: Controladores y API REST",
+        "tutoriaTopic": "RestController, PathVariable vs RequestParam, ResponseEntity, 201 Created",
+        "tutoriaKey": "tutoria-06-controller-api-rest"
+      }
+    ]
+  },
+  {
+    "meta": {
+      "id": 7,
+      "title": "Tutoría 07: Servicios, Inyección y JPA Intro",
+      "icon": "⚡",
+      "topic": "Service, Inyección por constructor, JPA Entity, Hibernate, merge vs persist"
+    },
+    "file": "/Users/blanca/Micampus/public/fuentes/springboot/tutorias-isra/tutoria-07-servicio-ioc-jpa/src/main/java/tut07/explicacion/Preguntas.java",
+    "questions": [
+      {
+        "id": "tut7_q1",
+        "number": 1,
+        "methodName": "p1",
+        "title": "Pregunta 1",
+        "question": "De las siguientes responsabilidades de una arquitectura en capas, ¿cuál pertenece propiamente a la capa de Servicio (@Service)?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Leer el header Authorization de la petición HTTP"
+          },
+          {
+            "key": "b",
+            "text": "Calcular el salario neto de un empleado aplicando IRPF"
+          },
+          {
+            "key": "c",
+            "text": "Serializar la"
+          },
+          {
+            "key": "d",
+            "text": "Abrir la conexión a la BBDD antes de procesar cualquier petición"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Lógica de negocio — el resto pertenece a otras capas.",
+        "tutoriaId": 7,
+        "tutoriaTitle": "Tutoría 07: Servicios, Inyección y JPA Intro",
+        "tutoriaTopic": "Service, Inyección por constructor, JPA Entity, Hibernate, merge vs persist",
+        "tutoriaKey": "tutoria-07-servicio-ioc-jpa"
+      },
+      {
+        "id": "tut7_q2",
+        "number": 2,
+        "methodName": "p2",
+        "title": "Pregunta 2",
+        "question": "¿Cuál es la relación correcta entre JPA e Hibernate?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Son lo mismo, diferentes nombres del mismo producto"
+          },
+          {
+            "key": "b",
+            "text": "Hibernate es más antiguo que JPA y lo reemplaza"
+          },
+          {
+            "key": "c",
+            "text": "JPA es la especificación; Hibernate es una implementación de JPA"
+          },
+          {
+            "key": "d",
+            "text": "JPA funciona sin Hibernate en Spring Boot, ya que ambos son intercambiables entre sí"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "JPA = contrato, Hibernate = implementación.",
+        "tutoriaId": 7,
+        "tutoriaTitle": "Tutoría 07: Servicios, Inyección y JPA Intro",
+        "tutoriaTopic": "Service, Inyección por constructor, JPA Entity, Hibernate, merge vs persist",
+        "tutoriaKey": "tutoria-07-servicio-ioc-jpa"
+      },
+      {
+        "id": "tut7_q3",
+        "number": 3,
+        "methodName": "p3",
+        "title": "Pregunta 3",
+        "question": "¿Cuándo usas merge() en lugar de persist()?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Para entidades nuevas sin id, ya que persist() las ignoraría"
+          },
+          {
+            "key": "b",
+            "text": "Para eliminar entidades"
+          },
+          {
+            "key": "c",
+            "text": "merge() y persist() son equivalentes"
+          },
+          {
+            "key": "d",
+            "text": "Para actualizar entidades que ya tienen id (detache"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "merge() para entidades existentes (detached → managed).",
+        "tutoriaId": 7,
+        "tutoriaTitle": "Tutoría 07: Servicios, Inyección y JPA Intro",
+        "tutoriaTopic": "Service, Inyección por constructor, JPA Entity, Hibernate, merge vs persist",
+        "tutoriaKey": "tutoria-07-servicio-ioc-jpa"
+      },
+      {
+        "id": "tut7_q4",
+        "number": 4,
+        "methodName": "p4",
+        "title": "Pregunta 4",
+        "question": "Spring Boot ve un @Service con un único constructor que recibe\nEmpleadoRepository. ¿Lo inyecta automáticamente?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Sí — si hay un único constructor, Spring lo inyecta solo"
+          },
+          {
+            "key": "b",
+            "text": "No — siempre necesitas @Autowired"
+          },
+          {
+            "key": "c",
+            "text": "Solo si el constructor es public y está anotado con @Autowired"
+          },
+          {
+            "key": "d",
+            "text": "Solo si usas Lombok @RequiredArgsConstructor"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "Spring Boot: un solo constructor → inyección automática.",
+        "tutoriaId": 7,
+        "tutoriaTitle": "Tutoría 07: Servicios, Inyección y JPA Intro",
+        "tutoriaTopic": "Service, Inyección por constructor, JPA Entity, Hibernate, merge vs persist",
+        "tutoriaKey": "tutoria-07-servicio-ioc-jpa"
+      },
+      {
+        "id": "tut7_q5",
+        "number": 5,
+        "methodName": "p5",
+        "title": "Pregunta 5",
+        "question": "¿Cuál es la diferencia entre el patrón DAO y Spring Data JpaRepository?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Son idénticos, diferente nombre"
+          },
+          {
+            "key": "b",
+            "text": "JpaRepository genera automáticamente CRUD básico; DAO requiere implementación manual de cada método"
+          },
+          {
+            "key": "c",
+            "text": "DAO usa JPA; JpaRepository usa JDBC"
+          },
+          {
+            "key": "d",
+            "text": "JpaRepository no permite queries personalizadas, hay que usar EntityManager directamente para eso"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "JpaRepository genera el CRUD; DAO lo implementas tú.",
+        "tutoriaId": 7,
+        "tutoriaTitle": "Tutoría 07: Servicios, Inyección y JPA Intro",
+        "tutoriaTopic": "Service, Inyección por constructor, JPA Entity, Hibernate, merge vs persist",
+        "tutoriaKey": "tutoria-07-servicio-ioc-jpa"
+      }
+    ]
+  },
+  {
+    "meta": {
+      "id": 8,
+      "title": "Tutoría 08-09: Entidades, Relaciones y JPQL",
+      "icon": "🔗",
+      "topic": "OneToMany, ManyToOne, FetchType LAZY/EAGER, JPQL, EnumType.STRING"
+    },
+    "file": "/Users/blanca/Micampus/public/fuentes/springboot/tutorias-isra/tutoria-08-09-entidades-relaciones-jpql/src/main/java/tut0809/explicacion/Preguntas.java",
+    "questions": [
+      {
+        "id": "tut8_q1",
+        "number": 1,
+        "methodName": "p1",
+        "title": "Pregunta 1",
+        "question": "Tu clase tiene @Entity pero Hibernate lanza error al arrancar.\n¿Cuál es la causa más probable?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Falta la anotación @Table"
+          },
+          {
+            "key": "b",
+            "text": "Falta @Column en todos los campos"
+          },
+          {
+            "key": "c",
+            "text": "Falta el constructor sin argumentos"
+          },
+          {
+            "key": "d",
+            "text": "El nombre de la clase es incorrecto"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "Constructor sin argumentos — JPA lo exige obligatoriamente.",
+        "tutoriaId": 8,
+        "tutoriaTitle": "Tutoría 08-09: Entidades, Relaciones y JPQL",
+        "tutoriaTopic": "OneToMany, ManyToOne, FetchType LAZY/EAGER, JPQL, EnumType.STRING",
+        "tutoriaKey": "tutoria-08-09-entidades-relaciones-jpql"
+      },
+      {
+        "id": "tut8_q2",
+        "number": 2,
+        "methodName": "p2",
+        "title": "Pregunta 2",
+        "question": "Tienes: enum EstadoProducto { DISPONIBLE, AGOTADO, DESCATALOGADO }\n¿Qué problema tiene @Enumerated(EnumType.ORDINAL)?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Es más lento que STRING al tener que mapear índices numéricos"
+          },
+          {
+            "key": "b",
+            "text": "No funciona con H2"
+          },
+          {
+            "key": "c",
+            "text": "No hay diferencia práctica"
+          },
+          {
+            "key": "d",
+            "text": "Guarda 0,1,2: si reordenas el enum los datos históricos cambian"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "ORDINAL guarda posición: reordenar el enum rompe datos históricos.",
+        "tutoriaId": 8,
+        "tutoriaTitle": "Tutoría 08-09: Entidades, Relaciones y JPQL",
+        "tutoriaTopic": "OneToMany, ManyToOne, FetchType LAZY/EAGER, JPQL, EnumType.STRING",
+        "tutoriaKey": "tutoria-08-09-entidades-relaciones-jpql"
+      },
+      {
+        "id": "tut8_q3",
+        "number": 3,
+        "methodName": "p3",
+        "title": "Pregunta 3",
+        "question": "Tabla 'producto' tiene columna 'categoria_id'.",
+        "options": [
+          {
+            "key": "a",
+            "text": "Categoria es el dueño, mappedBy solo indica el nombre de columna"
+          },
+          {
+            "key": "b",
+            "text": "El campo 'categoria' en Producto tiene la FK — Producto es el dueño"
+          },
+          {
+            "key": "c",
+            "text": "Es el nombre del join column que Hibernate genera automáticamente"
+          },
+          {
+            "key": "d",
+            "text": "mappedBy da igual quién sea el dueño, ambos lados mandan por igual"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "mappedBy apunta al campo del otro lado que tiene la FK — ese es el dueño.",
+        "tutoriaId": 8,
+        "tutoriaTitle": "Tutoría 08-09: Entidades, Relaciones y JPQL",
+        "tutoriaTopic": "OneToMany, ManyToOne, FetchType LAZY/EAGER, JPQL, EnumType.STRING",
+        "tutoriaKey": "tutoria-08-09-entidades-relaciones-jpql"
+      },
+      {
+        "id": "tut8_q4",
+        "number": 4,
+        "methodName": "p4",
+        "title": "Pregunta 4",
+        "question": "Tienes 100 productos, cada uno con @ManyToOne Categoria LAZY.\nIteras sobre todos y llamas a getCategoria().getNombre().\n¿Cuántas queries SQL ejecuta Hibernate?",
+        "options": [
+          {
+            "key": "a",
+            "text": "1"
+          },
+          {
+            "key": "b",
+            "text": "101"
+          },
+          {
+            "key": "c",
+            "text": "2"
+          },
+          {
+            "key": "d",
+            "text": "200"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "101 — 1 SELECT productos + 100 SELECT categoria WHERE id=?",
+        "tutoriaId": 8,
+        "tutoriaTitle": "Tutoría 08-09: Entidades, Relaciones y JPQL",
+        "tutoriaTopic": "OneToMany, ManyToOne, FetchType LAZY/EAGER, JPQL, EnumType.STRING",
+        "tutoriaKey": "tutoria-08-09-entidades-relaciones-jpql"
+      },
+      {
+        "id": "tut8_q5",
+        "number": 5,
+        "methodName": "p5",
+        "title": "Pregunta 5",
+        "question": "Tienes @ManyToMany entre Producto y Etiqueta.\n¿Qué CascadeType es peligroso usar en esta relación?",
+        "options": [
+          {
+            "key": "a",
+            "text": "REMOVE / ALL"
+          },
+          {
+            "key": "b",
+            "text": "PERSIST"
+          },
+          {
+            "key": "c",
+            "text": "MERGE"
+          },
+          {
+            "key": "d",
+            "text": "REFRESH"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "REMOVE/ALL: eliminaría Etiquetas usadas por otros Productos.",
+        "tutoriaId": 8,
+        "tutoriaTitle": "Tutoría 08-09: Entidades, Relaciones y JPQL",
+        "tutoriaTopic": "OneToMany, ManyToOne, FetchType LAZY/EAGER, JPQL, EnumType.STRING",
+        "tutoriaKey": "tutoria-08-09-entidades-relaciones-jpql"
+      },
+      {
+        "id": "tut8_q6",
+        "number": 6,
+        "methodName": "p6",
+        "title": "Pregunta 6",
+        "question": "¿Cuál es la diferencia clave entre JPQL y SQL?",
+        "options": [
+          {
+            "key": "a",
+            "text": "JPQL es más rápido que SQL"
+          },
+          {
+            "key": "b",
+            "text": "SQL es más portable entre distintas BBDD"
+          },
+          {
+            "key": "c",
+            "text": "JPQL opera sobre entidades Java; SQL sobre tablas de BBDD"
+          },
+          {
+            "key": "d",
+            "text": "JPQL no soporta JOIN entre distintas entidades relacionadas"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "JPQL usa nombres de entidad/campo Java, no tabla/columna BBDD.",
+        "tutoriaId": 8,
+        "tutoriaTitle": "Tutoría 08-09: Entidades, Relaciones y JPQL",
+        "tutoriaTopic": "OneToMany, ManyToOne, FetchType LAZY/EAGER, JPQL, EnumType.STRING",
+        "tutoriaKey": "tutoria-08-09-entidades-relaciones-jpql"
+      },
+      {
+        "id": "tut8_q7",
+        "number": 7,
+        "methodName": "p7",
+        "title": "Pregunta 7",
+        "question": "¿Qué hace @JoinTable en una relación @ManyToMany?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Crea una columna en la tabla del dueño"
+          },
+          {
+            "key": "b",
+            "text": "Agrega índices a la relación para acelerar las consultas"
+          },
+          {
+            "key": "c",
+            "text": "Define el FetchType de la relación"
+          },
+          {
+            "key": "d",
+            "text": "Define la tabla intermedia y sus columnas FK"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "@JoinTable define la tabla intermedia (nombre + columnas FK).",
+        "tutoriaId": 8,
+        "tutoriaTitle": "Tutoría 08-09: Entidades, Relaciones y JPQL",
+        "tutoriaTopic": "OneToMany, ManyToOne, FetchType LAZY/EAGER, JPQL, EnumType.STRING",
+        "tutoriaKey": "tutoria-08-09-entidades-relaciones-jpql"
+      },
+      {
+        "id": "tut8_q8",
+        "number": 8,
+        "methodName": "p8",
+        "title": "Pregunta 8",
+        "question": "¿Qué hace spring.jpa.hibernate.ddl-auto=create-drop?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Solo crea tablas, nunca las elimina"
+          },
+          {
+            "key": "b",
+            "text": "Valida que las tablas coinciden con las entidades pero no las modifica"
+          },
+          {
+            "key": "c",
+            "text": "Crea tablas al arrancar y las elimina al parar la app"
+          },
+          {
+            "key": "d",
+            "text": "Genera un script SQL pero no lo ejecuta"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "create-drop: ideal para desarrollo/tests, NUNCA en producción.",
+        "tutoriaId": 8,
+        "tutoriaTitle": "Tutoría 08-09: Entidades, Relaciones y JPQL",
+        "tutoriaTopic": "OneToMany, ManyToOne, FetchType LAZY/EAGER, JPQL, EnumType.STRING",
+        "tutoriaKey": "tutoria-08-09-entidades-relaciones-jpql"
+      },
+      {
+        "id": "tut8_q9",
+        "number": 9,
+        "methodName": "p9",
+        "title": "Pregunta 9",
+        "question": "FichaTecnica tiene @Id private Long id; (sin @GeneratedValue) y\n¿Qué diferencia hay con un @OneToOne normal (cada uno con su propio id)?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Ninguna, son exactamente iguales"
+          },
+          {
+            "key": "b",
+            "text": "FichaTecnica comparte el mismo valor de id que su Producto"
+          },
+          {
+            "key": "c",
+            "text": "@MapsId solo funciona en relaciones @ManyToMany"
+          },
+          {
+            "key": "d",
+            "text": "@MapsId elimina la necesidad de que exista @JoinColumn"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "@MapsId: la PK de FichaTecnica ES la PK del Producto asociado.",
+        "tutoriaId": 8,
+        "tutoriaTitle": "Tutoría 08-09: Entidades, Relaciones y JPQL",
+        "tutoriaTopic": "OneToMany, ManyToOne, FetchType LAZY/EAGER, JPQL, EnumType.STRING",
+        "tutoriaKey": "tutoria-08-09-entidades-relaciones-jpql"
+      },
+      {
+        "id": "tut8_q10",
+        "number": 10,
+        "methodName": "p10",
+        "title": "Pregunta 10",
+        "question": "Producto → Resena tiene cascade=ALL pero orphanRemoval=false.\nHaces producto.getResenas().remove(resena) y guardas el producto.\n¿Qué pasa con esa reseña en la tabla resena?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Se borra igual, cascade=ALL ya incluye ese caso"
+          },
+          {
+            "key": "b",
+            "text": "Sigue existiendo en BBDD con su producto_id, aunque ya no esté en la lista Java"
+          },
+          {
+            "key": "c",
+            "text": "Lanza una excepción al guardar"
+          },
+          {
+            "key": "d",
+            "text": "Su producto_id pasa a NULL automáticamente"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "cascade=REMOVE solo actúa al borrar el PADRE; para 'huérfanos al quitarlos de la colección hace falta orphanRemoval=true.",
+        "tutoriaId": 8,
+        "tutoriaTitle": "Tutoría 08-09: Entidades, Relaciones y JPQL",
+        "tutoriaTopic": "OneToMany, ManyToOne, FetchType LAZY/EAGER, JPQL, EnumType.STRING",
+        "tutoriaKey": "tutoria-08-09-entidades-relaciones-jpql"
+      }
+    ]
+  },
+  {
+    "meta": {
+      "id": 10,
+      "title": "Tutoría 10: DTOs, Mappers y Spring Data",
+      "icon": "🔄",
+      "topic": "DTO Pattern, MapStruct, Spring Data Repositories, Query Methods"
+    },
+    "file": "/Users/blanca/Micampus/public/fuentes/springboot/tutorias-isra/tutoria-10-dtos-spring-data/src/main/java/tut10/explicacion/Preguntas.java",
+    "questions": [
+      {
+        "id": "tut10_q1",
+        "number": 1,
+        "methodName": "p1",
+        "title": "Pregunta 1",
+        "question": "¿Por qué NO se debe exponer la entidad JPA directamente en la API?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Puede exponer campos sensibles y acopla la BBDD al contrato HTTP"
+          },
+          {
+            "key": "b",
+            "text": "Las entidades JPA son más lentas de serializar"
+          },
+          {
+            "key": "c",
+            "text": "Jackson no puede serializar entidades JPA"
+          },
+          {
+            "key": "d",
+            "text": "Spring Boot no permite devolver entidades desde @RestController"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "campos sensibles + acoplamiento BBDD/API.",
+        "tutoriaId": 10,
+        "tutoriaTitle": "Tutoría 10: DTOs, Mappers y Spring Data",
+        "tutoriaTopic": "DTO Pattern, MapStruct, Spring Data Repositories, Query Methods",
+        "tutoriaKey": "tutoria-10-dtos-spring-data"
+      },
+      {
+        "id": "tut10_q2",
+        "number": 2,
+        "methodName": "p2",
+        "title": "Pregunta 2",
+        "question": "Llamas a repo.save(cliente). ¿Cuándo hace INSERT vs UPDATE?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Siempre INSERT"
+          },
+          {
+            "key": "b",
+            "text": "INSERT si id==null, UPDATE si tiene id"
+          },
+          {
+            "key": "c",
+            "text": "Siempre UPDATE"
+          },
+          {
+            "key": "d",
+            "text": "Depende de ddl-auto y de si la tabla ya existe previamente"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "id==null → INSERT, id!=null → UPDATE (MERGE).",
+        "tutoriaId": 10,
+        "tutoriaTitle": "Tutoría 10: DTOs, Mappers y Spring Data",
+        "tutoriaTopic": "DTO Pattern, MapStruct, Spring Data Repositories, Query Methods",
+        "tutoriaKey": "tutoria-10-dtos-spring-data"
+      },
+      {
+        "id": "tut10_q3",
+        "number": 3,
+        "methodName": "p3",
+        "title": "Pregunta 3",
+        "question": "¿Qué SQL genera Spring Data para: findByEmailContainingIgnoreCase?",
+        "options": [
+          {
+            "key": "a",
+            "text": "SELECT * WHERE email = ?"
+          },
+          {
+            "key": "b",
+            "text": "SELECT * WHERE email IS NOT NULL"
+          },
+          {
+            "key": "c",
+            "text": "SELECT * WHERE LOWER(email) LIKE LOWER('%?%')"
+          },
+          {
+            "key": "d",
+            "text": "No es un query method válido según las convenciones de Spring Data"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "Containing=LIKE %x%, IgnoreCase=LOWER().",
+        "tutoriaId": 10,
+        "tutoriaTitle": "Tutoría 10: DTOs, Mappers y Spring Data",
+        "tutoriaTopic": "DTO Pattern, MapStruct, Spring Data Repositories, Query Methods",
+        "tutoriaKey": "tutoria-10-dtos-spring-data"
+      },
+      {
+        "id": "tut10_q4",
+        "number": 4,
+        "methodName": "p4",
+        "title": "Pregunta 4",
+        "question": "Tienes @Modifying + @Query UPDATE en el repo pero sin @Transactional.\n¿Qué ocurre?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Funciona correctamente"
+          },
+          {
+            "key": "b",
+            "text": "El UPDATE se ejecuta pero sin commit"
+          },
+          {
+            "key": "c",
+            "text": "Spring añade la transacción automáticamente"
+          },
+          {
+            "key": "d",
+            "text": "Lanza TransactionRequiredException en runtime"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "JPA exige transacción activa para escrituras.",
+        "tutoriaId": 10,
+        "tutoriaTitle": "Tutoría 10: DTOs, Mappers y Spring Data",
+        "tutoriaTopic": "DTO Pattern, MapStruct, Spring Data Repositories, Query Methods",
+        "tutoriaKey": "tutoria-10-dtos-spring-data"
+      },
+      {
+        "id": "tut10_q5",
+        "number": 5,
+        "methodName": "p5",
+        "title": "Pregunta 5",
+        "question": "¿En qué capa debe ocurrir la conversión Entity → DTO de respuesta?",
+        "options": [
+          {
+            "key": "a",
+            "text": "En el Service"
+          },
+          {
+            "key": "b",
+            "text": "En el Repository"
+          },
+          {
+            "key": "c",
+            "text": "En el Controller"
+          },
+          {
+            "key": "d",
+            "text": "En el Repository, sobrescribiendo save() para que devuelva un DTO"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "En el Service — el Controller nunca debe tocar la entidad.",
+        "tutoriaId": 10,
+        "tutoriaTitle": "Tutoría 10: DTOs, Mappers y Spring Data",
+        "tutoriaTopic": "DTO Pattern, MapStruct, Spring Data Repositories, Query Methods",
+        "tutoriaKey": "tutoria-10-dtos-spring-data"
+      },
+      {
+        "id": "tut10_q6",
+        "number": 6,
+        "methodName": "p6",
+        "title": "Pregunta 6",
+        "question": "ClienteResponseDTO.planNombre es un String, no un objeto Plan. ¿Dónde\nse resuelve un ClienteRequestDTO.planId (Long) contra un Plan real?",
+        "options": [
+          {
+            "key": "a",
+            "text": "En el ClienteMapper, con un @Autowired PlanRepository"
+          },
+          {
+            "key": "b",
+            "text": "En el ClienteService, llamando a planRepo.findById(i"
+          },
+          {
+            "key": "c",
+            "text": "En el ClienteController, antes de llamar al Service"
+          },
+          {
+            "key": "d",
+            "text": "Automáticamente, Spring Data lo resuelve por convención de nombre"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "El Mapper no conoce Repositories; la resolución de ids va en el Service.",
+        "tutoriaId": 10,
+        "tutoriaTitle": "Tutoría 10: DTOs, Mappers y Spring Data",
+        "tutoriaTopic": "DTO Pattern, MapStruct, Spring Data Repositories, Query Methods",
+        "tutoriaKey": "tutoria-10-dtos-spring-data"
+      },
+      {
+        "id": "tut10_q7",
+        "number": 7,
+        "methodName": "p7",
+        "title": "Pregunta 7",
+        "question": "GET /api/v1/clientes?page=0&size=999. ¿Qué size llega realmente a PageRequest.of()?",
+        "options": [
+          {
+            "key": "a",
+            "text": "999, tal cual lo pide el cliente"
+          },
+          {
+            "key": "b",
+            "text": "100 — el Controller acota el size al máximo permitido"
+          },
+          {
+            "key": "c",
+            "text": "Error 400 Bad Request"
+          },
+          {
+            "key": "d",
+            "text": "10 — Spring Data ignora un size fuera de rango y usa el valor por defecto"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Math.min(size, TAMANO_PAGINA_MAXIMO) en el Controller.",
+        "tutoriaId": 10,
+        "tutoriaTitle": "Tutoría 10: DTOs, Mappers y Spring Data",
+        "tutoriaTopic": "DTO Pattern, MapStruct, Spring Data Repositories, Query Methods",
+        "tutoriaKey": "tutoria-10-dtos-spring-data"
+      }
+    ]
+  },
+  {
+    "meta": {
+      "id": 11,
+      "title": "Tutoría 11: Validaciones y Gestión de Errores",
+      "icon": "🛡️",
+      "topic": "Bean Validation (@NotNull, @Valid), ControllerAdvice, ProblemDetail, ErrorHandler"
+    },
+    "file": "/Users/blanca/Micampus/public/fuentes/springboot/tutorias-isra/tutoria-11-validaciones-errores/src/main/java/tut11/explicacion/Preguntas.java",
+    "questions": [
+      {
+        "id": "tut11_q1",
+        "number": 1,
+        "methodName": "p1",
+        "title": "Pregunta 1",
+        "question": "Pregunta 1 sobre Bean Validation (@NotNull, @Valid), ControllerAdvice, ProblemDetail, ErrorHandler",
+        "options": [
+          {
+            "key": "a",
+            "text": "@NotNull"
+          },
+          {
+            "key": "b",
+            "text": "@NotBlank"
+          },
+          {
+            "key": "c",
+            "text": "@NotEmpty"
+          },
+          {
+            "key": "d",
+            "text": "@NonNull"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "@NotBlank rechaza null, vacío Y solo-espacios.",
+        "tutoriaId": 11,
+        "tutoriaTitle": "Tutoría 11: Validaciones y Gestión de Errores",
+        "tutoriaTopic": "Bean Validation (@NotNull, @Valid), ControllerAdvice, ProblemDetail, ErrorHandler",
+        "tutoriaKey": "tutoria-11-validaciones-errores"
+      },
+      {
+        "id": "tut11_q2",
+        "number": 2,
+        "methodName": "p2",
+        "title": "Pregunta 2",
+        "question": "Tu DTO tiene @NotBlank pero el Controller no tiene @Valid.\n¿Qué ocurre si envías un nombre vacío?",
+        "options": [
+          {
+            "key": "a",
+            "text": "400 Bad Request, ya que Spring rechaza cualquier campo vacío"
+          },
+          {
+            "key": "b",
+            "text": "Error de compilación"
+          },
+          {
+            "key": "c",
+            "text": "El pedido se crea igualmente (validación no activ"
+          },
+          {
+            "key": "d",
+            "text": "500 Internal Server Error"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "Sin @Valid, las anotaciones son decorativas.",
+        "tutoriaId": 11,
+        "tutoriaTitle": "Tutoría 11: Validaciones y Gestión de Errores",
+        "tutoriaTopic": "Bean Validation (@NotNull, @Valid), ControllerAdvice, ProblemDetail, ErrorHandler",
+        "tutoriaKey": "tutoria-11-validaciones-errores"
+      },
+      {
+        "id": "tut11_q3",
+        "number": 3,
+        "methodName": "p3",
+        "title": "Pregunta 3",
+        "question": "Campo opcional: @Size(max = 100) String observaciones. Se envía observaciones = null.\n¿Qué ocurre al validar?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Falla: todas las anotaciones de validación rechazan siempre el valor null"
+          },
+          {
+            "key": "b",
+            "text": "Falla con un 500 porque @Size no sabe calcular la longitud de un valor null en tiempo de ejecución"
+          },
+          {
+            "key": "c",
+            "text": "Pasa: @Size da por válido el null (para obligarlo habría que añadir @NotNull)"
+          },
+          {
+            "key": "d",
+            "text": "Pasa solo si el DTO lleva además @Valid colocado sobre el propio campo"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "La mayoría de anotaciones (@Size, @Email, @Pattern, @Min...) dan por válido el null.",
+        "tutoriaId": 11,
+        "tutoriaTitle": "Tutoría 11: Validaciones y Gestión de Errores",
+        "tutoriaTopic": "Bean Validation (@NotNull, @Valid), ControllerAdvice, ProblemDetail, ErrorHandler",
+        "tutoriaKey": "tutoria-11-validaciones-errores"
+      },
+      {
+        "id": "tut11_q4",
+        "number": 4,
+        "methodName": "p4",
+        "title": "Pregunta 4",
+        "question": "Quieres una regla que dependa de DOS campos del DTO (si urgente = true, fechaEntrega es obligatoria).\n¿Qué necesitas?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Una anotación propia sobre la clase y un ConstraintValidator que recibe el DTO completo"
+          },
+          {
+            "key": "b",
+            "text": "Poner @NotNull en el campo fechaEntrega, porque esa anotación ya comprueba también el valor del otro campo"
+          },
+          {
+            "key": "c",
+            "text": "Un @ExceptionHandler específico para fechaEntrega en el GlobalExceptionHandler"
+          },
+          {
+            "key": "d",
+            "text": "Dos anotaciones estándar, una en cada campo, para que se validen entre sí"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "Una anotación sobre la CLASE: su validador recibe el DTO completo y puede comparar ambos campos. PARTE B — MANEJO DE ERRORES",
+        "tutoriaId": 11,
+        "tutoriaTitle": "Tutoría 11: Validaciones y Gestión de Errores",
+        "tutoriaTopic": "Bean Validation (@NotNull, @Valid), ControllerAdvice, ProblemDetail, ErrorHandler",
+        "tutoriaKey": "tutoria-11-validaciones-errores"
+      },
+      {
+        "id": "tut11_q5",
+        "number": 5,
+        "methodName": "p5",
+        "title": "Pregunta 5",
+        "question": "PedidoNotFoundException extiende RuntimeException, no Exception.\n¿Por qué?",
+        "options": [
+          {
+            "key": "a",
+            "text": "No obliga a declarar throws ni a hacer try/catch en cada capa"
+          },
+          {
+            "key": "b",
+            "text": "Se ejecuta más rápido que una excepción checked en runtime"
+          },
+          {
+            "key": "c",
+            "text": "Spring solo es capaz de manejar excepciones de tipo RuntimeException"
+          },
+          {
+            "key": "d",
+            "text": "No hay ninguna diferencia práctica entre ambas para este caso de uso"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "Unchecked exception — código más limpio sin try-catch en cascada.",
+        "tutoriaId": 11,
+        "tutoriaTitle": "Tutoría 11: Validaciones y Gestión de Errores",
+        "tutoriaTopic": "Bean Validation (@NotNull, @Valid), ControllerAdvice, ProblemDetail, ErrorHandler",
+        "tutoriaKey": "tutoria-11-validaciones-errores"
+      },
+      {
+        "id": "tut11_q6",
+        "number": 6,
+        "methodName": "p6",
+        "title": "Pregunta 6",
+        "question": "¿Cuántos GlobalExceptionHandler necesitas para 10 controllers?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Uno por controller (10)"
+          },
+          {
+            "key": "b",
+            "text": "Uno por módulo"
+          },
+          {
+            "key": "c",
+            "text": "Tantos como tipos de excepción distintos existan"
+          },
+          {
+            "key": "d",
+            "text": "Uno solo para toda la aplicación"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "Uno solo — @RestControllerAdvice captura de TODOS los controllers.",
+        "tutoriaId": 11,
+        "tutoriaTitle": "Tutoría 11: Validaciones y Gestión de Errores",
+        "tutoriaTopic": "Bean Validation (@NotNull, @Valid), ControllerAdvice, ProblemDetail, ErrorHandler",
+        "tutoriaKey": "tutoria-11-validaciones-errores"
+      },
+      {
+        "id": "tut11_q7",
+        "number": 7,
+        "methodName": "p7",
+        "title": "Pregunta 7",
+        "question": "Tienes handler para PedidoNotFoundException y para Exception (genérica).\nSe lanza PedidoNotFoundException. ¿Cuál se ejecuta?",
+        "options": [
+          {
+            "key": "a",
+            "text": "El de Exception (más general)"
+          },
+          {
+            "key": "b",
+            "text": "El de PedidoNotFoundException (más específico)"
+          },
+          {
+            "key": "c",
+            "text": "Ambos handlers se ejecutan en el orden en que fueron declarados"
+          },
+          {
+            "key": "d",
+            "text": "Depende del orden de declaración"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Spring elige el handler más específico que coincide.",
+        "tutoriaId": 11,
+        "tutoriaTitle": "Tutoría 11: Validaciones y Gestión de Errores",
+        "tutoriaTopic": "Bean Validation (@NotNull, @Valid), ControllerAdvice, ProblemDetail, ErrorHandler",
+        "tutoriaKey": "tutoria-11-validaciones-errores"
+      },
+      {
+        "id": "tut11_q8",
+        "number": 8,
+        "methodName": "p8",
+        "title": "Pregunta 8",
+        "question": "Antes de guardar un pedido hay que comprobar que su email no esté ya registrado\n(hay que consultar la base de datos). ¿Dónde va esa comprobación?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Con @Email en el DTO, que además de comprobar el formato lo comprueba contra la base de datos"
+          },
+          {
+            "key": "b",
+            "text": "En el GlobalExceptionHandler, justo antes de devolver la"
+          },
+          {
+            "key": "c",
+            "text": "Con @Valid en el Controller, que consulta el repositorio por sí solo antes de llamar al Service"
+          },
+          {
+            "key": "d",
+            "text": "En el Service, lanzando una excepción si ya existe"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "Es una regla de negocio que necesita datos: va en el Service y el manejador global la traduce.",
+        "tutoriaId": 11,
+        "tutoriaTitle": "Tutoría 11: Validaciones y Gestión de Errores",
+        "tutoriaTopic": "Bean Validation (@NotNull, @Valid), ControllerAdvice, ProblemDetail, ErrorHandler",
+        "tutoriaKey": "tutoria-11-validaciones-errores"
+      },
+      {
+        "id": "tut11_q9",
+        "number": 9,
+        "methodName": "p9",
+        "title": "Pregunta 9",
+        "question": "¿Por qué códigos distintos?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Porque Spring convierte siempre en 400 las excepciones lanzadas durante un POST"
+          },
+          {
+            "key": "b",
+            "text": "En el GET falta el recurso pedido; en el POST el dato erróneo viaja dentro de la petición"
+          },
+          {
+            "key": "c",
+            "text": "Porque el handler de Exception se ejecuta antes que el de NoSuchElementException"
+          },
+          {
+            "key": "d",
+            "text": "Es un error del enunciado: en los dos casos debería devolverse siempre exactamente el mismo código"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "404 = el recurso que pides no existe; 400 = un DATO de tu petición es inválido.",
+        "tutoriaId": 11,
+        "tutoriaTitle": "Tutoría 11: Validaciones y Gestión de Errores",
+        "tutoriaTopic": "Bean Validation (@NotNull, @Valid), ControllerAdvice, ProblemDetail, ErrorHandler",
+        "tutoriaKey": "tutoria-11-validaciones-errores"
+      },
+      {
+        "id": "tut11_q10",
+        "number": 10,
+        "methodName": "p10",
+        "title": "Pregunta 10",
+        "question": "Un Controller tiene un try/catch que solo captura la excepción para devolver un 404.\nYa existe el GlobalExceptionHandler. ¿Qué haces?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Lo dejas: el manejador global no puede traducir excepciones lanzadas desde un Controller"
+          },
+          {
+            "key": "b",
+            "text": "Lo cambias por un catch vacío para que el manejador global no se entere del fallo"
+          },
+          {
+            "key": "c",
+            "text": "Lo quitas y dejas que la excepción suba hasta el manejador, que ya devuelve el 404"
+          },
+          {
+            "key": "d",
+            "text": "Lo mueves al Repository, que es donde el try/catch tiene sentido"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "El try/catch que solo elige el código HTTP sobra: se lanza la excepción y el manejador responde.",
+        "tutoriaId": 11,
+        "tutoriaTitle": "Tutoría 11: Validaciones y Gestión de Errores",
+        "tutoriaTopic": "Bean Validation (@NotNull, @Valid), ControllerAdvice, ProblemDetail, ErrorHandler",
+        "tutoriaKey": "tutoria-11-validaciones-errores"
+      },
+      {
+        "id": "tut11_q11",
+        "number": 11,
+        "methodName": "p11",
+        "title": "Pregunta 11",
+        "question": "En Spring Boot 4, ¿qué propiedad hace que la respuesta de error POR DEFECTO\n(sin tu GlobalExceptionHandler) incluya el mensaje de la excepción?",
+        "options": [
+          {
+            "key": "a",
+            "text": "spring.web.error.include-message=always"
+          },
+          {
+            "key": "b",
+            "text": "server.error.include-message=always, igual que en Spring Boot 3"
+          },
+          {
+            "key": "c",
+            "text": "spring.mvc.error.show-message=true"
+          },
+          {
+            "key": "d",
+            "text": "logging.level.org.springframework.web=ERROR"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "En Boot 4 es spring.web.error.*; la antigua server.error.* ya no tiene efecto.",
+        "tutoriaId": 11,
+        "tutoriaTitle": "Tutoría 11: Validaciones y Gestión de Errores",
+        "tutoriaTopic": "Bean Validation (@NotNull, @Valid), ControllerAdvice, ProblemDetail, ErrorHandler",
+        "tutoriaKey": "tutoria-11-validaciones-errores"
+      }
+    ]
+  },
+  {
+    "meta": {
+      "id": 12,
+      "title": "Tutoría 12: Logs, Perfiles y OpenAPI",
+      "icon": "📜",
+      "topic": "SLF4J/Logback, Spring Profiles, Swagger / OpenAPI, Actuator"
+    },
+    "file": "/Users/blanca/Micampus/public/fuentes/springboot/tutorias-isra/tutoria-12-logs-perfiles-docs/src/main/java/tut12/explicacion/Preguntas.java",
+    "questions": [
+      {
+        "id": "tut12_q1",
+        "number": 1,
+        "methodName": "pregunta1",
+        "title": "Pregunta 1",
+        "question": "SISTEMA DE LOGS\n¿Por qué en una aplicación empresarial se prohíbe System.out.println?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Porque solo funciona en Windows y falla en Linux."
+          },
+          {
+            "key": "b",
+            "text": "Porque no permite clasificar por niveles ni apagarlo en producción."
+          },
+          {
+            "key": "c",
+            "text": "Porque destruye el objeto antes de imprimirlo."
+          },
+          {
+            "key": "d",
+            "text": "Porque solo admite cadenas de texto cortas."
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "System.out.println es sincrónico, lento, y no permite configurar umbrales de gravedad ni redirigir a ficheros con rotación.",
+        "tutoriaId": 12,
+        "tutoriaTitle": "Tutoría 12: Logs, Perfiles y OpenAPI",
+        "tutoriaTopic": "SLF4J/Logback, Spring Profiles, Swagger / OpenAPI, Actuator",
+        "tutoriaKey": "tutoria-12-logs-perfiles-docs"
+      },
+      {
+        "id": "tut12_q2",
+        "number": 2,
+        "methodName": "pregunta2",
+        "title": "Pregunta 2",
+        "question": "ANOTACIÓN @Slf4j\n¿Qué hace exactamente la anotación @Slf4j de Lombok?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Conecta la app a una base de datos de logs."
+          },
+          {
+            "key": "b",
+            "text": "Crea automáticamente una variable estática 'log' de SLF4J."
+          },
+          {
+            "key": "c",
+            "text": "Convierte todos los System.out.println en logs."
+          },
+          {
+            "key": "d",
+            "text": "Habilita Swagger UI."
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Consulta el código de la tutoría para ver el detalle de la solución.",
+        "tutoriaId": 12,
+        "tutoriaTitle": "Tutoría 12: Logs, Perfiles y OpenAPI",
+        "tutoriaTopic": "SLF4J/Logback, Spring Profiles, Swagger / OpenAPI, Actuator",
+        "tutoriaKey": "tutoria-12-logs-perfiles-docs"
+      },
+      {
+        "id": "tut12_q3",
+        "number": 3,
+        "methodName": "pregunta3",
+        "title": "Pregunta 3",
+        "question": "JERARQUÍA DE NIVELES\nSi en application.yml configuras: logging.level.root: INFO\n¿Qué mensajes se imprimirán?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Solo los de nivel INFO."
+          },
+          {
+            "key": "b",
+            "text": "INFO, WARN y ERROR."
+          },
+          {
+            "key": "c",
+            "text": "TRACE, DEBUG e INFO."
+          },
+          {
+            "key": "d",
+            "text": "Todos los niveles."
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Se muestran el nivel configurado y todos los que sean más graves que él.",
+        "tutoriaId": 12,
+        "tutoriaTitle": "Tutoría 12: Logs, Perfiles y OpenAPI",
+        "tutoriaTopic": "SLF4J/Logback, Spring Profiles, Swagger / OpenAPI, Actuator",
+        "tutoriaKey": "tutoria-12-logs-perfiles-docs"
+      },
+      {
+        "id": "tut12_q4",
+        "number": 4,
+        "methodName": "pregunta5",
+        "title": "Pregunta 4",
+        "question": "PERFILES DE CONFIGURACIÓN\n¿Qué archivo sobreescribe application.yml si se activa el perfil 'prod'?",
+        "options": [
+          {
+            "key": "a",
+            "text": "application-prod.yml"
+          },
+          {
+            "key": "b",
+            "text": "application.prod.properties"
+          },
+          {
+            "key": "c",
+            "text": "prod.yml"
+          },
+          {
+            "key": "d",
+            "text": "spring-prod.yml"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "Consulta el código de la tutoría para ver el detalle de la solución.",
+        "tutoriaId": 12,
+        "tutoriaTitle": "Tutoría 12: Logs, Perfiles y OpenAPI",
+        "tutoriaTopic": "SLF4J/Logback, Spring Profiles, Swagger / OpenAPI, Actuator",
+        "tutoriaKey": "tutoria-12-logs-perfiles-docs"
+      },
+      {
+        "id": "tut12_q5",
+        "number": 5,
+        "methodName": "pregunta6",
+        "title": "Pregunta 5",
+        "question": "ANOTACIÓN @Profile",
+        "options": [
+          {
+            "key": "a",
+            "text": "Para que solo se compile en desarrollo."
+          },
+          {
+            "key": "b",
+            "text": "Para que Spring solo cree esa instancia (Bean) si el perfil activo es 'dev'."
+          },
+          {
+            "key": "c",
+            "text": "Para desactivar los logs de esa clase."
+          },
+          {
+            "key": "d",
+            "text": "Para permitir llamadas sin contraseña."
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Consulta el código de la tutoría para ver el detalle de la solución.",
+        "tutoriaId": 12,
+        "tutoriaTitle": "Tutoría 12: Logs, Perfiles y OpenAPI",
+        "tutoriaTopic": "SLF4J/Logback, Spring Profiles, Swagger / OpenAPI, Actuator",
+        "tutoriaKey": "tutoria-12-logs-perfiles-docs"
+      },
+      {
+        "id": "tut12_q6",
+        "number": 6,
+        "methodName": "pregunta7",
+        "title": "Pregunta 6",
+        "question": "RUTA POR DEFECTO DE SWAGGER UI\nCon springdoc-openapi, ¿cuál es la URL por defecto para ver la interfaz gráfica?",
+        "options": [
+          {
+            "key": "a",
+            "text": "http://localhost:8080/docs"
+          },
+          {
+            "key": "b",
+            "text": "http://localhost:8080/swagger-ui/index.html (o /swagger-ui.html)"
+          },
+          {
+            "key": "c",
+            "text": "http://localhost:8080/api-docs.html"
+          },
+          {
+            "key": "d",
+            "text": "http://localhost:8080/swagger"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Consulta el código de la tutoría para ver el detalle de la solución.",
+        "tutoriaId": 12,
+        "tutoriaTitle": "Tutoría 12: Logs, Perfiles y OpenAPI",
+        "tutoriaTopic": "SLF4J/Logback, Spring Profiles, Swagger / OpenAPI, Actuator",
+        "tutoriaKey": "tutoria-12-logs-perfiles-docs"
+      },
+      {
+        "id": "tut12_q7",
+        "number": 7,
+        "methodName": "pregunta8",
+        "title": "Pregunta 7",
+        "question": "DOCUMENTACIÓN EN CONTROLADORES Y DTOs\n¿Qué anotación de OpenAPI 3 se coloca sobre un campo de un DTO?",
+        "options": [
+          {
+            "key": "a",
+            "text": "@ApiModelProperty"
+          },
+          {
+            "key": "b",
+            "text": "@Operation"
+          },
+          {
+            "key": "c",
+            "text": "@Schema"
+          },
+          {
+            "key": "d",
+            "text": "@Tag"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "@Schema es la anotación estándar de OpenAPI 3 para campos y clases modelo/DTO.",
+        "tutoriaId": 12,
+        "tutoriaTitle": "Tutoría 12: Logs, Perfiles y OpenAPI",
+        "tutoriaTopic": "SLF4J/Logback, Spring Profiles, Swagger / OpenAPI, Actuator",
+        "tutoriaKey": "tutoria-12-logs-perfiles-docs"
+      }
+    ]
+  },
+  {
+    "meta": {
+      "id": 13,
+      "title": "Tutoría 13: Testing Unitario con JUnit 5 & Mockito",
+      "icon": "🧪",
+      "topic": "Unit Tests, @Mock, @InjectMocks, when().thenReturn(), verify()"
+    },
+    "file": "/Users/blanca/Micampus/public/fuentes/springboot/tutorias-isra/tutoria-13-junit-mockito/src/main/java/tut13/explicacion/Preguntas.java",
+    "questions": [
+      {
+        "id": "tut13_q1",
+        "number": 1,
+        "methodName": "p1",
+        "title": "Pregunta 1",
+        "question": "En la pirámide de testing, ¿qué tipo de pruebas debe haber en mayor número?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Las E2E, porque son las que más se parecen al uso real de la aplicación"
+          },
+          {
+            "key": "b",
+            "text": "Las de integración, porque comprueban que las piezas encajan entre sí"
+          },
+          {
+            "key": "c",
+            "text": "Las unitarias, porque son baratas y rápidas"
+          },
+          {
+            "key": "d",
+            "text": "Las manuales, porque las ejecuta una persona que ve el resultado"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "Las unitarias: forman la base de la pirámide porque son baratas y rápidas. Las E2E, caras y lentas, son las menos numerosas.",
+        "tutoriaId": 13,
+        "tutoriaTitle": "Tutoría 13: Testing Unitario con JUnit 5 & Mockito",
+        "tutoriaTopic": "Unit Tests, @Mock, @InjectMocks, when().thenReturn(), verify()",
+        "tutoriaKey": "tutoria-13-junit-mockito"
+      },
+      {
+        "id": "tut13_q2",
+        "number": 2,
+        "methodName": "p2",
+        "title": "Pregunta 2",
+        "question": "Un método anotado con @Test no contiene ninguna aserción. ¿Qué resultado da al ejecutarlo?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Pasa en verde, aunque no demuestre nada"
+          },
+          {
+            "key": "b",
+            "text": "Falla, porque JUnit exige al menos una aserción en cada test"
+          },
+          {
+            "key": "c",
+            "text": "Se marca como Skipped hasta que se le añada alguna aserción"
+          },
+          {
+            "key": "d",
+            "text": "No compila, porque @Test obliga a incluir un assertEquals"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "Pasa. Un test solo falla si una aserción falla o salta una excepción: sin aserciones nunca falla y no demuestra nada.",
+        "tutoriaId": 13,
+        "tutoriaTitle": "Tutoría 13: Testing Unitario con JUnit 5 & Mockito",
+        "tutoriaTopic": "Unit Tests, @Mock, @InjectMocks, when().thenReturn(), verify()",
+        "tutoriaKey": "tutoria-13-junit-mockito"
+      },
+      {
+        "id": "tut13_q3",
+        "number": 3,
+        "methodName": "p3",
+        "title": "Pregunta 3",
+        "question": "¿Cuándo se ejecuta un método anotado con @BeforeEach?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Una única vez, antes de todos los tests de la clase"
+          },
+          {
+            "key": "b",
+            "text": "Después de cada test, para limpiar el estado que dejó"
+          },
+          {
+            "key": "c",
+            "text": "Solo antes del primer test que encuentre JUnit"
+          },
+          {
+            "key": "d",
+            "text": "Antes de cada uno de los tests"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "Antes de cada test: cada uno parte de un estado nuevo, y los tests quedan aislados entre sí. @BeforeAll es el que se ejecuta una sola vez.",
+        "tutoriaId": 13,
+        "tutoriaTitle": "Tutoría 13: Testing Unitario con JUnit 5 & Mockito",
+        "tutoriaTopic": "Unit Tests, @Mock, @InjectMocks, when().thenReturn(), verify()",
+        "tutoriaKey": "tutoria-13-junit-mockito"
+      },
+      {
+        "id": "tut13_q4",
+        "number": 4,
+        "methodName": "p4",
+        "title": "Pregunta 4",
+        "question": "En un test unitario de ReservaServiceImpl, ¿qué se sustituye por un mock de Mockito?",
+        "options": [
+          {
+            "key": "a",
+            "text": "El propio ReservaServiceImpl, para controlar qué devuelve en cada caso"
+          },
+          {
+            "key": "b",
+            "text": "El ReservaRepository, que es la dependencia del Service"
+          },
+          {
+            "key": "c",
+            "text": "La clase Reserva, para no tener que crear datos de prueba reales"
+          },
+          {
+            "key": "d",
+            "text": "El método de test, para que se ejecute sin que haya aserciones"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "El repositorio: Mockito trabaja con las dependencias y JUnit con la clase bajo prueba. El Service es la clase real que se prueba.",
+        "tutoriaId": 13,
+        "tutoriaTitle": "Tutoría 13: Testing Unitario con JUnit 5 & Mockito",
+        "tutoriaTopic": "Unit Tests, @Mock, @InjectMocks, when().thenReturn(), verify()",
+        "tutoriaKey": "tutoria-13-junit-mockito"
+      },
+      {
+        "id": "tut13_q5",
+        "number": 5,
+        "methodName": "p5",
+        "title": "Pregunta 5",
+        "question": "Un test declara @Mock y @InjectMocks pero NO lleva @ExtendWith(MockitoExtension.class). ¿Qué pasa al ejecutarlo?",
+        "options": [
+          {
+            "key": "a",
+            "text": "El Service no se crea y el test falla con un NullPointerException"
+          },
+          {
+            "key": "b",
+            "text": "Todo funciona igual, porque Spring crea los mocks por su cuenta"
+          },
+          {
+            "key": "c",
+            "text": "Error de compilación, porque @Mock no se puede usar sin la extensión"
+          },
+          {
+            "key": "d",
+            "text": "Mockito crea los mocks, pero ignora el @InjectMocks de la clase"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "Sin la extensión no se procesan las anotaciones de Mockito: el Service queda a null y el test falla con NullPointerException.",
+        "tutoriaId": 13,
+        "tutoriaTitle": "Tutoría 13: Testing Unitario con JUnit 5 & Mockito",
+        "tutoriaTopic": "Unit Tests, @Mock, @InjectMocks, when().thenReturn(), verify()",
+        "tutoriaKey": "tutoria-13-junit-mockito"
+      },
+      {
+        "id": "tut13_q6",
+        "number": 6,
+        "methodName": "p6",
+        "title": "Pregunta 6",
+        "question": "Quieres comprobar que, con una reserva inválida, el Service NO llega a guardar nada. ¿Qué usas?",
+        "options": [
+          {
+            "key": "a",
+            "text": "verify(repo, atLeastOnce()).save(any())"
+          },
+          {
+            "key": "b",
+            "text": "verify(repo, never()).save(any())"
+          },
+          {
+            "key": "c",
+            "text": "when(repo.save(any())).thenReturn(null)"
+          },
+          {
+            "key": "d",
+            "text": "verify(repo, times(2)).save(any())"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "verify con never(): comprueba que el método del mock no se llamó ninguna vez.",
+        "tutoriaId": 13,
+        "tutoriaTitle": "Tutoría 13: Testing Unitario con JUnit 5 & Mockito",
+        "tutoriaTopic": "Unit Tests, @Mock, @InjectMocks, when().thenReturn(), verify()",
+        "tutoriaKey": "tutoria-13-junit-mockito"
+      },
+      {
+        "id": "tut13_q7",
+        "number": 7,
+        "methodName": "p7",
+        "title": "Pregunta 7",
+        "question": "El método delete del Service es void. ¿Cómo compruebas con qué argumento se llamó a repo.deleteById?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Con un assertEquals sobre el valor que devuelve el método delete"
+          },
+          {
+            "key": "b",
+            "text": "Con un when(...).thenReturn(...) sobre el método deleteById"
+          },
+          {
+            "key": "c",
+            "text": "Con verify y un ArgumentCaptor"
+          },
+          {
+            "key": "d",
+            "text": "No se puede comprobar: un método void no deja ningún rastro"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "ArgumentCaptor + verify: captura el argumento real con el que se llamó al mock para poder inspeccionarlo.",
+        "tutoriaId": 13,
+        "tutoriaTitle": "Tutoría 13: Testing Unitario con JUnit 5 & Mockito",
+        "tutoriaTopic": "Unit Tests, @Mock, @InjectMocks, when().thenReturn(), verify()",
+        "tutoriaKey": "tutoria-13-junit-mockito"
+      },
+      {
+        "id": "tut13_q8",
+        "number": 8,
+        "methodName": "p8",
+        "title": "Pregunta 8",
+        "question": "findById de un id inexistente debe lanzar ReservaNotFoundException. ¿Qué aserción usas?",
+        "options": [
+          {
+            "key": "a",
+            "text": "assertEquals(ReservaNotFoundException.class, service.findById(99L).getClass())"
+          },
+          {
+            "key": "b",
+            "text": "assertNull(service.findById(99L))"
+          },
+          {
+            "key": "c",
+            "text": "assertTrue(service.findById(99L))"
+          },
+          {
+            "key": "d",
+            "text": "assertThrows(ReservaNotFoundException.class, () -> service.findById(99L))"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "assertThrows: comprueba que el código lanza esa excepción. assertEquals compara valores devueltos, no fallos.",
+        "tutoriaId": 13,
+        "tutoriaTitle": "Tutoría 13: Testing Unitario con JUnit 5 & Mockito",
+        "tutoriaTopic": "Unit Tests, @Mock, @InjectMocks, when().thenReturn(), verify()",
+        "tutoriaKey": "tutoria-13-junit-mockito"
+      },
+      {
+        "id": "tut13_q9",
+        "number": 9,
+        "methodName": "p9",
+        "title": "Pregunta 9",
+        "question": "En el informe de JaCoCo, una línea aparece en AMARILLO. ¿Qué significa?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Que el compilador ha emitido un aviso sobre esa línea"
+          },
+          {
+            "key": "b",
+            "text": "Que está parcialmente cubierta: falta alguna rama"
+          },
+          {
+            "key": "c",
+            "text": "Que la línea es un comentario y no se tiene en cuenta"
+          },
+          {
+            "key": "d",
+            "text": "Que ningún test pasa por ella, es decir, no está cubierta"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Amarillo = parcialmente cubierta (alguna rama sin recorrer). Verde = cubierta; rojo = ningún test pasa por la línea.",
+        "tutoriaId": 13,
+        "tutoriaTitle": "Tutoría 13: Testing Unitario con JUnit 5 & Mockito",
+        "tutoriaTopic": "Unit Tests, @Mock, @InjectMocks, when().thenReturn(), verify()",
+        "tutoriaKey": "tutoria-13-junit-mockito"
+      },
+      {
+        "id": "tut13_q10",
+        "number": 10,
+        "methodName": "p10",
+        "title": "Pregunta 10",
+        "question": "¿Qué umbral de cobertura con JaCoCo se suele exigir en una empresa?",
+        "options": [
+          {
+            "key": "a",
+            "text": "El 100 %, sin ninguna excepción"
+          },
+          {
+            "key": "b",
+            "text": "Alrededor del 50 %, porque cubrir más no compensa"
+          },
+          {
+            "key": "c",
+            "text": "Ninguno, porque JaCoCo solo informa y no puede hacer fallar el build"
+          },
+          {
+            "key": "d",
+            "text": "Entre el 85 % y el 95 %"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "Entre el 85 % y el 95 %. Exigir el 100 % es irreal, y el plugin puede hacer fallar el build con mvn verify si no se alcanza el mínimo.",
+        "tutoriaId": 13,
+        "tutoriaTitle": "Tutoría 13: Testing Unitario con JUnit 5 & Mockito",
+        "tutoriaTopic": "Unit Tests, @Mock, @InjectMocks, when().thenReturn(), verify()",
+        "tutoriaKey": "tutoria-13-junit-mockito"
+      },
+      {
+        "id": "tut13_q11",
+        "number": 11,
+        "methodName": "p11",
+        "title": "Pregunta 11",
+        "question": "Un método tiene un if / else if / else con tres caminos posibles. ¿Cuántos tests hacen falta, como mínimo, para cubrir todas sus ramas?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Tres, uno por cada camino"
+          },
+          {
+            "key": "b",
+            "text": "Uno, con la entrada más habitual, porque el resto de caminos se infiere"
+          },
+          {
+            "key": "c",
+            "text": "Dos, uno por cada if y por el else final sin contar el else if"
+          },
+          {
+            "key": "d",
+            "text": "Cuatro, uno por cada línea de código del método completo"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "Tres: cada camino necesita su propio test para que todas las ramas queden cubiertas.",
+        "tutoriaId": 13,
+        "tutoriaTitle": "Tutoría 13: Testing Unitario con JUnit 5 & Mockito",
+        "tutoriaTopic": "Unit Tests, @Mock, @InjectMocks, when().thenReturn(), verify()",
+        "tutoriaKey": "tutoria-13-junit-mockito"
+      },
+      {
+        "id": "tut13_q12",
+        "number": 12,
+        "methodName": "p12",
+        "title": "Pregunta 12",
+        "question": "¿Cuál es el equivalente en BDDMockito de when(repo.findAll()).thenReturn(lista)?",
+        "options": [
+          {
+            "key": "a",
+            "text": "given(repo.findAll()).thenReturn(list"
+          },
+          {
+            "key": "b",
+            "text": "then(repo.findAll()).willReturn(list"
+          },
+          {
+            "key": "c",
+            "text": "given(repo.findAll()).willReturn(list"
+          },
+          {
+            "key": "d",
+            "text": "should(repo.findAll()).willReturn(list"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "given(...).willReturn(...): hace lo mismo que when(...).thenReturn(...), pero con vocabulario Given / When / Then.",
+        "tutoriaId": 13,
+        "tutoriaTitle": "Tutoría 13: Testing Unitario con JUnit 5 & Mockito",
+        "tutoriaTopic": "Unit Tests, @Mock, @InjectMocks, when().thenReturn(), verify()",
+        "tutoriaKey": "tutoria-13-junit-mockito"
+      }
+    ]
+  },
+  {
+    "meta": {
+      "id": 14,
+      "title": "Tutoría 14: Test de Integración & Spring Boot Test",
+      "icon": "🚀",
+      "topic": "Integration Tests, @SpringBootTest, @WebMvcTest, MockMvc, Testcontainers"
+    },
+    "file": "/Users/blanca/Micampus/public/fuentes/springboot/tutorias-isra/tutoria-14-spring-boot-test/src/main/java/tut14/explicacion/Preguntas.java",
+    "questions": [
+      {
+        "id": "tut14_q1",
+        "number": 1,
+        "methodName": "p1",
+        "title": "Pregunta 1",
+        "question": "¿Qué carga la anotación @DataJpaTest?",
+        "options": [
+          {
+            "key": "a",
+            "text": "La aplicación completa, con un servidor HTTP arrancado en un puerto aleatorio"
+          },
+          {
+            "key": "b",
+            "text": "Las entidades y los repositorios de Spring Data, con una BD en memoria"
+          },
+          {
+            "key": "c",
+            "text": "El controlador indicado y MockMvc, con el servicio sustituido por un mock"
+          },
+          {
+            "key": "d",
+            "text": "Solo las clases de test, sin ningún bean de la aplicación"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "@DataJpaTest carga solo la capa de persistencia: las clases @Entity y los repositorios de Spring Data, sobre una BD en memoria (H2). No carga @Service ni @Controller.",
+        "tutoriaId": 14,
+        "tutoriaTitle": "Tutoría 14: Test de Integración & Spring Boot Test",
+        "tutoriaTopic": "Integration Tests, @SpringBootTest, @WebMvcTest, MockMvc, Testcontainers",
+        "tutoriaKey": "tutoria-14-spring-boot-test"
+      },
+      {
+        "id": "tut14_q2",
+        "number": 2,
+        "methodName": "p2",
+        "title": "Pregunta 2",
+        "question": "Usas @WebMvcTest(LibroController.class) y el controlador recibe un LibroService por constructor. ¿Qué\nhaces con el servicio?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Nada: @WebMvcTest también carga todos los @Service de la aplicación"
+          },
+          {
+            "key": "b",
+            "text": "Añado @DataJpaTest a la clase para que Spring cargue el servicio real"
+          },
+          {
+            "key": "c",
+            "text": "Declaro un mock con @MockBean (@MockitoBean desde Spring Boot 3.4)"
+          },
+          {
+            "key": "d",
+            "text": "Creo el servicio con new LibroService(null) y se lo paso a MockMvc"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "@WebMvcTest no carga los @Service. Hay que registrar un mock en el contexto con @MockBean (@MockitoBean desde Spring Boot 3.4); sin él, el contexto no arranca (NoSuchBeanDefinitionException).",
+        "tutoriaId": 14,
+        "tutoriaTitle": "Tutoría 14: Test de Integración & Spring Boot Test",
+        "tutoriaTopic": "Integration Tests, @SpringBootTest, @WebMvcTest, MockMvc, Testcontainers",
+        "tutoriaKey": "tutoria-14-spring-boot-test"
+      },
+      {
+        "id": "tut14_q3",
+        "number": 3,
+        "methodName": "p3",
+        "title": "Pregunta 3",
+        "question": "¿Qué diferencia hay entre @Mock y @MockBean (@MockitoBean)?",
+        "options": [
+          {
+            "key": "a",
+            "text": "@Mock solo vale para repositorios y @MockBean solo para controladores de la aplicación"
+          },
+          {
+            "key": "b",
+            "text": "Ninguna: son dos nombres distintos de la misma anotación, intercambiables en cualquier test"
+          },
+          {
+            "key": "c",
+            "text": "@MockBean no permite configurar"
+          },
+          {
+            "key": "d",
+            "text": "@MockBean registra el mock en el contexto de Spring, sustituyendo al bean real"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "@Mock crea un mock de Mockito que Spring no conoce. @MockBean (@MockitoBean desde Spring Boot 3.4) crea el mock Y lo registra en el contexto, reemplazando el bean del mismo tipo; por eso se usa en @WebMvcTest.",
+        "tutoriaId": 14,
+        "tutoriaTitle": "Tutoría 14: Test de Integración & Spring Boot Test",
+        "tutoriaTopic": "Integration Tests, @SpringBootTest, @WebMvcTest, MockMvc, Testcontainers",
+        "tutoriaKey": "tutoria-14-spring-boot-test"
+      },
+      {
+        "id": "tut14_q4",
+        "number": 4,
+        "methodName": "p4",
+        "title": "Pregunta 4",
+        "question": "En un @DataJpaTest, un test guarda un libro y otro test posterior ejecuta repo.count(). ¿Qué ve el\nsegundo?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Cero: cada test se revierte (rollback) al terminar y la tabla queda vacía"
+          },
+          {
+            "key": "b",
+            "text": "Un libro, porque H2 conserva los datos entre los tests de una misma clase"
+          },
+          {
+            "key": "c",
+            "text": "Depende del orden en que JUnit decida ejecutar los dos tests de la clase"
+          },
+          {
+            "key": "d",
+            "text": "Una excepción, porque la tabla se elimina al terminar cada uno de los tests"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "@DataJpaTest envuelve cada test en una transacción que se revierte al terminar, así que los tests son independientes: lo que guarda uno no lo ve el otro, se ejecuten en el orden que se ejecuten.",
+        "tutoriaId": 14,
+        "tutoriaTitle": "Tutoría 14: Test de Integración & Spring Boot Test",
+        "tutoriaTopic": "Integration Tests, @SpringBootTest, @WebMvcTest, MockMvc, Testcontainers",
+        "tutoriaKey": "tutoria-14-spring-boot-test"
+      },
+      {
+        "id": "tut14_q5",
+        "number": 5,
+        "methodName": "p5",
+        "title": "Pregunta 5",
+        "question": "Pregunta 5 sobre Integration Tests, @SpringBootTest, @WebMvcTest, MockMvc, Testcontainers",
+        "options": [
+          {
+            "key": "a",
+            "text": "Que el campo titulo del objeto raíz de la"
+          },
+          {
+            "key": "b",
+            "text": "Que existe algún elemento del array raíz cuyo campo titulo vale X, en cualquier posición"
+          },
+          {
+            "key": "c",
+            "text": "Que el campo titulo del primer elemento del array raíz vale X"
+          },
+          {
+            "key": "d",
+            "text": "Que el array raíz contiene exactamente X elementos que tienen el campo titulo informado"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "$ es la raíz; $[0] el primer elemento si la raíz es un array; .titulo su campo. Comprueba ese valor concreto, no todos los elementos ni el tamaño (eso sería $.length()).",
+        "tutoriaId": 14,
+        "tutoriaTitle": "Tutoría 14: Test de Integración & Spring Boot Test",
+        "tutoriaTopic": "Integration Tests, @SpringBootTest, @WebMvcTest, MockMvc, Testcontainers",
+        "tutoriaKey": "tutoria-14-spring-boot-test"
+      },
+      {
+        "id": "tut14_q6",
+        "number": 6,
+        "methodName": "p6",
+        "title": "Pregunta 6",
+        "question": "Pregunta 6 sobre Integration Tests, @SpringBootTest, @WebMvcTest, MockMvc, Testcontainers",
+        "options": [
+          {
+            "key": "a",
+            "text": "Porque @Sql ejecuta el script dos veces; hay que anotar solo un método de la clase con @Sql"
+          },
+          {
+            "key": "b",
+            "text": "La secuencia IDENTITY no avanza con ids explícitos; se reinicia con RESTART WITH 100"
+          },
+          {
+            "key": "c",
+            "text": "Porque @DataJpaTest no permite guardar tras cargar un script; hay que cambiar a @SpringBootTest"
+          },
+          {
+            "key": "d",
+            "text": "Porque el rollback deja el id 1 ocupado en la tabla; se arregla añadiendo @DirtiesContext al test"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Los INSERT con id explícito no hacen avanzar el contador IDENTITY, que sigue en 1. Se reinicia al final del script con ALTER TABLE libro ALTER COLUMN id RESTART WITH 100.",
+        "tutoriaId": 14,
+        "tutoriaTitle": "Tutoría 14: Test de Integración & Spring Boot Test",
+        "tutoriaTopic": "Integration Tests, @SpringBootTest, @WebMvcTest, MockMvc, Testcontainers",
+        "tutoriaKey": "tutoria-14-spring-boot-test"
+      },
+      {
+        "id": "tut14_q7",
+        "number": 7,
+        "methodName": "p7",
+        "title": "Pregunta 7",
+        "question": "En un @WebMvcTest compruebas que un POST con precio negativo devuelve 400 con el mensaje que produce\nun @RestControllerAdvice. ¿Hay que importar el handler con @Import?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Sí, siempre: @WebMvcTest ignora por completo los @ControllerAdvice de la aplicación"
+          },
+          {
+            "key": "b",
+            "text": "Sí, y además hay que declarar el handler como @MockBean para que no consulte la BD"
+          },
+          {
+            "key": "c",
+            "text": "No, pero entonces el test solo funciona si se cambia a @SpringBootTest con RANDOM_PORT"
+          },
+          {
+            "key": "d",
+            "text": "No: @WebMvcTest escanea los @ControllerAdvice y lo aplica solo"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "@WebMvcTest carga los @ControllerAdvice. El @Import solo haría falta si el handler no se detectara (por ejemplo, sin la anotación). Ojo: si el handler no existe en el contexto, el 404 se escapa como excepción y la validación da un 400 sin cuerpo.",
+        "tutoriaId": 14,
+        "tutoriaTitle": "Tutoría 14: Test de Integración & Spring Boot Test",
+        "tutoriaTopic": "Integration Tests, @SpringBootTest, @WebMvcTest, MockMvc, Testcontainers",
+        "tutoriaKey": "tutoria-14-spring-boot-test"
+      },
+      {
+        "id": "tut14_q8",
+        "number": 8,
+        "methodName": "p8",
+        "title": "Pregunta 8",
+        "question": "Un @SpringBootTest usa webEnvironment = RANDOM_PORT. ¿Para qué sirve y qué URL se le pasa a\nTestRestTemplate?",
+        "options": [
+          {
+            "key": "b",
+            "text": "Hace que los tests sean más rápidos al no arrancar Tomcat; la URL completa con el puerto 8080"
+          },
+          {
+            "key": "c",
+            "text": "Obliga a usar MockMvc en lugar de un cliente HTTP real; la URL no importa en ese caso concreto"
+          },
+          {
+            "key": "d",
+            "text": "Evita tener que configurar una base de datos para el test; la IP de la máquina más el puerto"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "RANDOM_PORT arranca un servidor real en un puerto libre aleatorio, sin chocar con la aplicación u otros tests. TestRestTemplate ya apunta a ese puerto: se le pasan rutas relativas. Una URL con puerto fijo da Connection refused.",
+        "tutoriaId": 14,
+        "tutoriaTitle": "Tutoría 14: Test de Integración & Spring Boot Test",
+        "tutoriaTopic": "Integration Tests, @SpringBootTest, @WebMvcTest, MockMvc, Testcontainers",
+        "tutoriaKey": "tutoria-14-spring-boot-test"
+      },
+      {
+        "id": "tut14_q9",
+        "number": 9,
+        "methodName": "p9",
+        "title": "Pregunta 9",
+        "question": "Pregunta 9 sobre Integration Tests, @SpringBootTest, @WebMvcTest, MockMvc, Testcontainers",
+        "options": [
+          {
+            "key": "a",
+            "text": "Mockito acumula las llamadas de un test al siguiente; hay que llamar a reset(...) en cada uno"
+          },
+          {
+            "key": "b",
+            "text": "No hay rollback con servidor real: los datos persisten; repo.deleteAll() en @BeforeEach"
+          },
+          {
+            "key": "c",
+            "text": "JUnit ejecuta cada test dos veces cuando hay servidor; se corrige añadiendo @Order a los métodos"
+          },
+          {
+            "key": "d",
+            "text": "H2 duplica las filas al arrancar el contexto por segunda vez; se corrige cambiando a MySQL real"
+          }
+        ],
+        "correctAnswer": "b",
+        "explanation": "Con servidor real la petición no corre dentro de la transacción del test, así que no hay rollback y los datos del primer test siguen ahí. Se limpia la BD antes de cada test para que sean independientes.",
+        "tutoriaId": 14,
+        "tutoriaTitle": "Tutoría 14: Test de Integración & Spring Boot Test",
+        "tutoriaTopic": "Integration Tests, @SpringBootTest, @WebMvcTest, MockMvc, Testcontainers",
+        "tutoriaKey": "tutoria-14-spring-boot-test"
+      },
+      {
+        "id": "tut14_q10",
+        "number": 10,
+        "methodName": "p10",
+        "title": "Pregunta 10",
+        "question": "¿Qué tipo de test elegirías para comprobar que findByAutorIgnoreCase ignora las mayúsculas?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Un @WebMvcTest con el repositorio sustituido por un mock del servicio"
+          },
+          {
+            "key": "b",
+            "text": "Un test de Mockito del Service con when(repo...).thenReturn(...) para la consulta"
+          },
+          {
+            "key": "c",
+            "text": "Un @DataJpaTest contra la base de datos H2"
+          },
+          {
+            "key": "d",
+            "text": "Un @SpringBootTest que recorra todos los endpoints de la aplicación completa"
+          }
+        ],
+        "correctAnswer": "c",
+        "explanation": "Que la consulta derivada del nombre haga lo que crees solo se comprueba ejecutándola contra una BD real: @DataJpaTest. Con un mock del repositorio solo estarías probando lo que tú mismo le dijiste que contestara.",
+        "tutoriaId": 14,
+        "tutoriaTitle": "Tutoría 14: Test de Integración & Spring Boot Test",
+        "tutoriaTopic": "Integration Tests, @SpringBootTest, @WebMvcTest, MockMvc, Testcontainers",
+        "tutoriaKey": "tutoria-14-spring-boot-test"
+      },
+      {
+        "id": "tut14_q11",
+        "number": 11,
+        "methodName": "p11",
+        "title": "Pregunta 11",
+        "question": "¿Cuál de estos clientes de test NO necesita un servidor HTTP real?",
+        "options": [
+          {
+            "key": "a",
+            "text": "TestRestTemplate con webEnvironment = RANDOM_PORT en un @SpringBootTest"
+          },
+          {
+            "key": "b",
+            "text": "WebTestClient con webEnvironment = RANDOM_PORT en un @SpringBootTest"
+          },
+          {
+            "key": "c",
+            "text": "Un RestTemplate normal apuntando a localhost en un puerto ya arrancado"
+          },
+          {
+            "key": "d",
+            "text": "MockMvc, que simula la petición sin abrir ningún puerto"
+          }
+        ],
+        "correctAnswer": "d",
+        "explanation": "MockMvc simula la petición y la entrega directamente al DispatcherServlet, sin puerto ni Tomcat. TestRestTemplate y WebTestClient (con RANDOM_PORT) lanzan peticiones HTTP reales contra un servidor de test.",
+        "tutoriaId": 14,
+        "tutoriaTitle": "Tutoría 14: Test de Integración & Spring Boot Test",
+        "tutoriaTopic": "Integration Tests, @SpringBootTest, @WebMvcTest, MockMvc, Testcontainers",
+        "tutoriaKey": "tutoria-14-spring-boot-test"
+      },
+      {
+        "id": "tut14_q12",
+        "number": 12,
+        "methodName": "p12",
+        "title": "Pregunta 12",
+        "question": "¿Qué aporta un test de integración frente a los de capa, y qué cuesta?",
+        "options": [
+          {
+            "key": "a",
+            "text": "Detecta fallos al unir las capas reales; es más lento y localiza peor el error"
+          },
+          {
+            "key": "b",
+            "text": "Es más rápido que los de capa porque no arranca Spring; a cambio no puede usar la BD"
+          },
+          {
+            "key": "c",
+            "text": "Sustituye a los tests unitarios; por eso la pirámide aconseja tener más de estos que de ningún otro"
+          },
+          {
+            "key": "d",
+            "text": "Comprueba la lógica de cada capa por separado; es el más barato de escribir y de mantener"
+          }
+        ],
+        "correctAnswer": "a",
+        "explanation": "Los tests de integración ejercitan Controller, Service, Repository y BD reales juntos: ven lo que cada capa por separado no ve. Son los más lentos y, cuando fallan, cuesta más saber qué capa es la culpable; por eso son los menos numerosos.",
+        "tutoriaId": 14,
+        "tutoriaTitle": "Tutoría 14: Test de Integración & Spring Boot Test",
+        "tutoriaTopic": "Integration Tests, @SpringBootTest, @WebMvcTest, MockMvc, Testcontainers",
+        "tutoriaKey": "tutoria-14-spring-boot-test"
+      }
+    ]
+  }
+]

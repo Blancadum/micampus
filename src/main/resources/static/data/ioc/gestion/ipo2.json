@@ -1,0 +1,261 @@
+{
+  "id": "ipo2",
+  "title": "Itinerario Personal para la Empleabilidad II",
+  "themeColor": "#ea580c",
+  "icon": "💼",
+  "progress": 100,
+  "theoryRoute": "/ioc/ipo2/lecciones-ipo2",
+  "blocks": [
+    {
+      "id": "bloque1",
+      "label": "BLOQUE 1: Contrato & Marco Laboral (EAC 1)"
+    },
+    {
+      "id": "bloque2",
+      "label": "BLOQUE 2: Nóminas & Seguridad Social (EAC 2)"
+    },
+    {
+      "id": "bloque3",
+      "label": "BLOQUE 3: Prevención & Salud Laboral (PRL)"
+    },
+    {
+      "id": "bloque4",
+      "label": "BLOQUE 4: SEO en LinkedIn & Filtros de IA (ATS)"
+    }
+  ],
+  "eacs": [
+    {
+      "id": "eaf1",
+      "title": "EAF 1: Marco Laboral y Derechos del Trabajador",
+      "status": "done",
+      "dueDate": "2026-10-15",
+      "theorySlug": "intro-bloque1",
+      "weight": "Formativa",
+      "description": "Actividad formativa de autoevaluación: análisis de las fuentes del derecho del trabajo, jerarquía normativa, derechos y deberes fundamentales de la relación laboral y papel de los convenios colectivos.",
+      "checklist": [
+        "Identificación de la jerarquía normativa laboral aplicable",
+        "Análisis de derechos irrenunciables en el Estatuto de los Trabajadores",
+        "Estudio de las condiciones del convenio colectivo del sector tecnológico",
+        "Entrega de las respuestas argumentadas en la plataforma Moodle"
+      ],
+      "nota": null
+    },
+    {
+      "id": "eac1",
+      "title": "EAC 1: Habilidades Emprenedoras y Validación de Ideas (U3 & U4)",
+      "status": "done",
+      "dueDate": "2026-11-03",
+      "publishDate": "2026-10-16",
+      "theorySlug": "intro-bloque1",
+      "weight": "100% AC",
+      "description": "Estudio y aplicación de habilidades emprenedoras, procesos de innovación aplicada (U3) e identificación y validación de ideas de negocio mediante metodologías ágiles (Lean Startup, Business Model Canvas) (U4).",
+      "checklist": [
+        "Identificación de oportunidades de innovación y modernización del sector productivo",
+        "Definición del mapa de empatía y detección de problemas/necesidades de clientes",
+        "Diseño de la propuesta de valor mediante el Business Model Canvas",
+        "Definición y validación del Producto Mínimo Viable (MVP) y métricas Lean"
+      ],
+      "downloadUrl": "/eacs/ipo2/Reto_Transformacion_Estrategia_Consultor_version2.docx",
+      "enunciatUrl": "/eacs/ipo2/Reto de transformación.md",
+      "exercicis": [
+        {
+          "num": 1,
+          "points": "2.5 puntos",
+          "title": "Parte 1: Diagnóstico Sectorial y Tipologías de Innovación",
+          "desc": "Análisis de la situación de partida frente a competidores ágiles. Prescripción justificada de innovación de producto, de proceso, organizativa y de marketing en el sector de desarrollo de software.",
+          "img": "/eacs/ipo2/diag1_diagnostico_innovacion.svg",
+          "deliverables": [
+            "Informe Ejecutivo (Sección 1)",
+            "Manual_Oslo_2018.pdf"
+          ]
+        },
+        {
+          "num": 2,
+          "points": "2.5 puntos",
+          "title": "Parte 2: Gestión del Talento e Intraemprendimiento",
+          "desc": "Estrategias para despertar el espíritu intraemprendedor en la plantilla. Identificación de soft skills prioritarias, equipos multidisciplinares y dinámicas colaborativas para romper jerarquías rígidas.",
+          "img": "/eacs/ipo2/diag2_intraemprendimiento_talento.svg",
+          "deliverables": [
+            "Informe Ejecutivo (Sección 2)",
+            "Dinamica_6_Sombreros.pdf"
+          ]
+        },
+        {
+          "num": 3,
+          "points": "2.5 puntos",
+          "title": "Parte 3: Metodología Ágil y Competencia Digital",
+          "desc": "Adopción de Design Thinking & Lean Startup para validación iterativa de hipótesis. Integración de vigilancia tecnológica, automatización de pruebas y herramientas de IA.",
+          "img": "/eacs/ipo2/diag3_metodologia_agil_lean.svg",
+          "deliverables": [
+            "Informe Ejecutivo (Sección 3)",
+            "Mapa_Empatia_MVP.pdf"
+          ]
+        },
+        {
+          "num": 4,
+          "points": "2.5 puntos",
+          "title": "Parte 4: Sostenibilidad, Green IT y Alineación ODS 2030",
+          "desc": "Vinculación directa de la estrategia con ODS 8 (Trabajo decente y crecimiento económico), ODS 9 (Industria, innovación e infraestructura) y ODS 12 (Producción y consumo responsables).",
+          "img": "/eacs/ipo2/diag4_sostenibilidad_ods_ecodevscan.svg",
+          "deliverables": [
+            "Informe Ejecutivo (Sección 4)",
+            "Reto_Transformacion_Estrategia_Consultor_version2.docx",
+            "Infografia_Lanzamiento_EcoDevScan.html"
+          ]
+        }
+      ],
+      "nota": null
+    },
+    {
+      "id": "eaf2",
+      "title": "EAF 2: Proyecto Emprendedor & Video-Pitch",
+      "status": "done",
+      "dueDate": "2026-12-11",
+      "publishDate": "2026-11-04",
+      "weight": "EAF (U5)",
+      "description": "Proyecto emprendedor de innovación social y tecnológica aplicada al sector del desarrollo de software (Unidad 5). Cuestionario respondido en Moodle a falta de adjuntar el enlace del vídeo Pitch en la Actividad 3; memoria técnica completada en PDF y DOCX (10 págs. útiles); pendiente grabación y enlace del vídeo Elevator Pitch.",
+      "enunciatUrl": "/eacs/ipo2/EAF2_Indicacions_Oficials.md",
+      "downloadUrl": "/eacs/ipo2/Proyecto_Emprendedor_EcoDevScan_EAF2.pdf",
+      "memoriaUrl": "/eacs/ipo2/Proyecto_Emprendedor_EcoDevScan_EAF2.docx",
+      "checklist": [
+        "Actividad 1: Test de la Unidad 5 sobre desarrollo de proyectos emprendedores (Cuestionario completado a falta del enlace del vídeo)",
+        "Actividad 2: Memoria en PDF y DOCX (10 págs.) con los 7 apartados oficiales completados y maquetados",
+        "Actividad 3: Vídeo Elevator Pitch de máx. 3 minutos (Pendiente subir enlace en el Test)",
+        "Actividad 4: Validación de autoría y autovaloración en el aula Moodle (obligatoria al finalizar)",
+        "Inclusión del enlace directo al vídeo Pitch dentro del documento PDF",
+        "Bibliografía, referencias web y anexos (incorporados en memoria)"
+      ],
+      "exercicis": [
+        {
+          "num": 1,
+          "points": "2.0 puntos",
+          "title": "Actividad 1: Test de la Unidad 5 (Cuestionario)",
+          "desc": "Resolución de cuestiones sobre desarrollo de proyectos emprendedores. Cuestionario respondido en Moodle a falta de adjuntar el enlace del vídeo en la pregunta 3.",
+          "deliverables": [
+            "Envío final en Moodle («Envia i acaba»)"
+          ],
+          "status": "pending_video"
+        },
+        {
+          "num": 2,
+          "points": "5.0 puntos",
+          "title": "Actividad 2: Memoria del Proyecto Emprendedor (PDF)",
+          "desc": "Documento técnico y sintético en PDF y DOCX de 10 páginas útiles con los 7 apartados oficiales completados.",
+          "deliverables": [
+            "Proyecto_Emprendedor_EcoDevScan_EAF2.pdf",
+            "Proyecto_Emprendedor_EcoDevScan_EAF2.docx"
+          ],
+          "status": "done"
+        },
+        {
+          "num": 3,
+          "points": "3.0 puntos",
+          "title": "Actividad 3: Vídeo Elevator Pitch (Máx. 3 minutos)",
+          "desc": "Defensa comunicativa del modelo de negocio (storytelling). Pendiente de grabación y subida del enlace compartido a la pregunta 3 del Test.",
+          "deliverables": [
+            "Enlace público o compartido activo a YouTube, Vimeo o Google Drive"
+          ],
+          "status": "pending"
+        },
+        {
+          "num": 4,
+          "points": "0.0 puntos",
+          "title": "Actividad 4: Validación de Autoría y Autovaloración",
+          "desc": "Confirmación formal de autoría propia y autoevaluación reflexiva del proceso de trabajo en Moodle.",
+          "deliverables": [
+            "Comprobación en Moodle"
+          ]
+        }
+      ],
+      "nota": null,
+      "docxUrl": "/eacs/ipo2/Proyecto_Emprendedor_EcoDevScan_EAF2.docx"
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Jose Antonio",
+      "photoKey": "jose_antonio",
+      "mailLink": "https://ioc.xtec.cat/campus/local/mail/view.php?t=drafts&c=18833&m=9380630"
+    }
+  ],
+  "events": [
+    {
+      "date": "2026-10-15",
+      "type": "entrega",
+      "title": "Entrega EAF1 (PDF) + Test Cuestionario",
+      "time": "23:55"
+    },
+    {
+      "date": "2026-10-16",
+      "type": "inicio_eac",
+      "title": "Enunciado EAC1 (Inicio de tarea)",
+      "time": "00:00"
+    },
+    {
+      "date": "2026-10-26",
+      "type": "notas",
+      "title": "Publicación de notas EAF1",
+      "time": "00:00"
+    },
+    {
+      "date": "2026-10-27",
+      "type": "inicio_eac",
+      "title": "Inicio recuperación EAF1",
+      "time": "10:10"
+    },
+    {
+      "date": "2026-11-04",
+      "type": "inicio_eac",
+      "title": "Inicio EAF2",
+      "time": "00:00"
+    },
+    {
+      "date": "2026-11-09",
+      "type": "entrega",
+      "title": "Entrega recuperación EAF1",
+      "time": "23:55"
+    },
+    {
+      "date": "2026-11-16",
+      "type": "notas",
+      "title": "Notas recuperación EAF1",
+      "time": "00:00"
+    },
+    {
+      "date": "2026-11-23",
+      "type": "notas",
+      "title": "Publicación de notas EAC1",
+      "time": "00:00"
+    },
+    {
+      "date": "2026-12-11",
+      "type": "entrega",
+      "title": "Entrega EAF2: Proyecto Emprendedor + Video-Pitch",
+      "time": "23:55"
+    },
+    {
+      "date": "2026-12-21",
+      "type": "notas",
+      "title": "Publicación de notas EAF2",
+      "time": "00:00"
+    },
+    {
+      "date": "2026-12-21",
+      "type": "inicio_eac",
+      "title": "Inicio recuperación EAF2",
+      "time": "00:01"
+    },
+    {
+      "date": "2027-01-14",
+      "type": "entrega",
+      "title": "Entrega recuperación EAF2",
+      "time": "23:55"
+    },
+    {
+      "date": "2027-01-16",
+      "type": "entrega",
+      "title": "PAF 1: Prueba Presencial IPO2",
+      "time": "09:00"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "p6-junit-testing",
+    "title": "Pirámide de Pruebas: JUnit 5, Mockito y MockMvc",
+    "slug": "testing-junit-mockito-mockmvc",
+    "moduleTitle": "Módulo 1: Testing Automatizado",
+    "moduleShort": "Módulo 1",
+    "topicNum": "6.1",
+    "contentMd": "# 🛡️ Pruebas Automatizadas en la Pirámide de Calidad\n\n* **70% Pruebas Unitarias:** Ejecución en milisegundos sin arrancar Spring ni base de datos, usando Mockito para aislar colaboradores.\n* **20% Pruebas de Integración:** Verificación de contratos REST con `MockMvc` y repositorios con `@DataJpaTest`.\n* **10% Pruebas E2E:** Flujos completos de usuario de extremo a extremo.\n"
+  },
+  {
+    "id": "p6-owasp-security",
+    "title": "Seguridad Aplicada (OWASP Top 10) & JWT",
+    "slug": "seguridad-owasp-jwt",
+    "moduleTitle": "Módulo 2: DevSecOps & Ciberseguridad",
+    "moduleShort": "Módulo 2",
+    "topicNum": "6.2",
+    "contentMd": "# 🔒 Seguridad Web OWASP & Autenticación Stateless con JWT\n\n1. **Inyección SQL:** Prevenida mediante consultas parametrizadas (PreparedStatements en JDBC y JPQL en JPA).\n2. **Cross-Site Scripting (XSS):** Escapado automático de salidas HTML y cabecera `Content-Security-Policy`.\n3. **Cross-Site Request Forgery (CSRF):** Uso de tokens SameSite en cookies o autenticación desacoplada con tokens Bearer JWT en cabecera `Authorization`.\n"
+  }
+]

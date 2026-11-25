@@ -1,0 +1,16 @@
+services:
+  micampus:
+    build: .
+    container_name: micampus-web
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8090}:8090"
+    environment:
+      PORT: 8090
+      MICAMPUS_DATA_DIR: /app/micampus-data
+      MICAMPUS_AUTO_OPEN_BROWSER: "false"
+    volumes:
+      - micampus_data:/app/micampus-data
+
+volumes:
+  micampus_data:

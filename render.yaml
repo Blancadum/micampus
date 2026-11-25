@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: micampus-web
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    envVars:
+      - key: MICAMPUS_DATA_DIR
+        value: /app/micampus-data
+      - key: MICAMPUS_AUTO_OPEN_BROWSER
+        value: "false"
+    disk:
+      name: micampus-data
+      mountPath: /app/micampus-data
+      sizeGB: 1

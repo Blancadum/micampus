@@ -1,0 +1,643 @@
+{
+  "id": "ent",
+  "title": "Entornos de Desarrollo",
+  "themeColor": "#3b82f6",
+  "icon": "🛠️",
+  "progress": 100,
+  "theoryRoute": "/ioc/ent/lecciones-ent",
+  "blocks": [
+    {
+      "id": "bloque1",
+      "label": "BLOQUE 1: Modelado UML (EAC 1)"
+    },
+    {
+      "id": "bloque2",
+      "label": "BLOQUE 2: Swing & Spring Boot (EAC 2)"
+    },
+    {
+      "id": "bloque3",
+      "label": "BLOQUE 3: JUnit, Refactor & Git (EAC 3)"
+    }
+  ],
+  "eacs": [
+    {
+      "id": "eac1",
+      "title": "EAC 1: Introducción a la ingeniería del software y entornos",
+      "status": "done",
+      "dueDate": "2026-10-20",
+      "theorySlug": "intro-u1",
+      "weight": "40% AC",
+      "description": "Modelado visual orientado a objetos con UML, diagramas estructurales (clases con atributos y operaciones, composición y agregación) y de comportamiento (casos de uso con include/extend y diagramas de secuencia) usando Eclipse y Papyrus.",
+      "checklist": [
+        "Modelado de clases con visibilidades (+, -, #) y tipos de datos",
+        "Relaciones de composición vs agregación modeladas correctamente",
+        "Diagramas de casos de uso y secuencias temporales en Papyrus",
+        "Exportación de capturas PNG y memoria de entrega oficial"
+      ],
+      "resolvedExampleSlug": "2-6-3-eac1-festa-major",
+      "resolvedExampleTitle": "Ejemplo Resuelto EAC 1 (Fiesta Mayor)",
+      "resolvedTopicSlug": "2-6-resolver-un-enunciado-de-clases-paso-a-paso",
+      "downloadUrl": "/eacs/ent/eac1/DA2_M0487_EAC1_Deuna_M.zip",
+      "enunciatUrl": "/eacs/ent/eac1/DA2_M0487_EAC1_Enunciat_2627S1.odt",
+      "exercicis": [
+        {
+          "num": 1,
+          "points": "2.5 puntos",
+          "title": "Diagrama de Clases (I): Comisión de la Fiesta Mayor",
+          "desc": "Modelado de comparsas (Bestiario, Bailes, Gigantes), miembros con roles, Cap de Colla (herencia), Ensayos y Actuaciones organizadas por la Coordinación de Cultura. Generación del código Java correspondiente.",
+          "img": "/eacs/ent/eac1/img/exercici1.png",
+          "deliverables": ["Exercici1.png", "Exercici1.zip (código Java generado)"]
+        },
+        {
+          "num": 2,
+          "points": "2.0 puntos",
+          "title": "Diagrama de Clases (II): Bestiario de Fuego y Pirotecnia",
+          "desc": "Estructura de Equipamiento Festivo con herencia en Bestia de Fuego. Modelado de Ceptrot y composición estricta con Surtidores de Pirotecnia (destrucción en cascada). Asociación Diablos y Tramos de Correfoc con Informes de Inspección.",
+          "img": "/eacs/ent/eac1/img/exercici2.png",
+          "deliverables": ["Exercici2.png"]
+        },
+        {
+          "num": 3,
+          "points": "0.5 puntos",
+          "title": "Diagrama de Clases (III): Ingeniería Inversa desde Java",
+          "desc": "Importación de la clase Java ElementFestiu (paquete festamajor con atributos encapsulados y método necessitaManteniment()) hacia un diagrama de clases de Papyrus.",
+          "img": "/eacs/ent/eac1/img/exercici3.png",
+          "deliverables": ["Exercici3.png"]
+        },
+        {
+          "num": 4,
+          "points": "1.0 punto",
+          "title": "Diagrama de Casos de Uso: Portal de la Fiesta Mayor",
+          "desc": "Actores Ciudadano/a, Cap de Colla y Técnico/a de Cultura. Casos de uso de consulta y reserva con relación <<extend>> para consultar mapa interactivo, y relación <<include>> obligatoria hacia Autenticación (Login).",
+          "img": "/eacs/ent/eac1/img/exercici4.png",
+          "deliverables": ["Exercici4.png"]
+        },
+        {
+          "num": 5,
+          "points": "1.0 punto",
+          "title": "Diagrama de Secuencia: Tronada de Salida",
+          "desc": "Líneas de vida temporales entre Técnico de Seguridad, Sistema Central, Base de Normativa Pirotécnica, Permiso de Actuación y Concejal/a de Fiestas para la validación y lanzamiento.",
+          "img": "/eacs/ent/eac1/img/exercici5.png",
+          "deliverables": ["Exercici5.png"]
+        },
+        {
+          "num": 6,
+          "points": "1.0 punto",
+          "title": "Diagrama de Comunicación: Coordinación del Seguici en Tiempo Real",
+          "desc": "Interacción numerada entre Centro de Control de Fiestas, Sistema de Coordinación de Paso, Cámaras urbanas y Protección Civil ante colapso de público en calles estrechas.",
+          "img": "/eacs/ent/eac1/img/exercici6.png",
+          "deliverables": ["Exercici6.png"]
+        },
+        {
+          "num": 7,
+          "points": "1.0 punto",
+          "title": "Diagrama de Actividades: Diada Castellera",
+          "desc": "Flujo concurrente con bifurcación (fork): diseño de piñas y ensayos en local en paralelo a logística de camisas y cascos. Sincronización (join) para prueba de red y posterior bifurcación en plaza para entrada y castell.",
+          "img": "/eacs/ent/eac1/img/exercici7.png",
+          "deliverables": ["Exercici7.png"]
+        },
+        {
+          "num": 8,
+          "points": "1.0 punto",
+          "title": "Diagrama de Estados: Ciclo de Vida de la Aligueta",
+          "desc": "Máquina de estados finitos: Repòs al Magatzem -> Plantada a la Plaça -> Ballant al Seguici -> Canvi de Portador / Refugi d'Emergència / Danyada -> Ball Final -> Guardada al Magatzem.",
+          "img": "/eacs/ent/eac1/img/exercici8.png",
+          "deliverables": ["Exercici8.png"]
+        }
+      ],
+      "nota": null
+    },
+    {
+      "id": "eac2",
+      "title": "EAC 2: Desenvolupament de programari (Swing, Spring & Copilot)",
+      "status": "done",
+      "dueDate": "2026-11-17",
+      "theorySlug": "intro-u2",
+      "weight": "30% AC",
+      "description": "Desenvolupament d'aplicació d'escriptori Java Swing amb WindowBuilder (quota de soci de club de volei), aplicació web client-servidor Spring Boot a Tomcat (càlcul quàdruple x4 i DNI) i assistència de codi amb GitHub Copilot a Eclipse.",
+      "checklist": [
+        "Apartat 1: Test de 10 preguntes de conceptes i paradigmes (2.0 pts)",
+        "Activitat 11: Finestra Swing ClubVoleiFrame amb validacions i càlculs (5.0 pts)",
+        "Activitat 12: Controlador REST Spring Boot quàdruple x4 i DNI (2.0 pts)",
+        "Activitat 13: Classe CopilotAssistent amb vocals (*) i comptador de paraules (1.0 pt)",
+        "Generació del zip DA2_M0487_EAC2_DeUna_M.zip amb exercici11.zip, exercici12.zip i .odt"
+      ],
+      "downloadUrl": "/eacs/ent/EAC2/DA2_M0487_EAC2_DeUna_M.zip",
+      "enunciatUrl": "/eacs/ent/EAC2_ENTORNS.odt",
+      "exercicis": [
+        {
+          "num": 1,
+          "points": "2.0 punts",
+          "title": "Apartat 1: Test Desenvolupament de programari",
+          "desc": "10 preguntes d'opció múltiple sobre codi font, màquines virtuals (JVM), llenguatges de baix nivell, paradigmes de programació, programació estructurada (Dijkstra), POO, sobrecàrrega i sobreescriptura de mètodes. Cada encert suma +0.20 punts i cada errada resta -0.04 punts.",
+          "deliverables": [
+            "Graella de respostes blava oficial dins del document DA2_M0487_EAC2_DeUna_M.odt"
+          ],
+          "questions": [
+            {
+              "num": 1,
+              "q": "Quina és la tasca d’un programador informàtic?",
+              "options": [
+                "Escollir quines ordres formen el programa, en quin ordre s’executen i sobre quines dades s’apliquen",
+                "Fabricar el maquinari on s’executarà el programa",
+                "Només corregir errors del sistema operatiu",
+                "Exclusivament dissenyar les interfícies gràfiques"
+              ],
+              "correct": 0,
+              "explanation": "El programador tradueix els requeriments i algoritmes en instruccions precises que un ordinador pugui executar sobre dades concretes."
+            },
+            {
+              "num": 2,
+              "q": "Què és el codi font?",
+              "options": [
+                "El conjunt de fitxers de text que contenen les instruccions del programa escrites en un llenguatge de programació",
+                "El fitxer binari que executa directament el processador",
+                "El resultat de la tasca de l’enllaçador",
+                "Una col·lecció de codi predefinit"
+              ],
+              "correct": 0,
+              "explanation": "El codi font són fitxers de text pla editables per humans que després són compilats o interpretats pel sistema."
+            },
+            {
+              "num": 3,
+              "q": "Amb quin objectiu va sorgir el concepte de màquina virtual?",
+              "options": [
+                "Augmentar la velocitat d’execució dels intèrprets",
+                "Eliminar la necessitat d’escriure codi font",
+                "Facilitar el desenvolupament de compiladors que generin codi per a diferents processadors",
+                "Substituir el sistema operatiu"
+              ],
+              "correct": 2,
+              "explanation": "La màquina virtual (com la JVM de Java) ofereix una capa d'abstracció (bytecode) que permet executar el mateix programa en qualsevol arquitectura de processador."
+            },
+            {
+              "num": 4,
+              "q": "Quin és un dels inconvenients dels llenguatges de baix nivell (primera i segona generació)?",
+              "options": [
+                "No permeten optimitzar els programes",
+                "Els programes estan lligats al maquinari i no es poden traslladar fàcilment a altres sistemes",
+                "Són massa abstractes per al programador",
+                "Només funcionen amb bases de dades"
+              ],
+              "correct": 1,
+              "explanation": "Els llenguatges màquina i d'assemblador depenen estretament dels jocs d'instruccions i registres físics de la CPU concreta."
+            },
+            {
+              "num": 5,
+              "q": "Quina d’aquestes és la classificació de paradigmes de programació?",
+              "options": [
+                "Compilat, interpretat, virtual i natiu",
+                "Baix nivell, mig nivell i alt nivell",
+                "Seqüencial, concurrent, paral·lel i distribuït",
+                "Imperatiu/estructurat, d’objectes, funcional i lògic"
+              ],
+              "correct": 3,
+              "explanation": "Són els quatre grans enfocaments filosòfics i estructurals per modelar la computació i resolució de problemes."
+            },
+            {
+              "num": 6,
+              "q": "Qui va desenvolupar la programació estructurada i què considera innecessari?",
+              "options": [
+                "Alan Turing; l’ús de bucles",
+                "Edsger W. Dijkstra; l’ús d’instruccions de transferència incondicional com GOTO",
+                "Bjarne Stroustrup; l’ús de classes",
+                "John McCarthy; l’ús de funcions"
+              ],
+              "correct": 1,
+              "explanation": "Dijkstra va publicar el famós article 'Go To Statement Considered Harmful' (1968), promovent estructures clares de seqüència, selecció i iteració."
+            },
+            {
+              "num": 7,
+              "q": "Què és un objecte en la programació orientada a objectes?",
+              "options": [
+                "Un fitxer de codi font",
+                "Una funció que retorna un únic valor",
+                "Un tipus de dades bàsic",
+                "Una combinació de dades (atributs) i mètodes que permeten interactuar-hi."
+              ],
+              "correct": 3,
+              "explanation": "Un objecte encapsula un estat intern (camps/atributs) i un comportament exposat (mètodes)."
+            },
+            {
+              "num": 8,
+              "q": "Quins són els 5 conceptes en què es basa la programació orientada a objectes?",
+              "options": [
+                "Seqüència, selecció, iteració, modularitat i herència",
+                "Abstracció, encapsulació, modularitat, jerarquia i polimorfisme",
+                "Classe, objecte, atribut, mètode i constructor",
+                "Compilació, enllaç, interpretació, execució i depuració"
+              ],
+              "correct": 1,
+              "explanation": "Definits per Grady Booch com els fonaments arquitectònics essencials de l'enginyeria de software orientada a objectes."
+            },
+            {
+              "num": 9,
+              "q": "En què consisteix la sobrecàrrega (overload) de mètodes?",
+              "options": [
+                "Implementar diverses vegades un mateix mètode amb paràmetres diferents; el compilador decideix quin executar segons la crida",
+                "Reimplementar un mètode heretat amb exactament la mateixa definició",
+                "Declarar un mètode com a privat",
+                "Copiar i enganxar codi en diverses classes"
+              ],
+              "correct": 0,
+              "explanation": "L'overload permet que una classe tingui múltiples mètodes amb el mateix nom però signatura diferent (nombre o tipus d'arguments)."
+            },
+            {
+              "num": 10,
+              "q": "En què consisteix la sobreescriptura (override) de mètodes?",
+              "options": [
+                "Definir el mateix nom de mètode amb paràmetres diferents",
+                "Eliminar un mètode de la superclasse",
+                "Reimplementar un mètode heretat d’una superclasse amb exactament la mateixa definició (nom, paràmetres i valor de retorn)",
+                "Convertir un mètode públic en privat"
+              ],
+              "correct": 2,
+              "explanation": "L'override (@Override a Java) permet a una subclasse proporcionar una implementació específica d'un mètode ja definit a la seva superclasse."
+            }
+          ]
+        },
+        {
+          "num": 11,
+          "label": "Activitat 11 (Swing)",
+          "points": "5.0 punts",
+          "title": "Activitat 11: Finestra Swing Simulador Quota Volei",
+          "desc": "Aplicació d'escriptori en Java Swing (WindowBuilder Pro) amb títol 'Simulador Quota Club Volei - deUna'. Blocs Dades Soci (edat 6-99 i combos), Opcions i Serveis (modalitat, equipació, donació), Resultats (Preu Base, IVA 21%, TOTAL) i Errors i Alertes. Tooltips obligatoris i gestió de focus amb requestFocus() i selectAll().",
+          "img": "/eacs/ent/EAC2/img/exercici11_swing.png",
+          "downloadZip": "/eacs/ent/EAC2/exercici11.zip",
+          "downloadSource": "/eacs/ent/EAC2/src/cat/ioc/volei/ClubVoleiFrame.java",
+          "deliverables": [
+            "exercici11.zip (carpeta src del projecte Java Swing)"
+          ],
+          "steps": [
+            {
+              "title": "Crear el Projecte Java a Eclipse",
+              "desc": "Ves a File → New → Java Project a Eclipse. Anomena el projecte 'Exercici11_Volei' amb Java SE 17 o 21 (desmarca 'Create module-info.java')."
+            },
+            {
+              "title": "Crear la Finestra Swing amb WindowBuilder",
+              "desc": "Fes clic dret a 'src' → New → Other... → WindowBuilder → Swing Designer → JFrame. Posa com a Package 'cat.ioc.volei' i com a Name 'ClubVoleiFrame'."
+            },
+            {
+              "title": "Títol Obligatori i Tooltips",
+              "desc": "Configura el títol obligatori amb el teu cognom: setTitle(\"Simulador Quota Club Volei - deUna\"). Afegeix el mètode setToolTipText(\"...\") a tots els camps editables (edat, combos i donació)."
+            },
+            {
+              "title": "Validació, Focus i Càlculs",
+              "desc": "Implementa els ActionListeners de VALIDAR (edat enter 6-99, combos seleccionats, deshabilitar bloc 1 i habilitar bloc 2) i de CALCULAR (quota base categoria * factor soci + suplements + donació, IVA 21% i TOTAL). En cas d'error crida sempre a requestFocus() i selectAll()."
+            },
+            {
+              "title": "Empaquetar la carpeta src a exercici11.zip",
+              "desc": "Comprova que l'aplicació s'executa correctament des d'Eclipse (Run As → Java Application). Un cop provat, comprimeix la carpeta 'src' en un fitxer anomenat 'exercici11.zip'."
+            }
+          ]
+        },
+        {
+          "num": 12,
+          "label": "Activitat 12 (Spring Boot)",
+          "points": "2.0 punts",
+          "title": "Activitat 12: Client-Servidor Spring Boot a Tomcat",
+          "desc": "Servei web REST amb @RestController a Eclipse + Tomcat (Spring Starter Project Web amb Maven). Rutes / (formulari GET) i /dobla. Requeriment de Blanca: DNI a sota del títol i càlcul del quàdruple (x4) en comptes del doble.",
+          "img": "/eacs/ent/EAC2/img/exercici12_spring.png",
+          "deliverables": [
+            "exercici12.jpg (captura del resultat d'execució del formulari amb DNI i x4)",
+            "exercici12.zip (carpeta src del projecte Spring)"
+          ]
+        },
+        {
+          "num": 13,
+          "label": "Activitat 13 (Copilot)",
+          "points": "1.0 punt",
+          "title": "Activitat 13: Assistent GitHub Copilot a Eclipse",
+          "desc": "Instal·lació del connector GitHub Copilot des d'Eclipse Marketplace. Implementació assistida de la classe CopilotAssistent amb dos mètodes estàtics: ocultarVocals (amb vocals catalanes/castellanes accentuades) i comptarParaules. Reflexió sobre l'assistent a la memòria.",
+          "deliverables": [
+            "Captura de pantalla de la classe amb comentaris /* */ a la memòria .odt",
+            "Respostes teòriques a les qüestions de reflexió de l'activitat 13"
+          ]
+        }
+      ],
+      "nota": null
+    },
+    {
+      "id": "eac3",
+      "title": "EAC 3: Desenvolupament de programari (Test, Git, Refacció i JUnit 5)",
+      "status": "done",
+      "dueDate": "2026-12-10",
+      "theorySlug": "intro-u3",
+      "weight": "30% AC",
+      "folderPath": "public/eacs/ent/eac3",
+      "workbenchRoute": "/ent/eac3",
+      "enunciatUrl": "/eacs/ent/eac3/enunciado/DA2_M0487_EAC3_Enunciat_2627S1.odt",
+      "description": "Qüestionari tipus test (1 pt), control de versions amb Git incloent branques i resolució de conflicte a PatinetElectric.java (3 pts), refacció assistida per IA i Javadoc a CalculadoraEnviament.java (2,5 pts), i disseny de casos de prova amb execució JUnit 5 a Eclipse (3,5 pts).",
+      "checklist": [
+        "Apartat 1: Qüestionari tipus test (10 preguntes a la graella blava, 1,0 pt)",
+        "Apartat 2: Git a EAC3_Patinet_Control (branques, conflicte i git log --graph, 3,0 pts)",
+        "Apartat 3: Refacció CalculadoraEnviament amb IA (comentaris en vermell) + Javadoc HTML (2,5 pts)",
+        "Apartat 4: Classes d'equivalència, diagrama de flux, V(G) i JUnit 5 a Eclipse (3,5 pts)"
+      ],
+      "exercicis": [
+        {
+          "num": 1,
+          "label": "Apartat 1 (Test)",
+          "points": "1.0 punt",
+          "title": "Apartat 1: Exercici tipus test",
+          "desc": "10 preguntes d'opció múltiple sobre proves de regressió, disseny de casos de prova, anàlisi estàtica, @Test sense assert, depurador (Step Over), refacció (Extreure mètode i flux segur), Javadoc, clone vs fork i marques de conflicte Git. Cada encert suma +0,10 punts i cada errada resta -0,05 punts (en blanc 0).",
+          "deliverables": [
+            "Graella de respostes blava oficial al final de l'exercici 1 dins de DA2_M0487_EAC3_DeUna_M.odt"
+          ],
+          "questions": [
+            {
+              "num": 1,
+              "q": "Quin tipus de prova es repeteix després d’un canvi per comprovar que no s’ha trencat un comportament que abans funcionava?",
+              "options": [
+                "De fum",
+                "De càrrega",
+                "D’acceptació",
+                "De regressió"
+              ],
+              "correct": 3,
+              "explanation": "Les proves de regressió reexecuten casos existents després d'una modificació per assegurar que no s'han introduït errors en funcionalitats que ja funcionaven."
+            },
+            {
+              "num": 2,
+              "q": "Quan s’ha de decidir el resultat esperat d’un cas de prova?",
+              "options": [
+                "Abans d’executar-lo, a partir de l’especificació.",
+                "Després d’executar-lo, segons el que retorna el programa.",
+                "Només quan la prova falla.",
+                "El decideix automàticament l’eina de proves."
+              ],
+              "correct": 0,
+              "explanation": "El resultat esperat s'ha de definir sempre abans de l'execució basant-se en els requisits o l'especificació, mai adaptant-lo al que retorni el codi."
+            },
+            {
+              "num": 3,
+              "q": "Què caracteritza l’anàlisi estàtica del codi?",
+              "options": [
+                "Substitueix totes les proves dinàmiques.",
+                "Si no hi ha avisos, garanteix que el programa és correcte.",
+                "Examina el codi sense executar-lo i busca patrons problemàtics (codi mort, duplicació, bugs probables...).",
+                "Només funciona mentre el programa s’executa."
+              ],
+              "correct": 2,
+              "explanation": "L'anàlisi estàtica inspecciona el codi font sense arribar a executar-lo per detectar code smells, variables no utilitzades, duplicacions o possibles errors."
+            },
+            {
+              "num": 4,
+              "q": "Què passa amb un mètode @Test que executa el codi però no conté cap assertion?",
+              "options": [
+                "JUnit el marca sempre com a fallit.",
+                "Pot passar sense haver comprovat el resultat funcional.",
+                "No es compila.",
+                "JUnit comprova automàticament el valor retornat."
+              ],
+              "correct": 1,
+              "explanation": "Si no hi ha cap asserció (assertEquals, assertThrows, etc.) i no es llança cap excepció no controlada, JUnit dóna el test per verd encara que el resultat sigui erroni."
+            },
+            {
+              "num": 5,
+              "q": "Quina acció del depurador executa la línia actual sense entrar dins dels mètodes que s’hi criden?",
+              "options": [
+                "Step Into",
+                "Step Return",
+                "Step Over",
+                "Resume"
+              ],
+              "correct": 2,
+              "explanation": "Step Over (F6 a Eclipse) executa la instrucció actual completa i avança a la següent línia del mateix mètode sense entrar al detall de les crides internes."
+            },
+            {
+              "num": 6,
+              "q": "Un bloc de 15 línies que calcula sempre el mateix concepte apareix repetit en diversos llocs. Quin patró de refacció és el més adequat?",
+              "options": [
+                "Reanomenar",
+                "Extreure constant",
+                "Convertir variable local en camp",
+                "Extreure mètode"
+              ],
+              "correct": 3,
+              "explanation": "Extract Method (Extreure mètode) elimina la duplicació encapsulant el bloc repetit en un nou mètode reutilitzable amb un nom descriptiu."
+            },
+            {
+              "num": 7,
+              "q": "Quin és el flux recomanat per fer una refacció segura?",
+              "options": [
+                "Fer diversos canvis grans i executar les proves només al final.",
+                "Proves verdes, un canvi petit, tornar a executar les proves i conservar o desfer el canvi.",
+                "Modificar el codi i esborrar els tests que fallin.",
+                "Executar només el test que fallava abans."
+              ],
+              "correct": 1,
+              "explanation": "La refacció segura es basa en passos petits i verificables: partir de tests en verd, aplicar un canvi atòmic i reexecutar els tests immediatament."
+            },
+            {
+              "num": 8,
+              "q": "Què ha d’explicar principalment un comentari Javadoc?",
+              "options": [
+                "El contracte públic: què fa, què rep, què retorna i quines excepcions pot llançar.",
+                "Què fa cada línia del codi.",
+                "Només el nom de l’autor.",
+                "Els errors de compilació."
+              ],
+              "correct": 0,
+              "explanation": "Javadoc documenta l'API pública (propòsit, @param, @return, @throws) perquè qui cridi la classe o mètode sàpiga com utilitzar-lo sense llegir la implementació."
+            },
+            {
+              "num": 9,
+              "q": "Quina diferència hi ha entre clonar (clone) i bifurcar (fork) un repositori?",
+              "options": [
+                "El clone crea una còpia idèntica amb les mateixes revisions; el fork crea un repositori nou no lligat a l’original.",
+                "Són sinònims.",
+                "El clone només copia l’última versió; el fork copia tot l’historial.",
+                "El fork elimina el repositori original."
+              ],
+              "correct": 0,
+              "explanation": "git clone descarrega una còpia local vinculada al repositori remot; el fork crea un repositori independent al servidor (habitualment sota el teu compte) per treballar-hi per separat."
+            },
+            {
+              "num": 10,
+              "q": "En un fitxer en conflicte, què conté el bloc entre <<<<<<< HEAD i =======?",
+              "options": [
+                "La versió de l’altra branca.",
+                "El commit arrel del repositori.",
+                "El contingut de .gitignore.",
+                "La versió de la branca on estem situats."
+              ],
+              "correct": 3,
+              "explanation": "HEAD apunta al commit actual de la branca on s'està fent el merge; per tant, el primer bloc (fins a =======) correspon als canvis de la branca actual."
+            }
+          ]
+        },
+        {
+          "num": 2,
+          "label": "Apartat 2 (Git)",
+          "points": "3.0 punts",
+          "title": "Apartat 2: Sistemes de control de versions (Git)",
+          "desc": "Gestió d'un repositori local Git a la carpeta EAC3_Patinet_Control amb la classe PatinetElectric.java (paquet transport). Treball amb dues branques (branca_bateria i branca_nom_atribut), fusió fast-forward, provocació i resolució manual de conflicte, compilació amb javac i visualització de l'historial amb git log --oneline --graph --all.",
+          "deliverables": [
+            "2.3 – 2.4: Sortida de git status abans i després del primer commit ('primera versió de DeUna')",
+            "2.5 – 2.10: Captures de branca_bateria, retorn a main (int) i branca_nom_atribut (autonomiaMaxima)",
+            "2.11: Explicació del merge Fast-forward amb la sortida de consola",
+            "2.12: Explicació del conflicte (línies afectades i per què Git no el resol sol)",
+            "2.13 – 2.15: Codi final compilat (double autonomiaMaxima = 25.0), commit de fusió i captura de git log --oneline --graph --all"
+          ],
+          "steps": [
+            {
+              "title": "2.0 – 2.1 Crear EAC3_Patinet_Control, PatinetElectric.java i inicialitzar Git",
+              "desc": "Recorda que al prompt de la Terminal de Mac s'ha de veure el camí de la carpeta actual. Crea la carpeta EAC3_Patinet_Control, inicialitza Git i crea el fitxer PatinetElectric.java amb el codi de l'enunciat.",
+              "code": "mkdir -p ~/EAC3_Patinet_Control && cd ~/EAC3_Patinet_Control && git init\n\ncat << 'EOF' > PatinetElectric.java\npackage transport;\n\npublic class PatinetElectric {\n    private String idPatinet;\n    private String model;\n    private int autonomia; // Autonomia en quilòmetres\n    private double nivellBateria;\n\n    public PatinetElectric(String idPatinet, String model) {\n        this.idPatinet = idPatinet;\n        this.model = model;\n        this.autonomia = 25;\n        this.nivellBateria = 100.0;\n    }\n\n    public String getDadesPatinet() {\n        return \"ID: \" + idPatinet + \" Model: \" + model + \" Autonomia: \" + autonomia + \"km\";\n    }\n\n    public void actualitzaBateria(double percentatge) {\n        this.nivellBateria = percentatge;\n    }\n}\nEOF"
+            },
+            {
+              "title": "2.2 – 2.4 Staging, git status i primer commit",
+              "desc": "Afegeix PatinetElectric.java a l'àrea de preparació, comprova l'estat (enganxa el resultat a 2.3), fes el commit amb el teu cognom i torna a comprovar git status (enganxa-ho a 2.4).",
+              "code": "git add PatinetElectric.java\ngit status\ngit commit -m \"primera versió de DeUna\"\ngit status"
+            },
+            {
+              "title": "2.5 – 2.8 Branca branca_bateria (double autonomia = 25.0) i retorn a main",
+              "desc": "Crea i mou-te a branca_bateria, modifica int autonomia a double autonomia i 25 a 25.0, fes commit i torna a main per comprovar que el codi torna a mostrar int.",
+              "code": "git branch branca_bateria\ngit checkout branca_bateria\n# Edita PatinetElectric.java: private double autonomia; i this.autonomia = 25.0;\ngit add PatinetElectric.java\ngit commit -m \"Canvi de tipus autonomia a double\"\ngit checkout main\ngrep -n \"autonomia\" PatinetElectric.java"
+            },
+            {
+              "title": "2.9 – 2.10 Branca branca_nom_atribut (autonomiaMaxima mantenint int)",
+              "desc": "Des de main sense fusionar res, crea i mou-te a branca_nom_atribut, reanomena autonomia a autonomiaMaxima (mantenint int) a la declaració, constructor i getDadesPatinet(), i fes commit.",
+              "code": "git checkout -b branca_nom_atribut\n# Edita PatinetElectric.java: autonomia -> autonomiaMaxima (mantenint int)\ngit add PatinetElectric.java\ngit commit -m \"Reanomenat atribut autonomia a autonomiaMaxima\""
+            },
+            {
+              "title": "2.11 – 2.15 Fusions, resolució de conflicte, compilació i git log",
+              "desc": "Torna a main: el primer merge (branca_bateria) serà Fast-forward perquè main no havia avançat. El segon (branca_nom_atribut) generarà conflicte a les 3 línies on s'usa l'atribut. Edita el fitxer conservant double autonomiaMaxima i 25.0, elimina les marques <<<<<<<, =======, >>>>>>>, compila amb javac, fes commit i treu la captura del graf.",
+              "code": "git checkout main\ngit merge branca_bateria\ngit merge branca_nom_atribut\n# Resol el conflicte deixant: private double autonomiaMaxima; i this.autonomiaMaxima = 25.0;\njavac -d . PatinetElectric.java\ngit add PatinetElectric.java\ngit commit -m \"Resolució conflicte: double autonomiaMaxima\"\ngit log --oneline --graph --all"
+            }
+          ]
+        },
+        {
+          "num": 3,
+          "label": "Apartat 3 (Refacció i Javadoc)",
+          "points": "2.5 punts",
+          "title": "Apartat 3: Refacció assistida per IA i Javadoc",
+          "desc": "Millora estructural de la classe CalculadoraEnviament.java (paquet refaccio) amb ajuda d'un assistent d'IA sense alterar-ne el comportament, documentant el prompt, l'anàlisi crítica i el codi final amb comentaris // en color vermell. A l'apartat 3.2, documentació amb Javadoc de la classe original i generació HTML des d'Eclipse.",
+          "deliverables": [
+            "3.1.A: Prompt exacte enviat a l'assistent d'IA (0,5 pts)",
+            "3.1.B: Text continu amb anàlisi crítica: suggeriments acceptats vs descartats (0,75 pts)",
+            "3.1.C: Codi refactoritzat amb comentaris // en color VERMELL indicant mínim 2 tècniques (0,75 pts)",
+            "3.2: Codi original amb Javadoc (/** ... */, @author, @version, @param, @return) + captura HTML al navegador (0,5 pts)"
+          ],
+          "steps": [
+            {
+              "title": "3.1.A – B Prompt per a la IA i punts clau de l'anàlisi crítica",
+              "desc": "Demana a l'assistent IA que apliqui refaccions estructurals (sense canviar la sortida per consola ni el valor retornat). Accepta l'extracció de constants (tarifes/kg, llindar 10.0 kg, recàrrecs, percentatges d'urgència) i l'extracció d'un mètode auxiliar comú per eliminar la duplicació entre NACIONAL, EUROPA i INTERNACIONAL; descarta patrons sobreenginyeritzats (com Strategy o factories innecessàries per a 3 casos).",
+              "code": "Refactoritza la classe Java CalculadoraEnviament aplicant tècniques clàssiques de refacció (Extract Constant per eliminar números màgics i Extract Method per eliminar codi duplicat entre NACIONAL, EUROPA i INTERNACIONAL). Mantén exactament el mateix comportament, missatges per consola i valors de retorn."
+            },
+            {
+              "title": "3.1.C Codi refactoritzat (recorda posar els comentaris // en VERMELL al .odt)",
+              "desc": "Exemple net aplicant Extract Constant i Extract Method. Quan l'enganxis al .odt, marca en color vermell els comentaris // que indiquen cada tècnica aplicada.",
+              "code": "package refaccio;\n\npublic class CalculadoraEnviament {\n    // TÈCNICA 1: Extract Constant (eliminació de números màgics)\n    private static final double LLINDAR_PES_ALT = 10.0;\n    private static final double TARIFA_NACIONAL = 2.5;\n    private static final double RECARREC_NACIONAL = 5.0;\n    private static final double URGENCIA_NACIONAL = 0.20;\n    private static final double TARIFA_EUROPA = 5.0;\n    private static final double RECARREC_EUROPA = 12.0;\n    private static final double URGENCIA_EUROPA = 0.30;\n    private static final double TARIFA_INTERNACIONAL = 10.0;\n    private static final double RECARREC_INTERNACIONAL = 25.0;\n    private static final double URGENCIA_INTERNACIONAL = 0.40;\n\n    public static double calcularCostEnviament(String destinacio, double pes, boolean esUrgent) {\n        switch (destinacio) {\n            case \"NACIONAL\":\n                return calcularPerZona(\"Nacional\", pes, esUrgent, TARIFA_NACIONAL, RECARREC_NACIONAL, URGENCIA_NACIONAL);\n            case \"EUROPA\":\n                return calcularPerZona(\"Europa\", pes, esUrgent, TARIFA_EUROPA, RECARREC_EUROPA, URGENCIA_EUROPA);\n            case \"INTERNACIONAL\":\n                return calcularPerZona(\"Internacional\", pes, esUrgent, TARIFA_INTERNACIONAL, RECARREC_INTERNACIONAL, URGENCIA_INTERNACIONAL);\n            default:\n                System.out.println(\"Error: Destinació no reconeguda.\");\n                return -1.0;\n        }\n    }\n\n    // TÈCNICA 2: Extract Method (eliminació de codi duplicat entre zones)\n    private static double calcularPerZona(String nomZona, double pes, boolean esUrgent,\n            double tarifaKg, double recarrecPes, double factorUrgencia) {\n        double costBase = pes * tarifaKg;\n        if (pes > LLINDAR_PES_ALT) {\n            costBase += recarrecPes;\n        }\n        double costFinal = esUrgent ? costBase + (costBase * factorUrgencia) : costBase;\n        System.out.println(\"Enviament \" + nomZona + \": \" + costFinal + \" € total.\");\n        return costFinal;\n    }\n}"
+            },
+            {
+              "title": "3.2 Javadoc sobre la classe original i generació HTML a Eclipse",
+              "desc": "Afegeix els comentaris Javadoc (/** ... */) amb @author, @version, @param i @return a la classe original CalculadoraEnviament. A Eclipse, ves a Project > Generate Javadoc... i obre doc/index.html al navegador per fer la captura.",
+              "code": "/**\n * Classe utilitària per al càlcul de costos d'enviament de paquets segons destinació, pes i urgència.\n * @author Blanca\n * @version 1.0\n */\npublic class CalculadoraEnviament {\n    /**\n     * Calcula el cost total d'un enviament.\n     * @param destinacio Zona de destí (\"NACIONAL\", \"EUROPA\" o \"INTERNACIONAL\")\n     * @param pes Pes del paquet en quilograms\n     * @param esUrgent Indica si l'enviament té prioritat urgent\n     * @return Cost final en euros, o -1.0 si la destinació no és vàlida\n     */\n    public static double calcularCostEnviament(String destinacio, double pes, boolean esUrgent) { ... }\n}"
+            }
+          ]
+        },
+        {
+          "num": 4,
+          "label": "Apartat 4 (Proves i JUnit 5)",
+          "points": "3.5 punts",
+          "title": "Apartat 4: Disseny de casos de prova i execució JUnit 5",
+          "desc": "Anàlisi de prova caixa negra (classes d'equivalència i valors límit) i caixa blanca (diagrama de flux, complexitat ciclomàtica V(G) i camins independents) per a EficienciaEnergetica.determinaCategoriaConsum(int consumKwh), i implementació dels 8 tests amb JUnit 5 a TestEficienciaEnergetica a Eclipse.",
+          "deliverables": [
+            "4.1.A: Condicions d'entrada/sortida i taula de classes d'equivalència vàlides i invàlides (1,0 pt)",
+            "4.1.B: Diagrama de flux + càlcul V(G) + llista de camins independents + taula de casos de prova (1,5 pts)",
+            "4.2: Captura d'execució JUnit 5 a Eclipse amb els 8 mètodes @Test en verd (1,0 pt)"
+          ],
+          "steps": [
+            {
+              "title": "4.1.A Classes d'equivalència (vàlides i invàlides)",
+              "desc": "Condició d'entrada: consumKwh (enter, vàlid en [0, 150]). Condició de sortida: String ('Categoria A'..'Categoria E') o ConsumIncorrecteException. Classes vàlides: CE1 [0..20] -> A, CE2 [21..50] -> B, CE3 [51..90] -> C, CE4 [91..120] -> D, CE5 [121..150] -> E. Classes invàlides: CE6 (< 0) -> Excepció, CE7 (> 150) -> Excepció.",
+              "code": "Vàlides:\n  CE1: [0..20]   -> \"Categoria A\"\n  CE2: [21..50]  -> \"Categoria B\"\n  CE3: [51..90]  -> \"Categoria C\"\n  CE4: [91..120] -> \"Categoria D\"\n  CE5: [121..150]-> \"Categoria E\"\nInvàlides:\n  CE6: < 0       -> ConsumIncorrecteException\n  CE7: > 150     -> ConsumIncorrecteException"
+            },
+            {
+              "title": "4.1.B Complexitat ciclomàtica V(G) i camins independents",
+              "desc": "El mètode determinaCategoriaConsum té 6 decisions simples (consumKwh < 0, > 150, <= 20, <= 50, <= 90, <= 120). Per tant V(G) = 6 + 1 = 7 camins independents (un per cada sortida: 2 excepcions + 5 categories). Cobreix valors límit (-1, 0, 20, 21, 50, 51, 90, 91, 120, 121, 150, 151) i valors intermedis (10, 35, 70, 105, 135).",
+              "code": "V(G) = P + 1 = 6 + 1 = 7 camins independents:\nC1: consumKwh < 0          -> throw ConsumIncorrecteException (ex: -1, -5)\nC2: 0 <= consumKwh <= 20   -> \"Categoria A\" (ex: 0, 10, 20)\nC3: 21 <= consumKwh <= 50  -> \"Categoria B\" (ex: 21, 35, 50)\nC4: 51 <= consumKwh <= 90  -> \"Categoria C\" (ex: 51, 70, 90)\nC5: 91 <= consumKwh <= 120 -> \"Categoria D\" (ex: 91, 105, 120)\nC6: 121 <= consumKwh <= 150-> \"Categoria E\" (ex: 121, 135, 150)\nC7: consumKwh > 150        -> throw ConsumIncorrecteException (ex: 151, 160)"
+            },
+            {
+              "title": "4.2 Classe JUnit 5 TestEficienciaEnergetica (paquet avaluacio)",
+              "desc": "A Eclipse, al paquet avaluacio: File > New > JUnit Test Case (JUnit Jupiter / JUnit 5). Crea un mètode @Test per a cadascuna de les 8 crides de l'enunciat (-5, 0, 21, 35, 70, 91, 150, 160) i executa com a Run As > JUnit Test.",
+              "code": "package avaluacio;\n\nimport static org.junit.jupiter.api.Assertions.*;\nimport org.junit.jupiter.api.Test;\n\nclass TestEficienciaEnergetica {\n    @Test void testNegatiuMenys5() {\n        assertThrows(ConsumIncorrecteException.class, () -> EficienciaEnergetica.determinaCategoriaConsum(-5));\n    }\n    @Test void testLimit0() throws ConsumIncorrecteException {\n        assertEquals(\"Categoria A\", EficienciaEnergetica.determinaCategoriaConsum(0));\n    }\n    @Test void testLimit21() throws ConsumIncorrecteException {\n        assertEquals(\"Categoria B\", EficienciaEnergetica.determinaCategoriaConsum(21));\n    }\n    @Test void testMig35() throws ConsumIncorrecteException {\n        assertEquals(\"Categoria B\", EficienciaEnergetica.determinaCategoriaConsum(35));\n    }\n    @Test void testMig70() throws ConsumIncorrecteException {\n        assertEquals(\"Categoria C\", EficienciaEnergetica.determinaCategoriaConsum(70));\n    }\n    @Test void testLimit91() throws ConsumIncorrecteException {\n        assertEquals(\"Categoria D\", EficienciaEnergetica.determinaCategoriaConsum(91));\n    }\n    @Test void testLimit150() throws ConsumIncorrecteException {\n        assertEquals(\"Categoria E\", EficienciaEnergetica.determinaCategoriaConsum(150));\n    }\n    @Test void testForaRang160() {\n        assertThrows(ConsumIncorrecteException.class, () -> EficienciaEnergetica.determinaCategoriaConsum(160));\n    }\n}"
+            }
+          ]
+        }
+      ],
+      "nota": null
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Montse",
+      "photoKey": "montse",
+      "mailLink": "https://ioc.xtec.cat/campus/local/mail/view.php?t=drafts&c=18646&m=9380631"
+    }
+  ],
+  "events": [
+    {
+      "date": "2026-10-20",
+      "type": "entrega",
+      "title": "Entrega EAC1 (archivo .zip)",
+      "time": "23:55"
+    },
+    {
+      "date": "2026-10-21",
+      "type": "leccion",
+      "title": "Apertura Lliçó 1 U2",
+      "time": "00:00"
+    },
+    {
+      "date": "2026-10-21",
+      "type": "inicio_eac",
+      "title": "Enunciado EAC2",
+      "time": "00:00"
+    },
+    {
+      "date": "2026-11-16",
+      "type": "notas",
+      "title": "Publicación de notas EAC1",
+      "time": "00:00"
+    },
+    {
+      "date": "2026-11-17",
+      "type": "entrega",
+      "title": "Entrega EAC2 (U2)",
+      "time": "23:55"
+    },
+    {
+      "date": "2026-11-18",
+      "type": "inicio_eac",
+      "title": "Enunciado EAC3 (U3)",
+      "time": "00:00"
+    },
+    {
+      "date": "2026-12-09",
+      "type": "notas",
+      "title": "Publicación de notas EAC2",
+      "time": "00:00"
+    },
+    {
+      "date": "2026-12-10",
+      "type": "entrega",
+      "title": "Entrega EAC3 (U3)",
+      "time": "23:55"
+    },
+    {
+      "date": "2026-12-21",
+      "type": "notas",
+      "title": "Publicación de notas EAC3 y final AC",
+      "time": "00:00"
+    },
+    {
+      "date": "2027-01-16",
+      "type": "entrega",
+      "title": "PAF 1: Prueba Presencial ENT",
+      "time": "11:30"
+    }
+  ]
+}

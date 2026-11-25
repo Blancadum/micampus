@@ -1,0 +1,503 @@
+{
+  "id": "desp",
+  "title": "Despliegue de Aplicaciones Web",
+  "themeColor": "#22c55e",
+  "icon": "🚀",
+  "progress": 45,
+  "theoryRoute": "/ioc/desp/lecciones-desp",
+  "unitDiagrams": {
+    "U1": {
+      "subtitle": "Arquitectura de publicación web y transferencia segura de archivos",
+      "nodes": [
+        { "title": "Cliente (Mac)", "items": ["Navegador HTTP/HTTPS", "FileZilla FTPS", "/etc/hosts local"], "x": 15, "color": "#64748b" },
+        { "title": "Apache2 (:80 / :443)", "items": ["Virtual Hosts múltiples", "Auth Básica (.htpasswd)", "SSL/TLS (OpenSSL)"], "x": 310, "color": "#22c55e" },
+        { "title": "ProFTPD (:21)", "items": ["Acceso anónimo (R)", "Usuarios virtuales (R/W)", "Canal cifrado FTPS"], "x": 605, "color": "#0ea5e9" }
+      ],
+      "arrows": [
+        { "fromX": 215, "toX": 310, "label": "HTTP / HTTPS" },
+        { "fromX": 510, "toX": 605, "label": "FTP / TLS" }
+      ]
+    },
+    "U2": {
+      "subtitle": "Ciclo desde el control de versiones hasta el despliegue LAMP y Java WAR",
+      "nodes": [
+        { "title": "Git & GitLab", "items": ["Fork & Clone", "Ramas feature", "Merge & Conflictos"], "x": 15, "color": "#f97316" },
+        { "title": "Pila LAMP (:80)", "items": ["Apache + PHP", "MariaDB (dundersdb)", "WordPress VHost"], "x": 310, "color": "#22c55e" },
+        { "title": "Tomcat 10 (:8080)", "items": ["WAR (NetBeans/Maven)", "Tomcat Manager GUI", "mod_proxy / WildFly"], "x": 605, "color": "#8b5cf6" }
+      ],
+      "arrows": [
+        { "fromX": 215, "toX": 310, "label": "Código PHP" },
+        { "fromX": 510, "toX": 605, "label": "Artefacto .war" }
+      ]
+    },
+    "U3": {
+      "subtitle": "Infraestructura reproducible, identidad centralizada y resolución DNS",
+      "nodes": [
+        { "title": "Vagrant & Docker", "items": ["VM synced_folder", "httpd:2.4 + bind mount", "Docker Compose"], "x": 15, "color": "#0ea5e9" },
+        { "title": "OpenLDAP (:389 / :8081)", "items": ["estructura / usuaris .ldif", "phpLDAPadmin Web", "Apache authnz_ldap"], "x": 310, "color": "#22c55e" },
+        { "title": "BIND9 DNS (:53)", "items": ["Zona directa e inversa", "everofficesupplies.cat", "Build: npm / Gulp"], "x": 605, "color": "#6366f1" }
+      ],
+      "arrows": [
+        { "fromX": 215, "toX": 310, "label": "Auth LDAP" },
+        { "fromX": 510, "toX": 605, "label": "Resolución DNS" }
+      ]
+    },
+    "U4": {
+      "subtitle": "Flujo de trabajo colaborativo con Git y documentación técnica estándar",
+      "nodes": [
+        { "title": "Working Tree → Staging", "items": ["git status / diff", "git add (Staging)", "git commit -m"], "x": 15, "color": "#f97316" },
+        { "title": "Remoto (GitHub/GitLab)", "items": ["Ramas & Pull Request", "fetch / pull / push", "Resolución conflictos"], "x": 310, "color": "#22c55e" },
+        { "title": "Documentación", "items": ["Javadoc (@param/@return)", "JSDoc (JavaScript)", "Wikis técnicas"], "x": 605, "color": "#3b82f6" }
+      ],
+      "arrows": [
+        { "fromX": 215, "toX": 310, "label": "push / merge" },
+        { "fromX": 510, "toX": 605, "label": "API Docs HTML" }
+      ]
+    }
+  },
+  "bookSections": [
+    { "unit": "U1", "section": "Servidores Web (Apache2)", "match": ["Arquitecturas Web", "Apache HTTP Server", "Virtual Hosts", "Control de Acceso", "Protocolo HTTPS"] },
+    { "unit": "U1", "section": "Transferencia de Ficheros (ProFTPD & FTPS)", "match": ["ProFTPD", "Usuarios Virtuales", "Modo Activo"] },
+    { "unit": "U2", "section": "Pila LAMP (Apache, MariaDB y PHP)", "match": ["Pila LAMP", "phpMyAdmin"] },
+    { "unit": "U2", "section": "Servidores de Aplicaciones Java", "match": ["Apache Tomcat", "Ficheros WAR", "Proxy Inverso", "WildFly"] },
+    { "unit": "U3", "section": "Contenedores y Orquestación (Docker)", "match": ["Fundamentos de Docker", "Dockerfile", "Docker Compose"] },
+    { "unit": "U3", "section": "Servicios de Red (DNS y LDAP)", "match": ["DNS", "LDAP"] },
+    { "unit": "U3", "section": "Automatización Frontend y Build Tools", "match": ["Node.js", "Gulp y Webpack"] },
+    { "unit": "U4", "section": "Documentación Técnica", "match": ["Javadoc", "JSDoc", "Wikis Técnicas"] },
+    { "unit": "U4", "section": "Control de Versiones con Git", "match": ["Fundamentos de Git", "Ramas en Git", "Repositorios Remotos"] }
+  ],
+  "blocks": [
+    { "id": "bloque1", "label": "BLOQUE 1: Servidores, FTP & DNS (EAC 1)" },
+    { "id": "bloque2", "label": "BLOQUE 2: Git, LAMP & Tomcat (EAC 2)" },
+    { "id": "bloque3", "label": "BLOQUE 3: HTTPS, SSL/TLS & Proxy (EAC 3)" }
+  ],
+  "eacs": [
+    {
+      "id": "eac1",
+      "title": "EAC 1: Servidores Web, ProFTPD y DNS (45% AC)",
+      "status": "done",
+      "dueDate": "2026-10-22",
+      "theorySlug": "intro-bloque1",
+      "weight": "45% AC",
+      "enunciatUrl": "/eacs/desp/eac1/DAW_0614_EAC1_Enunciat_2627S1.pdf",
+      "solutionUrl": "/eacs/desp/eac1/DESP_EAC1_Solucion.pdf",
+      "description": "Aprovisionamiento y configuración de servidores web Apache2 con Virtual Hosts múltiples (EverOffice Supplies), autenticación básica (.htpasswd) para recursos privados, servidor de transferencia ProFTPD con acceso anónimo, usuarios virtuales (comerciales y auditores), FTPS seguro mediante certificados OpenSSL y resolución DNS.",
+      "checklist": [
+        "Configuración de Apache2 y Virtual Hosts para dominios corporativos",
+        "Autenticación básica HTTP (.htpasswd) en /nomines",
+        "Servidor ProFTPD: acceso anónimo y usuarios virtuales diferenciados",
+        "Implementación de canal seguro FTPS con certificados TLS/SSL",
+        "Grabación del videotutorial con pruebas en vivo (FileZilla y navegador)"
+      ],
+      "ficha": {
+        "finalidad": "Aprender a publicar de forma segura múltiples aplicaciones web en un mismo servidor Linux y habilitar la transferencia controlada de archivos para equipos internos y externos, separando entornos públicos, privados y cifrados.",
+        "partes": [
+          {
+            "titulo": "Apache2 y Virtual Hosts múltiples",
+            "paraQueSirve": "Permite que un único servidor web responda con distintas webs según el dominio solicitado (p. ej. tienda, intranet o landing corporativa).",
+            "contextoReal": "En producción y hosting compartido/VPS, una empresa no contrata un servidor por cada dominio: aloja varios sitios (web pública, panel interno, staging) en una sola máquina.",
+            "temaTitulo": "Configuración de Virtual Hosts en Apache",
+            "relacionTeoria": "Aplica el modelo cliente-servidor HTTP de la Unidad 1: cómo Apache inspecciona la cabecera Host de la petición HTTP para enrutarla al DocumentRoot correspondiente mediante sites-available/sites-enabled y directivas ServerName/ServerAlias."
+          },
+          {
+            "titulo": "Autenticación básica HTTP (.htpasswd)",
+            "paraQueSirve": "Protege rutas sensibles (como /nomines o paneles de administración) exigiendo usuario y contraseña antes de servir el contenido.",
+            "contextoReal": "Muy habitual para cerrar entornos de preproducción/staging a clientes o proteger carpetas internas sin necesidad de programar un sistema de login en la aplicación.",
+            "temaTitulo": "Control de Acceso y Autenticación Básica (.htaccess y .htpasswd)",
+            "relacionTeoria": "Conecta directamente con el control de acceso HTTP y códigos de estado 401/403 de la U1: cómo Apache valida credenciales cifradas en .htpasswd mediante AuthType Basic y Require valid-user antes de entregar el recurso."
+          },
+          {
+            "titulo": "ProFTPD: acceso anónimo y usuarios virtuales",
+            "paraQueSirve": "Separa el acceso público de solo lectura (anónimo) de los accesos privados con permisos aislados (comerciales, auditores) sin crear cuentas reales del sistema.",
+            "contextoReal": "En empresas con proveedores o equipos externos, los usuarios virtuales evitan abrir cuentas SSH/Linux reales y permiten enjaular (chroot) a cada perfil en su carpeta.",
+            "temaTitulo": "Usuarios Virtuales, Permisos y Cuotas en ProFTPD",
+            "relacionTeoria": "Desarrolla la arquitectura del servicio de transferencia de ficheros (U1): separación entre usuarios del sistema y usuarios virtuales (AuthUserFile/ftpasswd), directivas DefaultRoot (~) para enjaulado y control granular de permisos (<Limit>)."
+          },
+          {
+            "titulo": "Canal seguro FTPS con OpenSSL",
+            "paraQueSirve": "Cifra tanto las credenciales como los ficheros transferidos mediante TLS/SSL para evitar que viajen en texto plano por la red.",
+            "contextoReal": "Obligatorio en cualquier entorno corporativo o auditoría RGPD/ISO: FTP sin cifrado expone contraseñas y documentos en redes públicas o corporativas.",
+            "temaTitulo": "Modo Activo vs Modo Pasivo y FTPS Seguro con Certificados",
+            "relacionTeoria": "Une la criptografía asimétrica/simétrica (certificados X.509 generados con OpenSSL) con el protocolo FTP de doble canal (control en puerto 21 y datos en modo pasivo), asegurando el handshake TLS mediante mod_tls."
+          }
+        ]
+      },
+      "exercicis": [
+        {
+          "num": 1,
+          "label": "Parte 1 · Servidores Web Apache2",
+          "points": "6.5 puntos",
+          "title": "Parte 1: Apache2, Virtual Hosts, .htpasswd y HTTPS",
+          "desc": "Instalación de Apache2 en Ubuntu Server (ARM64 con UTM/Parallels en Mac), resolución local en /etc/hosts, Virtual Hosts para EverOffice/Dunder/Mifflin Supplies, autenticación básica (.htpasswd) en /nomines, códigos HTTP (404) y cifrado HTTPS con OpenSSL.",
+          "steps": [
+            {
+              "title": "Paso 1 · Infraestructura en red puente y Apache2",
+              "desc": "Conecta tu MV Ubuntu Server 24.04 ARM64 en modo Adaptador Puente (Bridged), verifica conectividad con ping desde tu Mac, instala Apache2 y comprueba que escucha en el puerto 80.",
+              "code": "sudo apt update && sudo apt install -y apache2\nsudo systemctl status apache2\nsudo ss -tlnp | grep :80"
+            },
+            {
+              "title": "Paso 2 · Resolución local (/etc/hosts) y Virtual Hosts",
+              "desc": "Mapea www.everofficesupplies.cat, www.dundersupplies.cat y www.mifflinsupplies.cat en el /etc/hosts de tu Mac. Crea /var/www/html/everofficesupplies con permisos www-data y su VirtualHost en /etc/apache2/sites-available/everofficesupplies.conf.",
+              "code": "# En Mac (/etc/hosts): <IP_SERVIDOR> www.everofficesupplies.cat everofficesupplies.cat\nsudo mkdir -p /var/www/html/everofficesupplies\nsudo chown -R www-data:www-data /var/www/html/everofficesupplies\nsudo chmod 755 /var/www/html/everofficesupplies\nsudo a2dissite 000-default.conf && sudo a2ensite everofficesupplies.conf && sudo systemctl reload apache2"
+            },
+            {
+              "title": "Paso 3 · Autenticación básica (.htpasswd) en /nomines y códigos HTTP",
+              "desc": "Crea /var/www/html/everofficesupplies/nomines/nomines.html, genera el fichero .htpasswd con 2 trabajadores de RRHH y su archivo de grupos, protege <Directory> en everofficesupplies.conf y comprueba un 404 en /admin.html.",
+              "code": "sudo htpasswd -c /etc/apache2/.htpasswd_nomines rrhh1\nsudo htpasswd /etc/apache2/.htpasswd_nomines rrhh2\nsudo apache2ctl configtest && sudo systemctl reload apache2"
+            },
+            {
+              "title": "Paso 4 · Módulo SSL y certificados OpenSSL (HTTPS)",
+              "desc": "Habilita mod_ssl, instala openssl, crea /etc/ssl/certificats (permisos 700 root) y genera la clave privada RSA 4096 AES-256 (everofficesupplies.pem) y el certificado X.509 para HTTPS.",
+              "code": "sudo a2enmod ssl && sudo apt install -y openssl\nsudo mkdir -p /etc/ssl/certificats && sudo chmod 700 /etc/ssl/certificats\nsudo openssl genrsa -aes256 -out /etc/ssl/certificats/everofficesupplies.pem 4096\nsudo systemctl restart apache2"
+            }
+          ],
+          "deliverables": [
+            "Videotutorial en vivo mostrando Apache2, Virtual Hosts, acceso protegido a /nomines, código 404 y HTTPS funcionando desde el navegador del Mac"
+          ]
+        },
+        {
+          "num": 2,
+          "label": "Parte 2 · ProFTPD y FTPS",
+          "points": "3.5 puntos",
+          "title": "Parte 2: ProFTPD, Acceso Anónimo, Usuarios Virtuales y FTPS",
+          "desc": "Instalación de ProFTPD en el mismo Ubuntu Server, acceso anónimo solo lectura a /everofficesupplies/public, 4 usuarios virtuales diferenciados (comerciales vs auditores) en /everofficesupplies/clients y canal cifrado FTPS con proftpd-mod-crypto.",
+          "steps": [
+            {
+              "title": "Paso 1 · Instalación y comprobación de ProFTPD",
+              "desc": "Instala proftpd, verifica el servicio, los usuarios proftpd/ftp en /etc/passwd y la escucha en el puerto 21.",
+              "code": "sudo apt update && sudo apt install -y proftpd\nsudo systemctl status proftpd\ncat /etc/passwd | grep -E 'proftpd|ftp'\nsudo ss -tlnp | grep :21"
+            },
+            {
+              "title": "Paso 2 · Acceso anónimo solo lectura (/everofficesupplies/public)",
+              "desc": "Crea /everofficesupplies/public con un documento de prueba, asigna chown ftp:ftp, añade el bloque <Anonymous /everofficesupplies> con <Limit WRITE> DenyAll en /etc/proftpd/proftpd.conf y prueba con FileZilla.",
+              "code": "sudo mkdir -p /everofficesupplies/public\nsudo touch /everofficesupplies/public/informe_publico.txt\nsudo chown -R ftp:ftp /everofficesupplies\nsudo systemctl restart proftpd"
+            },
+            {
+              "title": "Paso 3 · Usuarios virtuales (comerciales y auditores)",
+              "desc": "Crea /everofficesupplies/clients y 4 usuarios virtuales con ftpasswd: Carla y Dídac (comerciales, lectura/escritura) y Elena y Francesc (auditores, solo lectura).",
+              "code": "sudo mkdir -p /everofficesupplies/clients\nsudo ftpasswd --passwd --name=carla --uid=1001 --gid=1001 --home=/everofficesupplies/clients --shell=/bin/false\nsudo ftpasswd --passwd --name=elena --uid=1002 --gid=1002 --home=/everofficesupplies/clients --shell=/bin/false"
+            },
+            {
+              "title": "Paso 4 · Canal cifrado FTPS con proftpd-mod-crypto",
+              "desc": "Instala proftpd-mod-crypto, configura tls.conf usando los certificados OpenSSL y comprueba la conexión FTPS explícita desde FileZilla.",
+              "code": "sudo apt install -y proftpd-mod-crypto\nsudo systemctl restart proftpd"
+            }
+          ],
+          "deliverables": [
+            "Videotutorial en vivo probando acceso anónimo, usuarios virtuales (escritura vs solo lectura) y conexión FTPS cifrada desde FileZilla"
+          ]
+        }
+      ],
+      "nota": null
+    },
+    {
+      "id": "eac2",
+      "title": "EAC 2: Servidores de aplicaciones web y control de versiones (30% AC)",
+      "status": "pending",
+      "dueDate": "2026-11-19",
+      "theorySlug": "intro-bloque2",
+      "weight": "30% AC",
+      "enunciatUrl": "/eacs/desp/DAW_0614_EAC2_Enunciat_2627S1/DAW_0614_EAC2_Enunciat_2627S1.odt",
+      "folderPath": "/Users/blanca/Micampus/public/eacs/desp/DAW_0614_EAC2_Enunciat_2627S1",
+      "description": "DAW_0614_EAC2_Enunciat_2627S1 · Entrega: único documento PDF (DAW_0614_EAC2_Deuna_M.pdf) antes del 19/11/2026 a las 23:55h. Incluye: Parte 0 (Laboratorio 2 MVs en red puente, 0 pts), Parte 1 (Git y GitLab por terminal: fork, ramas y 2 conflictos de merge, 3 pts - solo capturas), Parte 2 (Pila LAMP, BD dundersdb con usuario deuna y WordPress en www.dundersupplies.cat, 3 pts - capturas + mini-vídeo) y Parte 3 (Apache Tomcat 10, NetBeans WAR, despliegue por Tomcat Manager y manual en webapps, 4 pts - vídeo + texto bg).",
+      "checklist": [
+        "Parte 0 (0 pts · a): Ubuntu Desktop Cliente + Ubuntu Server en red puente con ping (sin capturas ni vídeo)",
+        "Parte 1 (3 pts · Apartados 1-5, a-w): Git config, Fork y Clone de EverOfficeComandes, fetch/pull/push, rama personalitzacio-deuna y resolución de 2 conflictos (capturas en el PDF)",
+        "Parte 2 (3 pts · Apartados 6-10, y-an): Pila LAMP, info.php, VHost www.dundersupplies.cat, BD dundersdb (usuario deuna) y WordPress con título 'Dunder Supplies' (capturas + mini-vídeo)",
+        "Parte 3 (4 pts · Apartados 11-14, ao-bg): Tomcat 10 (usuario blanca con rol manager-gui), WAR con NetBeans, despliegue por Manager y manual en webapps (vídeo + respuesta escrita bg)"
+      ],
+      "exercicis": [
+        {
+          "num": 1,
+          "label": "Parte 1 · Apartados 1 a 5 (a–w)",
+          "points": "3.0 puntos",
+          "title": "Parte 1: Control de versiones Git y GitLab por terminal",
+          "desc": "Instalación y configuración de Git en el Cliente, Fork privado de EverOfficeComandes en GitLab, clonación por HTTPS con Token, edición de README.md (push/pull y explicación de fetch vs pull vs push), rama personalitzacio-deuna en ComandesServlet.java y resolución de 2 conflictos (misma línea y modify/delete). Todo con capturas en el PDF (sin vídeo).",
+          "steps": [
+            {
+              "title": "Apartado 1 (a) · Configuración de Git en el Cliente (0,25 pts)",
+              "desc": "Comprueba la versión de Git y configura tu nombre y correo del IOC vinculados a GitLab.",
+              "code": "git --version\ngit config --global user.name \"Blanca de Uña\"\ngit config --global user.email \"bdeunam@ioc.cat\"\ngit config --list"
+            },
+            {
+              "title": "Apartado 2 (b–g) · Fork en GitLab y Clone local (0,75 pts)",
+              "desc": "Haz un Fork de https://gitlab.com/josepmaria_ioc1/everofficecomandes hacia tu usuario, clona TU fork con Personal Access Token y verifica remoto y ramas.",
+              "code": "git clone https://gitlab.com/blancadum/everofficecomandes.git\ncd everofficecomandes\ngit remote -v\ngit branch -a && git log --oneline"
+            },
+            {
+              "title": "Apartado 3 (h–k) · Commits, Push, Edición Web y Pull (0,50 pts)",
+              "desc": "Añade el apartado «Objectiu del projecte» en README.md, consulta git status/diff, haz commit y push. Después edita una línea en la web de GitLab, haz git pull origin main y explica la diferencia entre fetch, pull y push.",
+              "code": "printf \"\\n## Objectiu del projecte\\nGestión corporativa de pedidos y catálogo de EverOffice Supplies.\\n\" >> README.md\ngit status && git diff\ngit add README.md && git commit -m \"docs: añadir Objectiu del projecte\" && git push origin main\n# (Después de editar una línea en GitLab Web):\ngit pull origin main && git log --oneline"
+            },
+            {
+              "title": "Apartado 4 (l–o) · Rama personalitzacio-deuna y Merge (0,50 pts)",
+              "desc": "Crea la rama personalitzacio-deuna, pon RESPONSABLE = \"deuna\", cambia 1 producto y el mensaje de doPost() en ComandesServlet.java, documéntalo en README.md, sube la rama y fusiónala en main.",
+              "code": "git checkout -b personalitzacio-deuna\n# Edita ComandesServlet.java y README.md\ngit add -A && git commit -m \"feat: personalizar ComandesServlet\" && git push -u origin personalitzacio-deuna\ngit checkout main && git merge personalitzacio-deuna && git push origin main\ngit log --oneline --graph --all"
+            },
+            {
+              "title": "Apartado 5 (p–w) · Resolución de 2 Conflictos Reales (1,00 pt)",
+              "desc": "Conflicto 1 (p–s): ramas proposta-a y proposta-b modificando RESPONSABLE; fusiona y resuelve dejando \"deuna\". Conflicto 2 (t–w): ramas modificar-fitxer y eliminar-fitxer (git rm README.md); fusiona y resuelve manteniendo README.md.",
+              "code": "# Conflicto 1 (misma línea):\ngit checkout main && git checkout -b proposta-a\n# RESPONSABLE = \"Equip A - deuna\" -> commit\ngit checkout main && git checkout -b proposta-b\n# RESPONSABLE = \"Equip B - deuna\" -> commit\ngit checkout main && git merge proposta-a && git merge proposta-b\n# Resuelve dejando \"deuna\" -> git add -A && git commit\n\n# Conflicto 2 (modify/delete):\ngit checkout main && git checkout -b modificar-fitxer && echo \"Mejoras\" >> README.md && git commit -am \"docs: modificar\"\ngit checkout main && git checkout -b eliminar-fitxer && git rm README.md && git commit -m \"chore: eliminar\"\ngit checkout main && git merge modificar-fitxer && git merge eliminar-fitxer\ngit add README.md && git commit -m \"merge: mantener README.md\""
+            }
+          ],
+          "deliverables": [
+            "Apartado 1 (a): Captura de git --version y git config --list",
+            "Apartado 2 (b–g): Captura del Fork en GitLab ('forked from...') + git remote -v + git branch -a + git log --oneline",
+            "Apartado 3 (h–k): Captura de git status/diff, push, edición web + pull y explicación escrita de fetch vs pull vs push",
+            "Apartado 4 (l–o): Captura de la rama personalitzacio-deuna, cambios en ComandesServlet.java, merge en main y git log --graph",
+            "Apartado 5 (p–w): Capturas de los 2 conflictos (misma línea y modify/delete) y sus resoluciones"
+          ]
+        },
+        {
+          "num": 2,
+          "label": "Parte 2 · Apartados 6 a 10 (y–an)",
+          "points": "3.0 puntos",
+          "title": "Parte 2: Pila LAMP y WordPress (www.dundersupplies.cat)",
+          "desc": "Instalación de Apache, MariaDB y PHP en Ubuntu Server, comprobación de info.php desde el Cliente, creación del Virtual Host obligatorio www.dundersupplies.cat (/var/www/dundersupplies), BD dundersdb con usuario exclusivo deuna e instalación de WordPress con título 'Dunder Supplies' + mini-vídeo de pocos segundos.",
+          "steps": [
+            {
+              "title": "Apartado 6 (y) · Instalación y securización LAMP en el Servidor (0,50 pts)",
+              "desc": "Instala MariaDB y PHP, habilita el arranque automático, configura UFW, ejecuta mariadb-secure-installation y comprueba puertos (80 y 3306) y php -v.",
+              "code": "sudo apt update && sudo apt install -y apache2 mariadb-server php libapache2-mod-php php-mysql php-curl php-gd php-mbstring php-xml php-intl php-zip\nsudo systemctl enable --now apache2 mariadb\nsudo ufw allow OpenSSH && sudo ufw allow 80/tcp && sudo ufw allow 443/tcp && sudo ufw allow 8080/tcp\nsudo mariadb-secure-installation\nsudo ss -tlnp | grep -E ':(80|3306)' && php -v"
+            },
+            {
+              "title": "Apartado 7 (z–ab) · Acceso desde el Cliente e info.php (0,25 pts)",
+              "desc": "Crea /var/www/html/info.php en el Servidor y abre http://IP_SERVIDOR y http://IP_SERVIDOR/info.php desde el navegador del Cliente.",
+              "code": "printf \"<?php\\nphpinfo();\\n?>\\n\" | sudo tee /var/www/html/info.php"
+            },
+            {
+              "title": "Apartado 8 (ac–ag) · WordPress en /var/www/dundersupplies y Virtual Host (0,75 pts)",
+              "desc": "Descarga WordPress en /var/www/dundersupplies con permisos para www-data, añade www.dundersupplies.cat en /etc/hosts del Cliente y crea y activa el Virtual Host dundersupplies.conf.",
+              "code": "cd /tmp && wget -O latest.tar.gz https://es.wordpress.org/latest-es_ES.tar.gz\nsudo mkdir -p /var/www/dundersupplies && sudo tar -xzf latest.tar.gz -C /var/www/dundersupplies --strip-components=1\nsudo chown -R www-data:www-data /var/www/dundersupplies\n# Activar VHost:\nsudo a2enmod rewrite && sudo a2ensite dundersupplies.conf && sudo apache2ctl configtest && sudo systemctl reload apache2"
+            },
+            {
+              "title": "Apartado 9 (ah–ai) · Base de Datos dundersdb y usuario deuna (0,50 pts)",
+              "desc": "Crea la BD dundersdb y el usuario exclusivo con tu primer apellido (deuna) sin usar root.",
+              "code": "sudo mariadb -e \"CREATE DATABASE dundersdb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; CREATE USER 'deuna'@'localhost' IDENTIFIED BY 'Dunder2026!'; GRANT ALL PRIVILEGES ON dundersdb.* TO 'deuna'@'localhost'; FLUSH PRIVILEGES;\"\nmariadb -u deuna -p'Dunder2026!' -D dundersdb -e \"SELECT CURRENT_USER(), DATABASE();\""
+            },
+            {
+              "title": "Apartado 10 (aj–an) · Asistente WordPress, título 'Dunder Supplies' y Mini-vídeo (1,00 pt)",
+              "desc": "Completa la instalación en http://www.dundersupplies.cat, crea un usuario administrador de WP diferente de deuna, pon el título exacto 'Dunder Supplies' en /wp-admin y graba un vídeo de pocos segundos.",
+              "code": "URL portada: http://www.dundersupplies.cat\nURL admin:   http://www.dundersupplies.cat/wp-admin\nTítulo exacto: Dunder Supplies"
+            }
+          ],
+          "deliverables": [
+            "Apartado 6 (y): Capturas de systemctl status/is-enabled, ufw status, mariadb-secure-installation, ss -tlnp (:80 y :3306) y php -v",
+            "Apartado 7 (z–ab): Capturas de Apache por IP y de http://IP_SERVIDOR/info.php en el navegador del Cliente",
+            "Apartado 8 (ac–ag): Capturas de permisos en /var/www/dundersupplies, /etc/hosts en el Cliente, archivo dundersupplies.conf y pantalla inicial de instalación en http://www.dundersupplies.cat",
+            "Apartado 9 (ah–ai): Captura de la creación de dundersdb y comprobación de acceso del usuario deuna",
+            "Apartado 10 (aj–an): Capturas de la instalación y título 'Dunder Supplies' + Enlace al mini-vídeo de pocos segundos"
+          ]
+        },
+        {
+          "num": 3,
+          "label": "Parte 3 · Apartados 11 a 14 (ao–bg)",
+          "points": "4.0 puntos",
+          "title": "Parte 3: Apache Tomcat 10, NetBeans WAR y Despliegue",
+          "desc": "Instalación de Tomcat 10 en el Servidor (usuario con tu nombre y rol manager-gui en tomcat-users.xml), compilación de EverOfficeComandes.war con NetBeans en el Cliente, despliegue por Tomcat Manager y despliegue manual en webapps. Se entrega con 1 Vídeo demostrativo + el texto de respuesta de 14.bg en el PDF (sin capturas).",
+          "steps": [
+            {
+              "title": "Apartado 11 (ao–ar) · Tomcat 10 y usuario manager-gui (1,00 pt)",
+              "desc": "Instala OpenJDK, tomcat10 y tomcat10-admin en el Servidor, añade tu usuario con rol manager-gui en tomcat-users.xml y permite el acceso desde el Cliente en el context.xml del Manager.",
+              "code": "sudo apt update && sudo apt install -y default-jdk tomcat10 tomcat10-admin\n# En /etc/tomcat10/tomcat-users.xml:\n# <role rolename=\"manager-gui\"/>\n# <user username=\"blanca\" password=\"Tomcat2026!\" roles=\"manager-gui\"/>"
+            },
+            {
+              "title": "Apartado 12 (as–aw) · Proyecto en NetBeans y generación del WAR (1,00 pt)",
+              "desc": "Abre EverOfficeComandes con NetBeans en el Cliente, muestra ComandesServlet.java (doGet y doPost), ejecuta Clean and Build y localiza EverOfficeComandes.war en target/.",
+              "code": "cd ~/everofficecomandes && mvn clean package && ls -lh target/*.war"
+            },
+            {
+              "title": "Apartado 13 (ax–bb) · Despliegue mediante Tomcat Manager (1,00 pt)",
+              "desc": "Sube EverOfficeComandes.war desde http://IP_SERVIDOR:8080/manager/html, comprueba doGet() y doPost() en el navegador y prueba los botones Stop y Start.",
+              "code": "http://IP_SERVIDOR:8080/manager/html\nhttp://IP_SERVIDOR:8080/EverOfficeComandes/"
+            },
+            {
+              "title": "Apartado 14 (bc–bg) · Undeploy, Despliegue manual en webapps y Texto bg) (1,00 pt)",
+              "desc": "Haz Undeploy desde Tomcat Manager, copia EverOfficeComandes.war a /var/lib/tomcat10/webapps/ en el Servidor, comprueba que se despliega automáticamente e incluye en el PDF el texto de respuesta bg).",
+              "code": "scp ~/everofficecomandes/target/EverOfficeComandes.war IP_SERVIDOR:/tmp/\n# En el Servidor:\nsudo cp /tmp/EverOfficeComandes.war /var/lib/tomcat10/webapps/ && ls -la /var/lib/tomcat10/webapps/"
+            }
+          ],
+          "deliverables": [
+            "Apartado 14 (bg): Incluir en el documento PDF el texto identificando el directorio de despliegue (/var/lib/tomcat10/webapps/EverOfficeComandes) y la diferencia entre despliegue por Tomcat Manager y manual",
+            "Vídeo de la Parte 3 (obligatorio): Enlace al vídeo mostrando (1) Tomcat y acceso a Manager, (2) NetBeans y archivo WAR, (3) Despliegue por Tomcat Manager + GET/POST, (4) Despliegue manual en webapps + GET/POST"
+          ]
+        }
+      ],
+      "nota": null,
+      "ficha": {
+        "finalidad": "Dominar el ciclo completo desde el desarrollo colaborativo con Git/GitLab hasta el despliegue en producción de dos pilas reales muy extendidas: aplicaciones PHP/MySQL (LAMP + WordPress) y aplicaciones Java empresariales (WAR en Apache Tomcat).",
+        "partes": [
+          {
+            "titulo": "Parte 1 · Git, GitLab, ramas y resolución de conflictos",
+            "paraQueSirve": "Gestiona cambios en paralelo mediante ramas y resuelve colisiones de código sin perder trabajo del equipo.",
+            "contextoReal": "Trabajo diario de cualquier desarrollador: trabajar en feature branches, hacer Pull/Merge Requests sobre un fork o repo compartido y resolver conflictos reales antes de integrar a main.",
+            "temaTitulo": "Ramas en Git (Branching), Merge y Resolución de Conflictos Paso a Paso",
+            "relacionTeoria": "Aplica el modelo de control de versiones distribuido (U2): diferencia entre repositorio local y remoto (fetch vs pull vs push), punteros de rama, fusión (merge) y resolución manual de marcadores de conflicto (<<<<<<< / ======= / >>>>>>>)."
+          },
+          {
+            "titulo": "Parte 2 · Pila LAMP, Virtual Host y WordPress",
+            "paraQueSirve": "Integra servidor web (Apache), base de datos relacional (MariaDB) y runtime PHP con un usuario de BD dedicado de mínimos privilegios.",
+            "contextoReal": "Base de la mayoría de webs corporativas, CMS (WordPress, PrestaShop) y aplicaciones PHP en servidores Linux tradicionales.",
+            "temaTitulo": "Administración con phpMyAdmin y Despliegue de WordPress",
+            "relacionTeoria": "Conecta la arquitectura de tres capas estudiada en la U2 (servidor HTTP Apache + intérprete mod_php + motor SQL MariaDB) con el aislamiento de aplicaciones mediante Virtual Hosts y permisos mínimos en BD."
+          },
+          {
+            "titulo": "Parte 3 · Apache Tomcat 10 y despliegue de ficheros WAR",
+            "paraQueSirve": "Empaqueta un proyecto Java web en un artefacto .war y lo despliega tanto por interfaz web (Tomcat Manager) como por copia directa en webapps/.",
+            "contextoReal": "Despliegue clásico de aplicaciones Java Servlet/JSP y Spring en servidores de aplicaciones corporativos (banca, administración pública, ERPs).",
+            "temaTitulo": "Despliegue de Aplicaciones Web Java (Ficheros WAR y Tomcat Manager)",
+            "relacionTeoria": "Traduce la teoría de contenedores de servlets Jakarta EE (U2): ciclo de vida de un Servlet (doGet/doPost), empaquetado estándar WEB-INF en archivos .war, gestión de roles en tomcat-users.xml y autodespliegue en webapps/."
+          }
+        ]
+      }
+    },
+    {
+      "id": "eac3",
+      "title": "EAC 3: Aplicaciones web, servicios y documentación (25% AC)",
+      "status": "pending",
+      "dueDate": "2026-12-16",
+      "theorySlug": "intro-bloque3",
+      "weight": "25% AC",
+      "enunciatUrl": "/eacs/desp/eac3/enunciado/DAW_0614_EAC3_Enunciat_2627S1.pdf",
+      "description": "Despliegue de Apache con Vagrant y Docker (con persistencia), servidor de directorios OpenLDAP y phpLDAPadmin en Docker, autenticación LDAP en Apache, servidor DNS BIND9 (everofficesupplies.cat) y documentación JavaDoc de EverOfficeComandes.",
+      "checklist": [
+        "Parte 0: Red Host-only (192.168.20.0/24) + Ubuntu Desktop",
+        "Parte 1: Apache con Vagrant + Vídeo de persistencia (1,5 pts)",
+        "Parte 2: Apache con Docker + bind mount + Vídeo (2,0 pts)",
+        "Parte 3–4: OpenLDAP + phpLDAPadmin (:8081) + Auth LDAP en Apache (3,5 pts)",
+        "Parte 5: Servidor DNS BIND9 (everofficesupplies.cat) (2,0 pts)",
+        "Parte 6: Documentación JavaDoc de ComandesServlet.java + Vídeo (1,0 pt)"
+      ],
+      "ficha": {
+        "finalidad": "Dar el salto hacia la infraestructura reproducible moderna (Vagrant y Docker con persistencia de datos), centralizar identidades corporativas (OpenLDAP), gestionar la resolución de nombres propia (DNS BIND9) y documentar código profesionalmente (JavaDoc).",
+        "partes": [
+          {
+            "titulo": "Partes 1 y 2 · Infraestructura reproducible con Vagrant y Docker",
+            "paraQueSirve": "Permite levantar servidores idénticos en segundos evitando el clásico «en mi máquina funciona», conservando los datos fuera del contenedor/MV mediante volúmenes/bind mounts.",
+            "contextoReal": "Estándar actual en DevOps y CI/CD: entornos de desarrollo reproducibles (Vagrant/Docker) y despliegue en contenedores sin perder datos al actualizar versiones.",
+            "temaTitulo": "Virtualización y Contenedores: Fundamentos de Docker",
+            "relacionTeoria": "Contrasta la virtualización completa por hipervisor (Vagrant + VirtualBox) frente a la contenerización a nivel de kernel (Docker, imágenes, contenedores efímeros y persistencia mediante volúmenes/bind mounts)."
+          },
+          {
+            "titulo": "Partes 3 y 4 · OpenLDAP, phpLDAPadmin y autenticación LDAP en Apache",
+            "paraQueSirve": "Centraliza usuarios, grupos y credenciales en un directorio único al que se conectan los servicios (Apache) en lugar de mantener contraseñas duplicadas en cada servidor.",
+            "contextoReal": "Empresas medianas y grandes (Active Directory / OpenLDAP): un empleado entra o sale de la empresa en un único sitio y automáticamente tiene o pierde acceso a todas las apps internas.",
+            "temaTitulo": "Servicio de Directorio LDAP y Administración con phpLDAPadmin",
+            "relacionTeoria": "Pone en práctica el árbol jerárquico DIT de LDAP (dc, ou, cn, uid) y la integración de servicios externos mediante el módulo authnz_ldap de Apache, evolucionando respecto al .htpasswd local de la EAC 1."
+          },
+          {
+            "titulo": "Parte 5 · Servidor DNS propio con BIND9",
+            "paraQueSirve": "Traduce nombres de dominio internos y públicos a IPs mediante zonas directas e inversas autoritativas.",
+            "contextoReal": "Redes corporativas privadas, resolución interna de microservicios o administración de dominios propios sin depender de editar /etc/hosts en cada ordenador.",
+            "temaTitulo": "Sistema de Nombres de Dominio (DNS): Funcionamiento y Ficheros de Zona",
+            "relacionTeoria": "Aplica la resolución jerárquica de nombres y los registros de zona DNS (SOA, NS, A, CNAME, PTR) en BIND9, sustituyendo la resolución estática de /etc/hosts usada en los bloques anteriores."
+          },
+          {
+            "titulo": "Parte 6 · Documentación técnica con JavaDoc",
+            "paraQueSirve": "Genera documentación HTML navegable directamente desde los comentarios del código fuente Java.",
+            "contextoReal": "Mantenimiento de librerías, SDKs y APIs internas en equipos donde otros desarrolladores necesitan entender clases y métodos sin leer toda la implementación.",
+            "temaTitulo": "Documentación de Código en Java con Javadoc",
+            "relacionTeoria": "Aplica el estándar de documentación automática del código fuente (/** ... */ y etiquetas @param, @return, @throws) como parte del ciclo de entrega y mantenimiento de aplicaciones web."
+          }
+        ]
+      },
+      "exercicis": [
+        {
+          "num": 1,
+          "label": "Partes 0–2 · Red, Vagrant y Docker",
+          "points": "3.5 puntos",
+          "title": "Partes 0, 1 y 2: Red Host-only, Apache en Vagrant y Docker con persistencia",
+          "desc": "Configuración de red Host-only 192.168.20.0/24, despliegue de Apache2 con Vagrant (carpeta sincronizada ./web) y despliegue de Apache httpd:2.4 en Docker con bind mount persistente.",
+          "steps": [
+            {
+              "title": "Parte 0 · Red Host-only y Ubuntu Desktop (0 pts)",
+              "desc": "Configura red Host-only 192.168.20.1/24 (sin DHCP) y Ubuntu Desktop 26.04 con Adaptador 1 NAT y Adaptador 2 Host-only en 192.168.20.20/24.",
+              "code": "ping -c 4 192.168.20.1"
+            },
+            {
+              "title": "Parte 1 · Apache con Vagrant y carpeta sincronizada (1,5 pts)",
+              "desc": "Inicializa EverOfficeSupplies con Vagrant, usa el Vagrantfile de fitxers/Part 1/ y ./web/index.html, valida, arranca y demuestra persistencia en vivo.",
+              "code": "vagrant --version\nvagrant init ubuntu/jammy64\nvagrant validate && vagrant up && vagrant status\nvagrant ssh -c \"ip a | grep 192.168.20.10\""
+            },
+            {
+              "title": "Parte 2 · Apache en Docker con bind mount (2,0 pts)",
+              "desc": "Dentro de Ubuntu Desktop (192.168.20.20), instala Docker Engine, crea ~/projecte/index.html y lanza httpd:2.4 con -v \"$HOME/projecte:/usr/local/apache2/htdocs\". Demuestra que al borrar y recrear el contenedor la web persiste.",
+              "code": "sudo docker run -d --name everofficesupplies-web -p 8080:80 -v \"$HOME/projecte:/usr/local/apache2/htdocs\" httpd:2.4\nsudo docker ps\nsudo docker stop everofficesupplies-web && sudo docker rm everofficesupplies-web"
+            }
+          ],
+          "deliverables": [
+            "Captura ping Host-only (Parte 0)",
+            "Vídeo obligatorio (h, i, j) de Vagrant synced_folder",
+            "Vídeo obligatorio (v, w, x, y) de persistencia Docker bind mount"
+          ]
+        },
+        {
+          "num": 2,
+          "label": "Partes 3–4 · OpenLDAP y phpLDAPadmin",
+          "points": "3.5 puntos",
+          "title": "Partes 3 y 4: OpenLDAP en Docker, phpLDAPadmin y Auth LDAP en Apache",
+          "desc": "Despliegue de osixia/openldap:1.5.0 en red xarxa-ldap, importación ordenada de estructura.ldif, usuaris.ldif y grups.ldif, gestión visual con phpLDAPadmin (:8081) y autenticación authnz_ldap en el Apache de Vagrant.",
+          "steps": [
+            {
+              "title": "Parte 3 · Red Docker, OpenLDAP e importación .ldif (2,0 pts)",
+              "desc": "Crea la red xarxa-ldap, lanza osixia/openldap:1.5.0 con volúmenes persistentes, copia e importa en orden exacto estructura.ldif -> usuaris.ldif -> grups.ldif y fija contraseñas con ldappasswd.",
+              "code": "sudo docker network create xarxa-ldap\nsudo docker run -d --name everoffice-ldap --network xarxa-ldap -p 389:389 -e LDAP_DOMAIN=\"everofficesupplies.cat\" -e LDAP_ADMIN_PASSWORD=\"admin123\" -v everoffice-ldap-data:/var/lib/ldap -v everoffice-ldap-config:/etc/ldap/slapd.d osixia/openldap:1.5.0"
+            },
+            {
+              "title": "Parte 4 · phpLDAPadmin (:8081) y Apache + LDAP en Vagrant (1,5 pts)",
+              "desc": "Lanza osixia/phpldapadmin:0.9.0 en puerto 8081:80 dentro de xarxa-ldap. En la máquina Vagrant habilita mod_ldap y authnz_ldap y protege /privat/ contra ldap://192.168.20.20:389.",
+              "code": "# En Vagrant:\nsudo a2enmod ldap authnz_ldap\nsudo a2enconf ldap && sudo apache2ctl configtest && sudo systemctl restart apache2"
+            }
+          ],
+          "deliverables": [
+            "Capturas de docker ps, docker volume ls, importación de los 3 .ldif y ldapwhoami de anna",
+            "Capturas de phpLDAPadmin (:8081) y acceso autenticado a http://192.168.20.10/privat/"
+          ]
+        },
+        {
+          "num": 3,
+          "label": "Partes 5–6 · BIND9 DNS y JavaDoc",
+          "points": "3.0 puntos",
+          "title": "Partes 5 y 6: Servidor DNS BIND9 y Documentación JavaDoc",
+          "desc": "Configuración de servidor DNS autoritativo BIND9 en 192.168.20.20 para everofficesupplies.cat (zonas directa e inversa) y documentación JavaDoc completa de ComandesServlet.java en EverOfficeComandes.",
+          "steps": [
+            {
+              "title": "Parte 5 · BIND9 zonas directa e inversa (2,0 pts)",
+              "desc": "Instala bind9 en Ubuntu Desktop, configura named.conf.options (listen-on 192.168.20.20), crea zonas directa (www -> .10; docker/ldap/dns -> .20) e inversa, valida con named-checkconf y named-checkzone.",
+              "code": "sudo apt update && sudo apt install -y bind9\nsudo named-checkconf\nsudo named-checkzone everofficesupplies.cat /etc/bind/db.everofficesupplies.cat\nsudo systemctl restart bind9"
+            },
+            {
+              "title": "Parte 6 · Documentación JavaDoc en EverOfficeComandes (1,0 pt)",
+              "desc": "Documenta ComandesServlet.java con @author, @version, @param, @return, @throws, @see, {@link} y @since; genera el HTML de JavaDoc y graba el vídeo navegando por clases y métodos.",
+              "code": "javadoc -d doc/ -author -version src/main/java/cat/everoffice/comandes/ComandesServlet.java"
+            }
+          ],
+          "deliverables": [
+            "Capturas de named-checkconf, named-checkzone y resolución DNS en navegador",
+            "Captura de ComandesServlet.java + Vídeo obligatorio navegando por el JavaDoc generado"
+          ]
+        }
+      ],
+      "nota": null
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Josep Maria",
+      "photoKey": "josep_maria",
+      "mailLink": "https://ioc.xtec.cat/campus/local/mail/view.php?t=drafts&c=18669&m=9380698"
+    }
+  ],
+  "events": [
+    { "date": "2026-10-22", "type": "entrega", "title": "Entrega EAC1 (archivo .zip)", "time": "23:55" },
+    { "date": "2026-10-23", "type": "leccion", "title": "Apertura Apartat 1 y 2 U2", "time": "00:00" },
+    { "date": "2026-10-23", "type": "inicio_eac", "title": "Enunciado EAC2", "time": "00:00" },
+    { "date": "2026-10-29", "type": "notas", "title": "Solución y calificaciones EAC1", "time": "00:00" },
+    { "date": "2026-11-19", "type": "entrega", "title": "Entrega EAC2 (U2)", "time": "23:55" },
+    { "date": "2026-11-20", "type": "inicio_eac", "title": "Enunciado EAC3 (U3)", "time": "00:00" },
+    { "date": "2026-11-26", "type": "notas", "title": "Solución y calificaciones EAC2", "time": "00:00" },
+    { "date": "2026-12-16", "type": "entrega", "title": "Entrega EAC3 (U3)", "time": "23:55" },
+    { "date": "2026-12-21", "type": "notas", "title": "Calificaciones EAC3 y final AC", "time": "00:00" },
+    { "date": "2027-01-16", "type": "entrega", "title": "PAF 1: Prueba Presencial DESP", "time": "16:30" }
+  ]
+}
