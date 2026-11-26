@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -235,12 +237,35 @@ public class CalendarAndCoachService {
      * Parsea eventos VEVENT de un archivo .ics y los guarda como entregas/eventos de la asignatura.
      */
     public List<TaskItem> importIcsForSubject(String subjectId, String icsContent) {
+        Map<String, Object> res = importIcs(subjectId, icsContent, null, "");
+        @SuppressWarnings("unchecked")
+        List<TaskItem> tasks = (List<TaskItem>) res.getOrDefault("tasks", List.of());
+        return tasks;
+    }
+
+    /**
+     * Importa eventos .ics detectando automáticamente la asignatura por código/título si subjectId es vacío o "auto".
+     */
+    public Map<String, Object> importIcs(String requestedSubjectId, String icsContent, String filename, String ownerId) {
         if (icsContent == null || icsContent.isBlank()) {
-            return List.of();
+            return Map.of("tasks", List.of(), "eventsImported", 0, "detectedSubjects", List.of(), "unmatchedEvents", 0);
         }
+
+        boolean autoDetect = requestedSubjectId == null || requestedSubjectId.isBlank() || "auto".equalsIgnoreCase(requestedSubjectId.trim());
+        List<Subject> userSubjects = store.read(db -> db.getSubjects().stream()
+                .filter(s -> authService.matchesOwner(s.getOwnerId(), ownerId))
+                .toList());
+
         String unfolded = icsContent.replaceAll("\\r?\\n[ \\t]", "");
+        String calName = extractCalendarName(unfolded);
+        Subject fallbackSubject = autoDetect
+                ? matchSubject(userSubjects, filename, calName)
+                : userSubjects.stream().filter(s -> requestedSubjectId.equals(s.getId())).findFirst().orElse(null);
+
         String[] blocks = unfolded.split("(?i)BEGIN:VEVENT");
         List<TaskItem> created = new ArrayList<>();
+        Set<String> detectedNames = new LinkedHashSet<>();
+        int unmatched = 0;
         Pattern datePattern = Pattern.compile("(\\d{4})(\\d{2})(\\d{2})");
 
         for (int i = 1; i < blocks.length; i++) {
@@ -253,6 +278,7 @@ public class CalendarAndCoachService {
             String summary = "";
             String dueDate = "";
             String description = "";
+            String categories = "";
 
             for (String rawLine : block.split("\\r?\\n")) {
                 String line = rawLine.trim();
@@ -272,14 +298,37 @@ public class CalendarAndCoachService {
                     }
                 } else if (keyPart.equals("DESCRIPTION") || keyPart.startsWith("DESCRIPTION;")) {
                     description = unescapeIcs(valPart);
+                } else if (keyPart.equals("CATEGORIES") || keyPart.startsWith("CATEGORIES;")) {
+                    categories = unescapeIcs(valPart);
                 }
             }
 
             if (summary.isBlank()) continue;
 
+            Subject targetSubject = autoDetect
+                    ? matchSubject(userSubjects, categories, summary, description, calName, filename)
+                    : fallbackSubject;
+            if (targetSubject == null) {
+                targetSubject = fallbackSubject;
+            }
+            String resolvedSubjectId = targetSubject != null
+                    ? targetSubject.getId()
+                    : (!autoDetect ? requestedSubjectId : "");
+            if (resolvedSubjectId.isBlank()) {
+                unmatched++;
+                continue;
+            }
+            if (targetSubject != null) {
+                String label = (targetSubject.getCode() != null && !targetSubject.getCode().isBlank())
+                        ? targetSubject.getCode().toUpperCase()
+                        : targetSubject.getTitle();
+                detectedNames.add(label);
+            }
+
             TaskItem item = new TaskItem();
             item.setId(UUID.randomUUID().toString().substring(0, 8));
-            item.setSubjectId(subjectId);
+            item.setSubjectId(resolvedSubjectId);
+            item.setOwnerId(ownerId != null ? ownerId : "");
             item.setTitle(summary);
             item.setDescription(description);
             item.setDueDate(dueDate);
@@ -291,7 +340,8 @@ public class CalendarAndCoachService {
             store.write(db -> {
                 for (TaskItem item : created) {
                     boolean duplicate = db.getTasks().stream().anyMatch(existing ->
-                            subjectId.equals(existing.getSubjectId())
+                            item.getSubjectId().equals(existing.getSubjectId())
+                                    && authService.matchesOwner(existing.getOwnerId(), ownerId)
                                     && item.getTitle().equalsIgnoreCase(existing.getTitle())
                                     && ((item.getDueDate() == null && existing.getDueDate() == null)
                                     || (item.getDueDate() != null && item.getDueDate().equals(existing.getDueDate()))));
@@ -302,7 +352,47 @@ public class CalendarAndCoachService {
             });
         }
 
-        return created;
+        return Map.of(
+                "tasks", created,
+                "eventsImported", created.size(),
+                "detectedSubjects", new ArrayList<>(detectedNames),
+                "unmatchedEvents", unmatched
+        );
+    }
+
+    private String extractCalendarName(String unfolded) {
+        for (String rawLine : unfolded.split("\\r?\\n")) {
+            String line = rawLine.trim();
+            if (line.toUpperCase().startsWith("X-WR-CALNAME:")) {
+                return unescapeIcs(line.substring("X-WR-CALNAME:".length()).trim());
+            }
+        }
+        return "";
+    }
+
+    private Subject matchSubject(List<Subject> subjects, String... hints) {
+        if (subjects == null || subjects.isEmpty() || hints == null) return null;
+        StringBuilder combined = new StringBuilder();
+        for (String h : hints) {
+            if (h != null && !h.isBlank()) combined.append(' ').append(h.toLowerCase());
+        }
+        String text = combined.toString();
+        if (text.isBlank()) return null;
+
+        for (Subject s : subjects) {
+            String code = s.getCode() != null ? s.getCode().trim().toLowerCase() : "";
+            if (code.length() >= 2 && text.matches(".*\\b" + Pattern.quote(code) + "\\b.*")) {
+                return s;
+            }
+        }
+        for (Subject s : subjects) {
+            String shortTitle = s.getShortTitle() != null ? s.getShortTitle().trim().toLowerCase() : "";
+            String title = s.getTitle() != null ? s.getTitle().trim().toLowerCase() : "";
+            if ((!shortTitle.isBlank() && text.contains(shortTitle)) || (!title.isBlank() && text.contains(title))) {
+                return s;
+            }
+        }
+        return null;
     }
 
     private boolean hasSolutionUpload(List<com.micampus.model.UploadedFile> uploads, TaskItem task) {

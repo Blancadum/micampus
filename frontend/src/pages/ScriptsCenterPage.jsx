@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getCampusData } from '../utils/campusCache.js';
+import { getCampusData, invalidateCampusCache } from '../utils/campusCache.js';
 
 const cardStyle = {
   background: 'var(--bg-card)',
@@ -36,6 +36,7 @@ const inputStyle = {
 export default function ScriptsCenterPage() {
   const [subjects, setSubjects] = useState([]);
   const [selectedSubject, setSelectedSubject] = useState('');
+  const [icsSubject, setIcsSubject] = useState('auto');
   const [unitName, setUnitName] = useState('Apuntes Importados');
   const [legacyPath, setLegacyPath] = useState('./frontend/public/data');
   const [log, setLog] = useState('');
@@ -99,6 +100,28 @@ export default function ScriptsCenterPage() {
     const data = await res.json();
     setLog(`✅ Migración completada: ${data.subjectsAdded} asignaturas, ${data.tasksAdded} entregas y ${data.lessonsAdded} lecciones.`);
     await loadSubjects();
+  };
+
+  const handleImportIcs = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setLog('⏳ Analizando calendario .ics y detectando asignatura...');
+    const fd = new FormData();
+    fd.append('file', file);
+    if (icsSubject && icsSubject !== 'auto') {
+      fd.append('subjectId', icsSubject);
+    }
+    const res = await fetch('/api/scripts/import-ics', { method: 'POST', body: fd });
+    const data = await res.json();
+    invalidateCampusCache();
+    const detected = Array.isArray(data.detectedSubjects) && data.detectedSubjects.length > 0
+      ? ` · Asignaturas: ${data.detectedSubjects.join(', ')}`
+      : '';
+    const unmatched = data.unmatchedEvents > 0
+      ? ` (${data.unmatchedEvents} eventos sin asignatura coincidente)`
+      : '';
+    setLog(`✅ Se importaron ${data.eventsImported || 0} entregas desde ${file.name}${detected}${unmatched}.`);
+    e.target.value = '';
   };
 
   return (
@@ -168,6 +191,23 @@ export default function ScriptsCenterPage() {
           </p>
           <input style={inputStyle} value={legacyPath} onChange={(e) => setLegacyPath(e.target.value)} />
           <button style={btnPrimary} onClick={handleImportLegacy}>🚀 Importar Datos Clásicos</button>
+        </div>
+
+        <div style={cardStyle}>
+          <h3 style={{ margin: 0 }}>📅 5. Importar Calendario (.ics)</h3>
+          <p style={{ margin: 0, fontSize: '0.88rem', color: 'var(--text-muted)' }}>
+            Sube un archivo <code>.ics</code> del campus y detecta automáticamente a qué asignatura pertenece cada entrega.
+          </p>
+          <select style={inputStyle} value={icsSubject} onChange={(e) => setIcsSubject(e.target.value)}>
+            <option value="auto">✨ Detectar asignatura automáticamente</option>
+            {subjects.map((s) => (
+              <option key={s.id} value={s.id}>{s.icon} {s.title}</option>
+            ))}
+          </select>
+          <label style={btnPrimary}>
+            📅 Seleccionar archivo (.ics)
+            <input type="file" accept=".ics,text/calendar" hidden onChange={handleImportIcs} />
+          </label>
         </div>
       </div>
     </main>

@@ -28,11 +28,10 @@ MICAMPUS_SMTP_PASSWORD=tu-app-password
 Monta un disco persistente en `/app/micampus-data` para conservar `micampus.db` (usuarios, lecciones, tareas y configuración) entre despliegues.
 
 ```bash
-docker build -t micampus .
-docker run -d -p 8090:8090 \
-  -v micampus_data:/app/micampus-data \
-  -e MICAMPUS_SESSION_SECRET="cambia-esta-clave" \
-  micampus
+# Opción recomendada con docker-compose.yml (crea el volumen ./micampus-data automáticamente)
+cp .env.example .env
+# Edita .env para poner tu MICAMPUS_SESSION_SECRET
+docker compose up -d --build
 ```
 
 ## 2. Frontend en GitHub Pages (`github.io`)

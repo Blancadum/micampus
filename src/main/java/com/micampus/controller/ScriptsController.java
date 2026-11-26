@@ -95,15 +95,25 @@ public class ScriptsController {
     @PostMapping("/import-ics")
     public Map<String, Object> importIcs(
             @RequestParam("file") MultipartFile file,
-            @RequestParam("subjectId") String subjectId) throws IOException {
+            @RequestParam(value = "subjectId", required = false) String subjectId,
+            HttpServletRequest request) throws IOException {
         String content = new String(file.getBytes(), StandardCharsets.UTF_8);
-        var imported = calendarAndCoachService.importIcsForSubject(subjectId, content);
-        backupService.saveNormalizedCalendarFile(subjectId, content);
+        String ownerId = authService.resolveRequestOwnerId(request);
+        Map<String, Object> res = calendarAndCoachService.importIcs(subjectId, content, file.getOriginalFilename(), ownerId);
+
+        String savedAs = "";
+        if (subjectId != null && !subjectId.isBlank() && !"auto".equalsIgnoreCase(subjectId.trim())) {
+            backupService.saveNormalizedCalendarFile(subjectId, content);
+            savedAs = backupService.buildNormalizedCalendarFilename(subjectId);
+        }
+
         return Map.of(
                 "status", "ok",
-                "eventsImported", imported.size(),
-                "savedAs", backupService.buildNormalizedCalendarFilename(subjectId),
-                "tasks", imported
+                "eventsImported", res.getOrDefault("eventsImported", 0),
+                "detectedSubjects", res.getOrDefault("detectedSubjects", List.of()),
+                "unmatchedEvents", res.getOrDefault("unmatchedEvents", 0),
+                "savedAs", savedAs,
+                "tasks", res.getOrDefault("tasks", List.of())
         );
     }
 
